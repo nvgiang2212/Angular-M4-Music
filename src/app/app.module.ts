@@ -13,6 +13,12 @@ import {HeaderComponent} from './component/header/header.component';
 import {UserComponent} from './component/user/user.component';
 import {AdminComponent} from './component/admin/admin.component';
 import {PmComponent} from './component/pm/pm.component';
+import {environment} from "../environments/environment";
+import {AngularFireStorageModule} from "@angular/fire/storage";
+import {AngularFireModule} from "@angular/fire";
+import { UploadFileComponent } from './component/upload-file/upload-file.component';
+import { CreateSongComponent } from './component/create-song/create-song.component';
+import { UploadAvatarComponent } from './component/upload-avatar/upload-avatar.component';
 
 
 @NgModule({
@@ -24,7 +30,10 @@ import {PmComponent} from './component/pm/pm.component';
     HeaderComponent,
     UserComponent,
     AdminComponent,
-    PmComponent
+    PmComponent,
+    UploadFileComponent,
+    CreateSongComponent,
+    UploadAvatarComponent
   ],
   imports: [
     BrowserModule,
@@ -32,6 +41,8 @@ import {PmComponent} from './component/pm/pm.component';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireStorageModule
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]

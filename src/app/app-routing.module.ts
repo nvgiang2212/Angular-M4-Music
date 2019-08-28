@@ -6,6 +6,7 @@ import {ContentComponent} from './component/content/content.component';
 import {AdminComponent} from './component/admin/admin.component';
 import {PmComponent} from './component/pm/pm.component';
 import {UserComponent} from './component/user/user.component';
+import {CreateSongComponent} from "./component/create-song/create-song.component";
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'admin', component: AdminComponent},
   {path: 'auth/login', component: LoginComponent},
   {path: 'signup', component: RegisterComponent},
+  {path: 'create-house', component: CreateSongComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'}
 ];
 
