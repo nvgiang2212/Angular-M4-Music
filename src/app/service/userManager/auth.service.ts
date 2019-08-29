@@ -4,28 +4,34 @@ import { Observable } from 'rxjs';
 import {JwtResponse} from '../../model/jwt-response';
 import {SignUpInfo} from '../../model/userManager/Signup-Infor';
 import {AuthLoginInfo} from '../../model/userManager/Login-Infor';
+import {environment} from "../../../environments/environment";
 
 
-const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-};
+// const httpOptions = {
+//   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+// };
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  private loginUrl = 'http://localhost:8080/api/auth/signin';
-  private signupUrl = 'http://localhost:8080/api/auth/signup';
+  private API_URL = environment.URL + '/api/signin';
 
-  constructor(private http: HttpClient) {
+  constructor(private httpClient: HttpClient) {
   }
 
-  attemptAuth(credentials: AuthLoginInfo): Observable<JwtResponse> {
-    return this.http.post<JwtResponse>(this.loginUrl, credentials, httpOptions);
+  // ko can phai su dung JSON.stringigy de convert tu oject sang json
+  authenticate(user): Observable<any> {
+    return this.httpClient.get<any>(this.API_URL, user);
   }
 
-  signUp(info: SignUpInfo): Observable<string> {
-    return this.http.post<string>(this.signupUrl, info, httpOptions);
+  isLoggedIn() {
+    const username = localStorage.getItem('currentUser');
+    return !(username === null);
+  }
+
+  logout() {
+    localStorage.clear();
   }
 }

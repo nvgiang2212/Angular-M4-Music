@@ -15,14 +15,14 @@ export class AdminComponent implements OnInit {
   constructor(private userService: UserService) { }
 
   ngOnInit() {
-    this.userService.getAdminBoard().subscribe(
-      data => {
-        this.board = data;
-      },
-      error => {
-        this.errorMessage = `${error.status}: ${JSON.parse(error.error).message}`;
-      }
-    );
+    // this.userService.getAdminBoard().subscribe(
+    //   data => {
+    //     this.board = data;
+    //   },
+    //   error => {
+    //     this.errorMessage = `${error.status}: ${JSON.parse(error.error).message}`;
+    //   }
+    // );
   }
 
 }
