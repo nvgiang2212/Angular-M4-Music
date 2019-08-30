@@ -21,10 +21,10 @@ export class UserService {
     return this.http.post<Iuser>(this.API_URL + '/signup', user);
   }
 
-  // getUserBoard(name: string): Observable<string> {
-  //   return this.http.get(this.userUrl, { responseType: 'text' });
-  // }
-  //
+  getUserBoard(name: string): Observable<string> {
+    return this.http.get(this.API_URL, { responseType: 'text' });
+  }
+
   // getPMBoard(): Observable<string> {
   //   return this.http.get(this.pmUrl, { responseType: 'text' });
   // }

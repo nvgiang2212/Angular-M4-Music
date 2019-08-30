@@ -1,0 +1,36 @@
+<div class="container">
+  <div
+    style="background-color: black; border-radius: 10px; text-align: center; color: white; margin-top: 20px; margin-bottom: 20px; font-size: x-large; margin-left: 5px; margin-right:5px">
+    Đăng ký bài hát
+  </div>
+  <div class="container-fluid row">
+    <div class="col-4">
+      <form (ngSubmit)="createSong()" [formGroup]="songForm">
+        <div class="form-group">
+          <label>Song Name: </label>
+          <input type="text" class="form-control" [(ngModel)]="song.nameSong" formControlName="nameSong"
+                 placeholder="Enter song name">
+        </div>
+        <div class="form-group">
+          <label>Singer Name: </label>
+          <input type="text" class="form-control" [(ngModel)]="song.nameSinger" formControlName="nameSinger"
+                 placeholder="Enter song name">
+        </div>
+        <div class="form-group">
+          <label>Description: </label>
+          <textarea class="form-control" [(ngModel)]="song.Describe" formControlName="Describe"
+                    placeholder="Enter description"></textarea>
+        </div>
+        <div style="margin-bottom: 20px">
+          <button type="submit" class="btn btn-primary">Thêm Bài Hát</button>
+        </div>
+      </form>
+    </div>
+    <div class="col-4" style="margin-bottom: 10px">
+      <app-upload-file (giveURLtoCreate)="onChange($event)"></app-upload-file>
+    </div>
+    <div class="col-4" style="margin-bottom: 10px">
+      <app-upload-avatar (giveURLtoCreate)="onChange($event)"></app-upload-avatar>
+    </div>
+  </div>
+</div>
