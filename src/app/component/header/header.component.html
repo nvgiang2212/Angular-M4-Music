@@ -1,120 +1,72 @@
-<div class="header" style="margin-top: 100px">
-  <header class="header-area">
-    <div class="main-header-area">
-      <div class="classy-nav-container breakpoint-off">
-        <nav class="classy-navbar justify-content-between" id="pocaNav">
-          <a class="nav-brand" routerLink="home">
-            <img src="./assets/img/logo/logo-nct.png" alt="" width="100px"></a>
-          <div class="classy-navbar-toggler">
-            <span class="navbarToggler"></span>
-          </div>
-          <div class="classy-menu">
-            <div class="classycloseIcon">
-              <div class="cross-wrap">
-                <span class="top"></span>
-                <span class="bottom"></span></div>
-            </div>
-            <div class="classynav">
-              <ul id="nav">
-                <li class="current-item"><a routerLink="home">HOME</a></li>
-                <li><a routerLink="#">TOP LISTEN</a></li>
-                <li><a routerLink="#">TOP LIKE</a></li>
-                <li><a routerLink="/singer/song">SINGER</a></li>
-                <li *ngIf="authority"><a routerLink="/song/my-playlist">MY ALBUM</a></li>
-                <li *ngIf="authority"><a routerLink="/auth/personal">CÁ NHÂN</a></li>
-              </ul>
-              <div class="top-search-area">
-                <form method="post">
-                  <input type="search" name="top-search-bar" class="form-control"
-                         placeholder="Tìm bài hát hoặc ca sỹ...">
-                  <button type="submit"><i class="fas fa-search"></i></button>
-                </form>
+<!-- ##### Header Area Start ##### -->
+<div class="container">
+  <div class="row">
+    <header class="header-area">
+      <!-- Navbar Area -->
+      <div class="oneMusic-main-menu">
+        <div class="classy-nav-container breakpoint-off">
+          <div class="container">
+            <!-- Menu -->
+            <nav class="classy-navbar justify-content-between" id="oneMusicNav">
+
+              <!-- Nav brand -->
+              <a routerLink="home" class="nav-brand ml-50">
+                <img src="./assets/img/core-img/logo-box.png">
+              </a>
+
+              <!-- Navbar Toggler -->
+              <div class="classy-navbar-toggler">
+                <span class="navbarToggler"><span></span><span></span><span></span></span>
               </div>
-              <div class="nav navbar-nav">
-                <ul>
-<!--                  <li *ngIf="authority"><app-user></app-user></li>-->
-                  <li *ngIf="!authority" class="nav-item" style="font-size: 40%"><a routerLink="auth/login">Login</a></li>
-                  <li *ngIf="!authority" class="nav-item" style="font-size: 40%"><a
-                    routerLink="signup">Register</a></li>
-                </ul>
+
+              <!-- Menu -->
+              <div class="classy-menu">
+                <!-- Close Button -->
+                <div class="classycloseIcon">
+                  <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                </div>
+
+                <!-- Nav Start -->
+                <div class="classynav">
+                  <ul>
+                    <input class="form-control" type="text" placeholder="  Tìm tên bài hát..."
+                           aria-label="Search">
+                    <li><a routerLink="home" style="color: #0b0b0b">Trang chủ</a></li>
+                    <li><a routerLink="#" style="color: #0b0b0b">Sự kiện</a></li>
+                    <li><a routerLink="#" style="color: #0b0b0b">Music</a></li>
+                    <li><a routerLink="#" style="color: #0b0b0b">Singer</a></li>
+                    <li *ngIf="authority"><a routerLink="#">My Albums</a></li>
+                    <li *ngIf="authority"><a routerLink="#">My Profile</a></li>
+                    <li><a routerLink="#" style="color: #0b0b0b">Tin tức</a>
+                    <li><a href="#" style="color: #0b0b0b">Liên hệ</a></li>
+                  </ul>
+                  <div>
+
+                  </div>
+
+                  <!-- Login/Register & Cart Button -->
+                  <div class="login-register-cart-button d-flex align-items-center">
+                    <!-- Login/Register -->
+                    <div class="login-register-btn" *ngIf="!authority">
+                      <a routerLink="auth/login" id="loginBtn" style="color: #0b0b0b">Đăng nhập</a>
+                    </div>
+                    <div class="mr-2 ml-2" style="color: black">/</div>
+                    <div class="login-register-btn" *ngIf="!authority">
+                      <a routerLink="signup" id="logoutBtn" style="color: #0b0b0b">Đăng ký</a>
+                    </div>
+                    <div class="login-register-btn" *ngIf="authority">
+                      <a routerLink="auth/login" style="color: #0b0b0b">Đăng xuất</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- Nav End -->
               </div>
-            </div>
+            </nav>
           </div>
-        </nav>
+        </div>
       </div>
-    </div>
-  </header>
+    </header>
+  </div>
 </div>
 
-<!-- ##### Header Area Start ##### -->
-<header class="header-area">
-  <!-- Navbar Area -->
-  <div class="oneMusic-main-menu">
-    <div class="classy-nav-container breakpoint-off">
-      <div class="container">
-        <!-- Menu -->
-        <nav class="classy-navbar justify-content-between" id="oneMusicNav">
-
-          <!-- Nav brand -->
-          <a routerLink="home" class="nav-brand">
-            <img src="./assets/img/core-img/logo-box.png">
-          </a>
-
-          <!-- Navbar Toggler -->
-          <div class="classy-navbar-toggler">
-            <span class="navbarToggler"><span></span><span></span><span></span></span>
-          </div>
-
-          <!-- Menu -->
-          <div class="classy-menu">
-            <!-- Close Button -->
-            <div class="classycloseIcon">
-              <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
-            </div>
-
-            <!-- Nav Start -->
-            <div class="classynav">
-              <ul>
-                <input class="form-control" type="text" placeholder="Tìm tên bài hát..."
-                       aria-label="Search">
-                <li><a routerLink="home">Trang chủ</a></li>
-                <li><a routerLink="#">Sự kiện</a></li>
-                <li><a routerLink="#">Music</a></li>
-                <li><a routerLink="#">Singer</a></li>
-                <li><a routerLink="#">Tin tức</a>
-                  <ul class="dropdown">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Albums</a></li>
-                    <li><a href="#">Sự kiện</a></li>
-                    <li><a href="#">Music</a></li>
-                    <li><a href="#">Tin tức</a></li>
-                    <li><a href="#">Liên hệ</a></li>
-                    <li><a href="#">Elements</a></li>
-                  </ul>
-                </li>
-                <li><a href="#">Liên hệ</a></li>
-              </ul>
-              <div>
-
-              </div>
-
-              <!-- Login/Register & Cart Button -->
-              <div class="login-register-cart-button d-flex align-items-center">
-                <!-- Login/Register -->
-                <div class="login-register-btn">
-                  <a href="login.html" id="loginBtn">Đăng nhập</a>
-                </div>
-                <div class="mr-2 ml-2" style="color: white">/</div>
-                <div class="login-register-btn mr-50">
-                  <a href="register.html" id="logoutBtn">Đăng ký</a>
-                </div>
-              </div>
-            </div>
-            <!-- Nav End -->
-          </div>
-        </nav>
-      </div>
-    </div>
-  </div>
-</header>
 <!-- ##### Header Area End ##### -->

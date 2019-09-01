@@ -1,36 +1,53 @@
-
-<div *ngIf="isLoggedIn; else loggedOut">
-  Logged in as {{roles}}.
+<div class="top">
+  <h2>Đăng Nhập</h2>
 </div>
-<ng-template #loggedOut>
-  <div style="max-width:350px;">
+<div class="card col-md-4 offset-4">
+  <div class="card-body">
+    <!-- Default form login -->
     <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+      <!-- Email -->
+      <label>User Name</label>
+      <input type="text" id="defaultLoginFormEmail" class="form-control mb-4 mt-3"
+             name="username"
+             [(ngModel)]="form.username" #username="ngModel" required
+             value="" placeholder="Enter Username">
+
+      <!-- Password -->
       <div class="form-group">
-        <label for="username">Username</label>
-        <input type="text" class="form-control" name="username" [(ngModel)]="form.username" #username="ngModel"
-               required/>
-        <div *ngIf="f.submitted && username.invalid">
-          <div *ngIf="username.errors.required">Username is required</div>
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" class="form-control" name="password" [(ngModel)]="form.password" #password="ngModel"
-               required minlength="6"/>
+        <label>Password</label>
+        <input type="password" id="defaultLoginFormPassword" class="form-control mb-4 mt-3"
+               name="password"
+               [(ngModel)]="form.password" #password="ngModel" required minlength="6"
+               placeholder="Enter Password">
         <div *ngIf="f.submitted && password.invalid">
           <div *ngIf="password.errors.required">Password is required</div>
           <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
         </div>
       </div>
-      <div class="form-group">
-        <button class="btn btn-primary">Login</button>
-        <div *ngIf="f.submitted && isLoginFailed" class="alert alert-danger">
-          Login failed: {{errorMessage}}
+
+      <div class="d-flex justify-content-around">
+        <div>
+          <!-- Remember me -->
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember">
+            <label class="custom-control-label" for="defaultLoginFormRemember">Remember me</label>
+          </div>
+        </div>
+        <div>
+          <!-- Forgot password -->
+          <a routerLink="#">Forgot password?</a>
         </div>
       </div>
+
+      <!-- Sign in button -->
+      <div class="form-group">
+        <button class="btn btn-info btn-block my-4" type="submit">Đăng Nhập</button>
+      </div>
+      <!-- Register -->
+      <p>Bạn chưa có tài khoản? Vậy thì
+        <a routerLink="/signup">Đăng Ký</a> thôi !
+      </p>
     </form>
-    <hr/>
-    <p>Don't have an account?</p>
-    <a href="signup" class="btn btn-success">Sign Up</a>
+    <!-- Default form login -->
   </div>
-</ng-template>
+</div>

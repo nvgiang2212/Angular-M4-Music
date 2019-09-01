@@ -6,7 +6,8 @@ import {ContentComponent} from './component/content/content.component';
 import {AdminComponent} from './component/admin/admin.component';
 import {PmComponent} from './component/pm/pm.component';
 import {UserComponent} from './component/user/user.component';
-import {CreateSongComponent} from "./component/create-song/create-song.component";
+import {CreateSongComponent} from './component/create-song/create-song.component';
+
 
 
 const routes: Routes = [
