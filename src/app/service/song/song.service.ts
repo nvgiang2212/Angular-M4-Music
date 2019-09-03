@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import {Song} from "../model/song";
-import {Observable} from "rxjs";
-import {HttpClient} from "@angular/common/http";
-import {AuthService} from "./userManager/auth.service";
+import {Song} from '../../model/song';
+import {Observable} from 'rxjs';
+import {AuthService} from '../userManager/auth.service';
+import {HttpClient} from '@angular/common/http';
+
 
 @Injectable({
   providedIn: 'root'

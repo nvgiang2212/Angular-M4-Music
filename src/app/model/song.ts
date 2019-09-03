@@ -4,5 +4,5 @@ export class Song {
   nameSong: string;
   nameSinger: string;
   url: string;
-  Describe: string;
+  describe: string;
 }

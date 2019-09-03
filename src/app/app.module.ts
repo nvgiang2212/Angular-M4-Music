@@ -19,6 +19,7 @@ import {AngularFireModule} from "@angular/fire";
 import { UploadFileComponent } from './component/upload-file/upload-file.component';
 import { CreateSongComponent } from './component/create-song/create-song.component';
 import { UploadAvatarComponent } from './component/upload-avatar/upload-avatar.component';
+import { FooterComponent } from './component/footer/footer.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { UploadAvatarComponent } from './component/upload-avatar/upload-avatar.c
     PmComponent,
     UploadFileComponent,
     CreateSongComponent,
-    UploadAvatarComponent
+    UploadAvatarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
