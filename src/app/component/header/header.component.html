@@ -35,8 +35,8 @@
                     <li><a routerLink="#" style="color: #0b0b0b">Sự kiện</a></li>
                     <li><a routerLink="#" style="color: #0b0b0b">Music</a></li>
                     <li><a routerLink="#" style="color: #0b0b0b">Singer</a></li>
-                    <li *ngIf="authority"><a routerLink="#">My Albums</a></li>
-                    <li *ngIf="authority"><a routerLink="#">My Profile</a></li>
+<!--                    <li *ngIf="authority"><a routerLink="#">My Albums</a></li>-->
+<!--                    <li *ngIf="authority"><a routerLink="#">My Profile</a></li>-->
                     <li><a href="#" style="color: #0b0b0b">Liên hệ</a></li>
                   </ul>
                   <div>
@@ -58,7 +58,7 @@
                       <a routerLink="signup" id="logoutBtn" style="color: #0b0b0b">Đăng ký</a>
                     </div>
                     <div class="login-register-btn" *ngIf="authority">
-                      <a routerLink="auth/login" style="color: #0b0b0b">Đăng xuất</a>
+                      <a (click)="logout()" style="color: #0b0b0b">Đăng xuất</a>
                     </div>
                   </div>
                 </div>
