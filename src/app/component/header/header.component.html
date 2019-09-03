@@ -46,10 +46,14 @@
                   <div class="ml-30 btn btn-primary" style="padding: 6px;" *ngIf="authority">
                     <a routerLink="create-house" id="addSongBtn">Thêm bài hát</a>
                   </div>
+
                   <!-- Login/Register & Cart Button -->
                   <div class="login-register-cart-button d-flex align-items-center">
 
                     <!-- Login/Register -->
+                    <div class="ml-20" *ngIf="authority">
+                      <img style="width: 50px; height: 50px" src="https://ebook.vn/images/default.jpg">
+                    </div>
                     <div class="login-register-btn" *ngIf="!authority">
                       <a routerLink="auth/login" id="loginBtn" style="color: #0b0b0b">Đăng nhập</a>
                     </div>
