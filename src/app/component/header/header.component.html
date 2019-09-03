@@ -37,15 +37,18 @@
                     <li><a routerLink="#" style="color: #0b0b0b">Singer</a></li>
                     <li *ngIf="authority"><a routerLink="#">My Albums</a></li>
                     <li *ngIf="authority"><a routerLink="#">My Profile</a></li>
-                    <li><a routerLink="#" style="color: #0b0b0b">Tin tức</a>
                     <li><a href="#" style="color: #0b0b0b">Liên hệ</a></li>
                   </ul>
                   <div>
-
                   </div>
 
+                  <!-- Add Song -->
+                  <div class="ml-30 btn btn-primary" style="padding: 6px;" *ngIf="!authority">
+                    <a routerLink="create-house" id="addSongBtn">Thêm bài hát</a>
+                  </div>
                   <!-- Login/Register & Cart Button -->
                   <div class="login-register-cart-button d-flex align-items-center">
+
                     <!-- Login/Register -->
                     <div class="login-register-btn" *ngIf="!authority">
                       <a routerLink="auth/login" id="loginBtn" style="color: #0b0b0b">Đăng nhập</a>

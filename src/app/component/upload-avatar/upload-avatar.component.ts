@@ -1,6 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {AngularFireStorage, AngularFireStorageReference} from "@angular/fire/storage";
-import {HttpClient} from "@angular/common/http";
+import {HttpClient} from '@angular/common/http';
+
 
 @Component({
   selector: 'app-upload-avatar',
