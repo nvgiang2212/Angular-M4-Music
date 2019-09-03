@@ -7,6 +7,7 @@ import {AdminComponent} from './component/admin/admin.component';
 import {PmComponent} from './component/pm/pm.component';
 import {UserComponent} from './component/user/user.component';
 import {CreateSongComponent} from './component/create-song/create-song.component';
+import {DetailSongComponent} from "./component/detail-song/detail-song.component";
 
 
 
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: 'admin', component: AdminComponent},
   {path: 'auth/login', component: LoginComponent},
   {path: 'signup', component: RegisterComponent},
+  {path: 'song/play/:id', component: DetailSongComponent},
   {path: 'create-house', component: CreateSongComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'}
 ];

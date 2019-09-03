@@ -12,6 +12,7 @@ export class ContentComponent implements OnInit {
   info: any;
 
   bestChoiceSong: Song[];
+  songList: Song[] = [];
   bestSaleoffSong = this.bestChoiceSong;
   suggestionSong = this.bestChoiceSong;
 
@@ -27,7 +28,7 @@ export class ContentComponent implements OnInit {
 
     this.songService.getSong()
       .subscribe(next => {
-        this.bestChoiceSong = next.data;
+        this.songList = next.data;
         console.log(next);
       });
   }

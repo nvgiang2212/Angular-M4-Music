@@ -17,15 +17,17 @@ export class SongService {
   // private deleteSongByIdUrl = 'http://localhost:8080/api/songs/by';
 
   songs: Song[];
-  private API_URL = environment.URL + '/api/songs/create';
+  private readonly API_URL = environment.URL + '/api/songs/create';
+  private readonly API_URL_GET = environment.URL + '/api/songs';
+  private readonly API_URL_GET_ID = environment.URL + '/api/songs';
   // private readonly API = 'http://localhost:8080/api/songs';
 
   getSong(): Observable<any> {
-    return this.http.get<any>(this.API_URL);
+    return this.http.get<any>(this.API_URL_GET);
   }
 
-  getSongById(id: number): Observable<Song> {
-    return this.http.get<Song>(`${this.API_URL}/${id}`);
+  getSongById(id: number): Observable<any> {
+    return this.http.get<any>(`${this.API_URL_GET_ID}/${id}`);
   }
 
   createSong(song: Partial<Song>): Observable<Song> {

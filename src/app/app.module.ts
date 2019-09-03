@@ -20,6 +20,7 @@ import { UploadFileComponent } from './component/upload-file/upload-file.compone
 import { CreateSongComponent } from './component/create-song/create-song.component';
 import { UploadAvatarComponent } from './component/upload-avatar/upload-avatar.component';
 import { FooterComponent } from './component/footer/footer.component';
+import { DetailSongComponent } from './component/detail-song/detail-song.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { FooterComponent } from './component/footer/footer.component';
     UploadFileComponent,
     CreateSongComponent,
     UploadAvatarComponent,
-    FooterComponent
+    FooterComponent,
+    DetailSongComponent
   ],
   imports: [
     BrowserModule,
