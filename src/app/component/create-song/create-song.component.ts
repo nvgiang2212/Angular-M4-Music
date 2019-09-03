@@ -21,14 +21,14 @@ export class CreateSongComponent implements OnInit {
       nameSong: new FormControl(''),
       nameSinger: new FormControl(''),
       url: new FormControl(''),
-      Describe: new FormControl('')
+      describes: new FormControl('')
     });
     this.song = {
       avatar: '',
       nameSong: '',
       nameSinger: '',
       url: '',
-      Describe: ''
+      describes: ''
     };
   }
 
@@ -38,11 +38,14 @@ export class CreateSongComponent implements OnInit {
   onChange($event) {
     this.song.url = $event;
   }
+  onAvatar($event) {
+    this.song.avatar = $event;
+  }
 
   createSong() {
     console.log(this.song);
     this.service.createSong(this.song).subscribe(() => {
-      this.router.navigate(['/home-for-host']);
+      this.router.navigate(['/home']);
     }, error => console.log(error) );
   }
 

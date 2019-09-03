@@ -7,6 +7,22 @@
       <!--      NEW SONG-->
       <div class="col-md-4">
         <h3 routerLink="#">New Song <i class="fas fa-chevron-right fas-1g" style="font-size: 80%"></i></h3>
+<!--        <div *ngFor="let songs of bestChoiceSong; i as index">-->
+<!--          <a routerLink="/houses/{{songs.id}}"><img class="card-img-top img-fluid" [src]=songs.imageUrls[0] alt=""></a>-->
+<!--          <div class="card-body text-center">-->
+<!--            <a routerLink="/houses/{{songs.id}}"><h5 class="card-title">{{songs.houseName}}</h5></a>-->
+<!--            <p class="card-text m-md-1">{{songs.price}} $/đêm</p>-->
+<!--            <p class="card-text m-md-1"><span class="fa fa-map-marker"></span> {{songs.address}}</p>-->
+<!--            <p class="card-text m-md-1">-->
+<!--              <span class="fa fa-star " [class.checked]="songs.rate"></span>-->
+<!--              <span class="fa fa-star" [class.checked]="(songs.rate-1)>0"></span>-->
+<!--              <span class="fa fa-star" [class.checked]="(songs.rate-2)>0"></span>-->
+<!--              <span class="fa fa-star" [class.checked]="(songs.rate-3)>0"></span>-->
+<!--              <span class="fa fa-star" [class.checked]="(songs.rate-4)>0"></span>-->
+<!--            </p>-->
+
+<!--          </div>-->
+<!--        </div>-->
       </div>
       <br><br>
       <div class="row">
@@ -14,7 +30,8 @@
         <div class="col-lg-3 col-md-12 mb-lg-0 mb-3">
           <div class="rounded mb-4 play portfolio-effect__item portfolio-item--eff1"
                style="width: 180px;height: 180px">
-            <img class="img-fluid portfolio-item__image">
+<!--            <a routerLink="/songs/{{songs.id}}"></a>-->
+            <img class="img-fluid" >
             <div class="portfolio-item__info">
               <i class="fas fa-play-circle fa-3x"></i>
             </div>

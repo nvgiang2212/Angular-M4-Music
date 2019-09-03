@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {TokenStorageService} from '../../service/userManager/token-storage.service';
 import {Song} from '../../model/song/song';
+import {SongService} from "../../service/song/song.service";
 
 @Component({
   selector: 'app-content',
@@ -10,7 +11,12 @@ import {Song} from '../../model/song/song';
 export class ContentComponent implements OnInit {
   info: any;
 
-  constructor(private token: TokenStorageService) { }
+  bestChoiceSong: Song[];
+  bestSaleoffSong = this.bestChoiceSong;
+  suggestionSong = this.bestChoiceSong;
+
+  constructor(private token: TokenStorageService,
+              private songService: SongService) { }
 
   ngOnInit() {
     this.info = {
@@ -18,6 +24,12 @@ export class ContentComponent implements OnInit {
       username: this.token.getUsername(),
       authorities: this.token.getAuthorities()
     };
+
+    this.songService.getSong()
+      .subscribe(next => {
+        this.bestChoiceSong = next.data;
+        console.log(next);
+      });
   }
 
   logout() {
