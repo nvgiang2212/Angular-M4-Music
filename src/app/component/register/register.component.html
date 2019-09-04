@@ -9,7 +9,7 @@
           User Name
         </label>
         <input type="text" class="form-control ml-3 mt-3" [(ngModel)]="user.username"
-               formControlName="username" placeholder="Enter Username">
+               formControlName="username" placeholder="Enter Username" required>
       </div>
       <div class="alert alert-danger" role="alert"
            *ngIf="registerForm.get('username').invalid && registerForm.get('username').touched">
@@ -21,7 +21,11 @@
             Mật khẩu
           </label>
           <input type="password" class="form-control ml-3 mt-3" placeholder="Enter Password"
-                 [(ngModel)]="user.password" formControlName="password" >
+                 [(ngModel)]="user.password" formControlName="password" required minlength="6">
+          <div class="alert alert-danger" role="alert"
+               *ngIf="registerForm.get('password').invalid && registerForm.get('username').touched">
+            Username is required!
+          </div>
         </div>
         <div class="form-group row">
           <label class="col">

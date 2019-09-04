@@ -13,14 +13,16 @@ import {HeaderComponent} from './component/header/header.component';
 import {UserComponent} from './component/user/user.component';
 import {AdminComponent} from './component/admin/admin.component';
 import {PmComponent} from './component/pm/pm.component';
-import {environment} from "../environments/environment";
-import {AngularFireStorageModule} from "@angular/fire/storage";
-import {AngularFireModule} from "@angular/fire";
+
 import { UploadFileComponent } from './component/upload-file/upload-file.component';
 import { CreateSongComponent } from './component/create-song/create-song.component';
 import { UploadAvatarComponent } from './component/upload-avatar/upload-avatar.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { DetailSongComponent } from './component/detail-song/detail-song.component';
+import {AngularFontAwesomeModule} from 'angular-font-awesome';
+import {AngularFireStorageModule} from '@angular/fire/storage';
+import {environment} from '../environments/environment';
+import {AngularFireModule} from '@angular/fire';
 
 
 @NgModule({
@@ -46,7 +48,8 @@ import { DetailSongComponent } from './component/detail-song/detail-song.compone
     HttpClientModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    AngularFontAwesomeModule,
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
