@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {TokenStorageService} from '../../service/userManager/token/token-storage.service';
-import {Song} from '../../model/song/song';
-import {SongService} from '../../service/song/song.service';
+import {TokenStorageService} from '../../../service/userManager/token/token-storage.service';
+import {Song} from '../../../model/song/song';
+import {SongService} from '../../../service/song/song.service';
 
 
 @Component({
