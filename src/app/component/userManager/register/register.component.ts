@@ -1,17 +1,12 @@
 import {Component, OnInit} from '@angular/core';
-import {SignUpInfo} from '../../../model/userManager/Signup-Infor';
 import {AuthService} from '../../../service/userManager/auth/auth.service';
-import {Iuser} from "../../model/iuser";
-import {AbstractControl, FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {Router} from "@angular/router";
-import {UserService} from "../../../service/userManager/user/user.service";
+import {UserService} from '../../../service/userManager/user/user.service';
+import {HttpClient} from '@angular/common/http';
+import {ActivatedRoute, Router} from '@angular/router';
+import {FormBuilder, Validators} from '@angular/forms';
+import {SignUpInfo} from '../../../model/userManager/Signup-Infor';
+import {FileUpload} from '../../../model/song/fileUpload';
 
-function comparePassword(c: AbstractControl) {
-  const v = c.value;
-  return (v.password === v.confirmPassword) ? null : {
-    passwordnotmatch: true
-  };
-}
 
 @Component({
   selector: 'app-register',
@@ -19,48 +14,70 @@ function comparePassword(c: AbstractControl) {
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-  registerForm: FormGroup;
-  user: Partial<Iuser>;
+  selectedFiles: FileList;
+  currentFileUpload: FileUpload;
+  form: any = {};
+  registerForm: SignUpInfo;
+  isRegister = false;
+  isRegisterFail = false;
+  errorMessage = '';
 
-  constructor(private fb: FormBuilder, private router: Router, private userService: UserService) {
+  constructor(
+    private authService: AuthService,
+    private userService: UserService,
+    private http: HttpClient,
+    private router: Router,
+    private route: ActivatedRoute,
+    private fb: FormBuilder) {
   }
 
   ngOnInit() {
-    this.registerForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      pwGroup: this.fb.group({
-        password: ['', [Validators.required, Validators.minLength(6)]],
-        confirmPassword: ['']
-      }, {validator: comparePassword}),
-      name: ['', Validators.required],
-      username: ['', Validators.required],
+    this.form = this.fb.group({
+      name: ['', [Validators.required]],
+      username: ['', [Validators.required]],
+      email: ['', [Validators.required]],
+      password: ['', [Validators.required]],
+      confirmPassword: ['', [Validators.required]],
     });
-
-    this.user = {
-      username: '',
-      password: '',
-      role: [''],
-      name: 'tinh' + Math.random() * 1000,
-      email: 'tinh' + Math.random() * 1000 + '@gmai.com',
-    };
   }
 
-  onSubmit() {
-    // if (this.registerForm.invalid) {
-    //   return;
-    // }
-    console.log(this.registerForm.value);
-    this.userService.register(this.user)
+  selecAvatar(event) {
+
+    this.selectedFiles = event.target.files;
+    console.log(this.selectedFiles);
+  }
+
+  upload() {
+    const file = this.selectedFiles.item(0);
+    this.selectedFiles = undefined;
+
+    this.currentFileUpload = new FileUpload(file);
+    this.userService.pushAvatarToStorage(this.currentFileUpload);
+    console.log(this.currentFileUpload);
+  }
+
+  RegisterAccount() {
+    debugger;
+    this.registerForm = new SignUpInfo(
+      this.form.name,
+      this.form.username,
+      this.form.email,
+      this.form.password,
+      this.currentFileUpload.url
+    );
+
+    this.authService
+      .registerAuth(this.registerForm)
       .subscribe(
         data => {
-          console.log('succsess');
-          alert('Bạn đã đăng ký thành công');
-          this.router.navigateByUrl('/signup');
+          console.log(data);
+          this.isRegister = true;
+          this.isRegisterFail = false;
         },
         error => {
-          console.log('error');
-          alert('Bạn CHƯA đăng ký thành công');
-        }
-      );
+          console.log(error);
+          this.errorMessage = error.error.message;
+          this.isRegisterFail = true;
+        });
   }
 }
