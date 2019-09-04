@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {TokenStorageService} from '../../service/userManager/token-storage.service';
+import {TokenStorageService} from '../../service/userManager/token/token-storage.service';
 import {Song} from '../../model/song/song';
-import {SongService} from "../../service/song/song.service";
+import {SongService} from '../../service/song/song.service';
+
 
 @Component({
   selector: 'app-content',

@@ -7,7 +7,7 @@ import {LoginComponent} from './component/login/login.component';
 import {RegisterComponent} from './component/register/register.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
-import {httpInterceptorProviders} from './service/userManager/auth-interceptor';
+import {httpInterceptorProviders} from './service/userManager/auth/auth-interceptor';
 import {ContentComponent} from './component/content/content.component';
 import {HeaderComponent} from './component/header/header.component';
 import {UserComponent} from './component/user/user.component';

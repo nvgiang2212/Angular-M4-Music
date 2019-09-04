@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Song} from '../../model/song/song';
 import {Observable} from 'rxjs';
-import {AuthService} from '../userManager/auth.service';
+import {AuthService} from '../userManager/auth/auth.service';
 import {HttpClient} from '@angular/common/http';
 import {environment} from "../../../environments/environment";
 

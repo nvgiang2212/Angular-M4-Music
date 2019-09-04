@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {SignUpInfo} from '../../model/userManager/Signup-Infor';
-import {AuthService} from '../../service/userManager/auth.service';
+import {AuthService} from '../../service/userManager/auth/auth.service';
 import {Iuser} from "../../model/iuser";
 import {AbstractControl, FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
-import {UserService} from "../../service/userManager/user.service";
+import {UserService} from "../../service/userManager/user/user.service";
 
 function comparePassword(c: AbstractControl) {
   const v = c.value;

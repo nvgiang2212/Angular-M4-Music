@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import {JwtResponse} from '../../model/jwt-response';
-import {SignUpInfo} from '../../model/userManager/Signup-Infor';
-import {AuthLoginInfo} from '../../model/userManager/Login-Infor';
+import {JwtResponse} from '../../../model/jwt-response';
+import {SignUpInfo} from '../../../model/userManager/Signup-Infor';
+import {AuthLoginInfo} from '../../../model/userManager/Login-Infor';
 
 
 const httpOptions = {
