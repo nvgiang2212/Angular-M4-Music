@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import {Iuser} from "../../model/iuser";
-import {environment} from "../../../../environments/environment";
+import {environment} from '../../../../environments/environment';
+import {SignUpInfo} from '../../../model/userManager/Signup-Infor';
 
 @Injectable({
   providedIn: 'root'
@@ -17,12 +17,8 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  register(user: Partial<Iuser>): Observable<Iuser> {
-    return this.http.post<Iuser>(this.API_URL + '/signup', user);
-  }
-
-  getUserBoard(name: string): Observable<string> {
-    return this.http.get(this.API_URL, { responseType: 'text' });
+  getUserBoard(): Observable<SignUpInfo[]> {
+    return this.http.get<SignUpInfo[]>(this.API_URL  + '/signup');
   }
 
   // getPMBoard(): Observable<string> {
