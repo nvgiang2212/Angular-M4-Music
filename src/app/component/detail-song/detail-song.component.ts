@@ -11,40 +11,39 @@ import {ActivatedRoute, Route} from "@angular/router";
 
 export class DetailSongComponent implements OnInit {
 
-  ngOnInit(): void {
-  }
-
-
-  constructor() {
-  }
-
-  // song: Song = {
-  //     id: 0,
-  //     nameSong: '',
-  //     nameSinger: '',
-  //     avatar: '',
-  //     url: '',
-  //     describes: ''
-  //   };
-  //
-  // constructor(
-  //   private songService: SongService,
-  //   private route: Route,
-  //   private router: ActivatedRoute) {
+  // ngOnInit(): void {
   // }
   //
-  // ngOnInit() {
-  //   const id = +this.router.snapshot.paramMap.get('id');
-  //   this.songService.getSongById(id)
-  //     .subscribe(
-  //       next => {
-  //         this.song = next.data;
-  //         console.log(next.data);
-  //       },
-  //       error => {
-  //         console.log(error);
-  //         this.song = null;
-  //       });
+  //
+  // constructor() {
   // }
+
+  song: Partial<Song> = {
+      id: 0,
+      nameSong: '',
+      nameSinger: '',
+      avatar: '',
+      url: '',
+      describes: ''
+    };
+
+  constructor(
+    private songService: SongService,
+    private route: ActivatedRoute) {
+  }
+
+  ngOnInit() {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.songService.getSongById(id)
+      .subscribe(
+        next => {
+          this.song = next.data;
+          console.log(next.data);
+        },
+        error => {
+          console.log(error);
+          this.song = null;
+        });
+  }
 
 }
