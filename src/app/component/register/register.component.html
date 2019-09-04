@@ -31,7 +31,7 @@
                  formControlName="confirmPassword" placeholder="Enter Confirm Password">
         </div>
         <div class="alert alert-danger" role="alert" *ngIf="registerForm.hasError('passwordnotmatch', ['pwGroup']) &&
-      registerForm.get('pwGroup').touched">
+          registerForm.get('pwGroup').touched">
           Password does not match!
         </div>
       </div>
