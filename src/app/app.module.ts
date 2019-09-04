@@ -11,8 +11,6 @@ import {httpInterceptorProviders} from './service/userManager/auth/auth-intercep
 import {ContentComponent} from './component/layout/content/content.component';
 import {HeaderComponent} from './component/layout/header/header.component';
 import {UserComponent} from './component/userManager/user/user.component';
-import {AdminComponent} from './component/admin/admin.component';
-import {PmComponent} from './component/pm/pm.component';
 
 import { UploadFileComponent } from './component/upload/upload-file/upload-file.component';
 import { CreateSongComponent } from './component/songManager/create-song/create-song.component';
@@ -23,6 +21,7 @@ import {AngularFontAwesomeModule} from 'angular-font-awesome';
 import {AngularFireStorageModule} from '@angular/fire/storage';
 import {environment} from '../environments/environment';
 import {AngularFireModule} from '@angular/fire';
+import { CarouselComponent } from './component/layout/carousel/carousel.component';
 
 
 @NgModule({
@@ -33,13 +32,12 @@ import {AngularFireModule} from '@angular/fire';
     ContentComponent,
     HeaderComponent,
     UserComponent,
-    AdminComponent,
-    PmComponent,
     UploadFileComponent,
     CreateSongComponent,
     UploadAvatarComponent,
     FooterComponent,
-    DetailSongComponent
+    DetailSongComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,
