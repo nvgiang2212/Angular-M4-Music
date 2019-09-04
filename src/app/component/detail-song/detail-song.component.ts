@@ -18,14 +18,14 @@ export class DetailSongComponent implements OnInit {
   constructor() {
   }
 
-// song: Song = {
-  //   id: 0,
-  //   nameSong: '',
-  //   nameSinger: '',
-  //   avatar: '',
-  //   url: '',
-  //   describes: ''
-  // };
+  // song: Song = {
+  //     id: 0,
+  //     nameSong: '',
+  //     nameSinger: '',
+  //     avatar: '',
+  //     url: '',
+  //     describes: ''
+  //   };
   //
   // constructor(
   //   private songService: SongService,
@@ -45,10 +45,6 @@ export class DetailSongComponent implements OnInit {
   //         console.log(error);
   //         this.song = null;
   //       });
-  // }
-
-  // open(content) {
-  //   this.modalService.open(content);
   // }
 
 }

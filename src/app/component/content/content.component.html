@@ -11,7 +11,7 @@
           <thead>
           <tr>
             <th scope="col"><i class="fas fa-bars"></i></th>
-            <th scope="col" class="col-md-10">Name song</th>
+            <th scope="col" class="col-md-50">Name song</th>
             <th scope="col" class="col-md-10">Singer</th>
             <th scope="col" class="col-md-10">Avatar</th>
             <th scope="col" class="col-md-10">Audio</th>
@@ -21,10 +21,9 @@
           <tbody>
           <tr *ngFor="let song of songList">
             <th scope="row">{{ song.id }}</th>
-
             <td><a class="namesong" [routerLink]="['/song/play',song.id]">{{ song.nameSong }}</a></td>
             <td><a>{{ song.nameSinger }}</a></td>
-            <td><img style="width: 100px;height: 100px" [src]=song.avatar></td>
+            <td><a href="/"><img style="width: 100px;height: 100px" [src]=song.avatar></a></td>
             <td><audio controls>
               <source [src]=song.url>
             </audio></td>

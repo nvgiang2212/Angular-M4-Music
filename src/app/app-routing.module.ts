@@ -19,7 +19,7 @@ const routes: Routes = [
   {path: 'auth/login', component: LoginComponent},
   {path: 'signup', component: RegisterComponent},
   {path: 'song/play/:id', component: DetailSongComponent},
-  {path: 'create-house', component: CreateSongComponent},
+  {path: 'create-song', component: CreateSongComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'}
 ];
 

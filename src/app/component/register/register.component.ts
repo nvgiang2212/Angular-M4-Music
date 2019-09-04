@@ -54,10 +54,12 @@ export class RegisterComponent implements OnInit {
       .subscribe(
         data => {
           console.log('succsess');
+          alert('Bạn đã đăng ký thành công');
           this.router.navigateByUrl('/signup');
         },
         error => {
           console.log('error');
+          alert('Bạn CHƯA đăng ký thành công');
         }
       );
   }
