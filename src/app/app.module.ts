@@ -23,6 +23,7 @@ import {environment} from '../environments/environment';
 import {AngularFireModule} from '@angular/fire';
 import { CarouselComponent } from './component/layout/carousel/carousel.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -50,6 +51,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     AngularFireStorageModule,
     AngularFontAwesomeModule,
     NgbModule,
+    NgbPaginationModule,
+    NgbAlertModule,
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
