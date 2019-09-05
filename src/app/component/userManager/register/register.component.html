@@ -17,7 +17,7 @@
               <form name="form" (ngSubmit)="f.form.valid && RegisterAccount()" #f="ngForm" novalidate>
 
                 <div style="margin-bottom: 25px" class="form-group">
-
+                  <label class="mr-5">Name:</label>
                   <input type="text" class="form-control"
                          name="Name" placeholder="Name"
                          [(ngModel)]="form.name" #name="ngModel" required/>
@@ -27,6 +27,7 @@
                 </div>
 
                 <div style="margin-bottom: 25px" class="form-group">
+                  <label class="mr-3">UserName:</label>
                   <input type="text" class="form-control"
                          name="username" placeholder="User Name"
                          [(ngModel)]="form.username" #username="ngModel" required/>
@@ -36,6 +37,7 @@
                 </div>
 
                 <div style="margin-bottom: 25px" class="form-group">
+                  <label class="mr-5">Email:</label>
                   <input type="text" class="form-control"
                          name="email" placeholder="Email"
                          [(ngModel)]="form.email" #email="ngModel" required email/>
@@ -46,6 +48,7 @@
                 </div>
 
                 <div style="margin-bottom: 25px" class="form-group">
+                  <label class="mr-3">Password:</label>
                   <input type="password" class="form-control"
                          name="password" placeholder="Password"
                          [(ngModel)]="form.password" #password="ngModel"
@@ -59,7 +62,7 @@
 
                 <div style="margin-bottom: 25px" class="form-group">
                   <input type="file" (change)="selectAvatar($event)" placeholder="Choose Avatar">
-                  <button type="button" class="btn btn-success mt-2" (click)="upload()">Save</button>
+                  <button type="button" class="btn btn-success mt-3" (click)="upload()">Save</button>
                 </div> <!--Choose Avatar-->
 
 
@@ -69,7 +72,7 @@
               </form>
             </ng-template>
             <div class="panel-footer">
-              <div style="float:right; font-size: 80%; position: relative; top:-10px">
+              <div style="position: relative; top:-10px">
                 Bạn đã có tài khoản?<a routerLink="/auth/login"> Login Now</a></div>
             </div> <!--Header-->
           </form>
