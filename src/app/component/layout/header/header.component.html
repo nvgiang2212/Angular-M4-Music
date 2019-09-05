@@ -113,15 +113,15 @@
       </div>
     </form>
     <div class="navbar-nav">
-      <a routerLink="auth/login" class="nav-item nav-link" *ngIf="authority">
+      <a routerLink="auth/login" class="nav-item nav-link btn btn-outline-primary" *ngIf="!authority">
         Đăng Nhập
       </a>
-      <a routerLink="signup" class="nav-item nav-link" *ngIf="authority">
+      <a routerLink="signup" class="nav-item nav-link" *ngIf="!authority">
         Đăng Ký
       </a>
-      <div class="nav-item dropdown" *ngIf="!authority">
+      <div class="nav-item dropdown btn btn-outline-info dropleft" *ngIf="authority">
         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-          username
+          User Name
         </a>
         <div class="dropdown-menu">
           <a href="#" class="dropdown-item">Profile</a>
