@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {UserService} from '../../../service/userManager/user/user.service';
+import {TokenStorageService} from '../../../service/userManager/token/token-storage.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-user',
@@ -7,13 +9,18 @@ import {UserService} from '../../../service/userManager/user/user.service';
   styleUrls: ['./user.component.scss']
 })
 export class UserComponent implements OnInit {
-  board: string;
+  board: any = [];
   errorMessage: string;
+  info: any;
 
-  constructor(private userService: UserService) { }
+  constructor(
+    private userService: UserService,
+    private token: TokenStorageService,
+    private router: Router
+  ) {
+  }
 
   ngOnInit() {
-    // @ts-ignore
     this.userService.getUserBoard().subscribe(
       data => {
         this.board = data;
@@ -22,5 +29,17 @@ export class UserComponent implements OnInit {
         this.errorMessage = `${error.status}: ${JSON.parse(error.error).message}`;
       }
     );
+
+    this.info = {
+      token: this.token.getToken(),
+      username: this.token.getUsername(),
+      avatar: this.token.getAvatar(),
+      authorities: this.token.getAuthorities()
+    };
+  }
+
+  logout() {
+    this.token.signOut();
+    window.location.reload();
   }
 }

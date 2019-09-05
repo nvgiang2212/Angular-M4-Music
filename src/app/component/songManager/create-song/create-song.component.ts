@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup} from "@angular/forms";
-import {Song} from "../../../model/song/song";
-import {Router} from "@angular/router";
-import {SongService} from "../../../service/song/song.service";
+import {Component, OnInit} from '@angular/core';
+import {FormControl, FormGroup} from '@angular/forms';
+import {Song} from '../../../model/song/song';
+import {Router} from '@angular/router';
+import {SongService} from '../../../service/song/song.service';
 
 @Component({
   selector: 'app-create-song',
@@ -17,17 +17,17 @@ export class CreateSongComponent implements OnInit {
   constructor(private router: Router,
               private service: SongService) {
     this.songForm = new FormGroup({
-      avatar: new FormControl(''),
+      avatarUrl: new FormControl(''),
       nameSong: new FormControl(''),
       nameSinger: new FormControl(''),
-      url: new FormControl(''),
+      mp3Url: new FormControl(''),
       describes: new FormControl('')
     });
     this.song = {
-      avatar: '',
+      avatarUrl: '',
       nameSong: '',
       nameSinger: '',
-      url: '',
+      mp3Url: '',
       describes: ''
     };
   }
@@ -36,17 +36,18 @@ export class CreateSongComponent implements OnInit {
   }
 
   onChange($event) {
-    this.song.url = $event;
+    this.song.mp3Url = $event;
   }
+
   onAvatar($event) {
-    this.song.avatar = $event;
+    this.song.avatarUrl = $event;
   }
 
   createSong() {
     console.log(this.song);
     this.service.createSong(this.song).subscribe(() => {
       this.router.navigate(['/home']);
-    }, error => console.log(error) );
+    }, error => console.log(error));
   }
 
 }

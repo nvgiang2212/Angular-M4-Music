@@ -41,7 +41,7 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  selecAvatar(event) {
+  selectAvatar(event) {
 
     this.selectedFiles = event.target.files;
     console.log(this.selectedFiles);
@@ -67,7 +67,7 @@ export class RegisterComponent implements OnInit {
     );
 
     this.authService
-      .registerAuth(this.registerForm)
+      .signUpAuth(this.registerForm)
       .subscribe(
         data => {
           console.log(data);
