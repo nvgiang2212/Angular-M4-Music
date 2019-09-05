@@ -1,0 +1,53 @@
+<div class="top">
+  <h2>Đăng Ký</h2>
+</div>
+<div class="card col-md-4 offset-4">
+  <div class="card-body">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div class="form-group row">
+        <label class="col">
+          User Name
+        </label>
+        <input type="text" class="form-control ml-3 mt-3" [(ngModel)]="user.username"
+               formControlName="username" placeholder="Enter Username" required>
+      </div>
+      <div class="alert alert-danger" role="alert"
+           *ngIf="registerForm.get('username').invalid && registerForm.get('username').touched">
+        Username is required!
+      </div>
+      <div formGroupName="pwGroup">
+        <div class="form-group row">
+          <label class="col">
+            Mật khẩu
+          </label>
+          <input type="password" class="form-control ml-3 mt-3" placeholder="Enter Password"
+                 [(ngModel)]="user.password" formControlName="password" required minlength="6">
+          <div class="alert alert-danger" role="alert"
+               *ngIf="registerForm.get('password').invalid && registerForm.get('username').touched">
+            Username is required!
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col">
+            Xác nhận mật khẩu:
+          </label>
+          <input type="password" class="form-control ml-3 mt-3"
+                 formControlName="confirmPassword" placeholder="Enter Confirm Password">
+        </div>
+        <div class="alert alert-danger" role="alert" *ngIf="registerForm.hasError('passwordnotmatch', ['pwGroup']) &&
+          registerForm.get('pwGroup').touched">
+          Password does not match!
+        </div>
+      </div>
+      <div class="form-group offset-4 mt-4">
+        <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" type="submit">
+          Tạo tài khoản
+        </button>
+      </div>
+      <p style="text-align: center">Bạn đã có tài khoản? Vậy hãy<a routerLink="/auth/login">  Đăng Nhập </a>nào !</p>
+    </form>
+  </div>
+</div>
+<br>
+<app-footer></app-footer>
+
