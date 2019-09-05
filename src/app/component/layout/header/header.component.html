@@ -94,15 +94,14 @@
       <a routerLink="home" class="nav-item nav-link active">Trang chủ</a>
       <a href="#" class="nav-item nav-link">My Profile</a>
       <a href="#" class="nav-item nav-link">My Albums</a>
+      <a href="#" class="nav-item nav-link">Liên hệ</a>
       <div class="nav-item dropdown">
-        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Messages</a>
+        <a href="#" class="nav-link dropdown-toggle btn btn-outline-warning"
+           data-toggle="dropdown" *ngIf="authority">My Playlist</a>
         <div class="dropdown-menu">
-          <a href="#" class="dropdown-item">Inbox</a>
-          <a href="#" class="dropdown-item">Sent</a>
-          <a href="#" class="dropdown-item">Drafts</a>
+          <a routerLink="create-song" class="dropdown-item">Create Song</a>
         </div>
       </div>
-      <a href="#" class="nav-item nav-link">Liên hệ</a>
     </div>
     <form class="form-inline">
       <div class="input-group">
