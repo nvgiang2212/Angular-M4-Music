@@ -14,7 +14,7 @@ const routes: Routes = [
   {path: 'user', component: UserComponent},
   {path: 'auth/login', component: LoginComponent},
   {path: 'signup', component: RegisterComponent},
-  {path: 'song/play/:id', component: DetailSongComponent},
+  {path: 'song/play', component: DetailSongComponent},
   {path: 'create-song', component: CreateSongComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'}
 ];

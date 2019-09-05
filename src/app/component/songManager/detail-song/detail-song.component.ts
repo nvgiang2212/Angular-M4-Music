@@ -1,7 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import {Song} from "../../../model/song/song";
-import {SongService} from "../../../service/song/song.service";
-import {ActivatedRoute, Route} from "@angular/router";
+import {Component, OnInit} from '@angular/core';
+import {Song} from '../../../model/song/song';
+import {SongService} from '../../../service/song/song.service';
+import {ActivatedRoute} from '@angular/router';
+import {TokenStorageService} from '../../../service/userManager/token/token-storage.service';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+
+declare function playDock(): any;
 
 @Component({
   selector: 'app-detail-song',
@@ -10,41 +14,38 @@ import {ActivatedRoute, Route} from "@angular/router";
 })
 
 export class DetailSongComponent implements OnInit {
+  song: Song;
+  songInfor: Song[] = [];
 
-  ngOnInit(): void {
+  constructor(private token: TokenStorageService,
+              private songService: SongService,
+              private route: ActivatedRoute,
+              private modalService: NgbModal) {
   }
 
+  ngOnInit() {
+    this.songService.getSong().subscribe(
+      data => {
+        this.songInfor = data;
+      },
+      error => {
+        this.songInfor = [];
+      },
+    );
 
-  constructor() {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.songService.getSongById(id).subscribe(
+      next => {
+        this.song = next;
+      },
+      error => {
+        this.song = null;
+      }
+    );
+    playDock();
   }
 
-  // song: Song = {
-  //     id: 0,
-  //     nameSong: '',
-  //     nameSinger: '',
-  //     avatar: '',
-  //     url: '',
-  //     describes: ''
-  //   };
-  //
-  // constructor(
-  //   private songService: SongService,
-  //   private route: Route,
-  //   private router: ActivatedRoute) {
-  // }
-  //
-  // ngOnInit() {
-  //   const id = +this.router.snapshot.paramMap.get('id');
-  //   this.songService.getSongById(id)
-  //     .subscribe(
-  //       next => {
-  //         this.song = next.data;
-  //         console.log(next.data);
-  //       },
-  //       error => {
-  //         console.log(error);
-  //         this.song = null;
-  //       });
-  // }
-
+  open(content) {
+    this.modalService.open(content);
+  }
 }

@@ -12,18 +12,17 @@ import {SongService} from '../../../service/song/song.service';
 export class ContentComponent implements OnInit {
   info: any;
 
-  bestChoiceSong: Song[];
   songList: Song[] = [];
-  bestSaleoffSong = this.bestChoiceSong;
-  suggestionSong = this.bestChoiceSong;
 
-  constructor(private token: TokenStorageService,
-              private songService: SongService) { }
+  constructor(
+    private token: TokenStorageService,
+    private songService: SongService) { }
 
   ngOnInit() {
     this.info = {
       token: this.token.getToken(),
       username: this.token.getUsername(),
+      avatar: this.token.getAvatar(),
       authorities: this.token.getAuthorities()
     };
 
