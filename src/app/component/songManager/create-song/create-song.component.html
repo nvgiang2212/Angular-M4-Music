@@ -27,7 +27,7 @@
           <input type="text" class="form-control" [(ngModel)]="song.nameSinger" formControlName="nameSinger"
                  placeholder="Enter song name">
         </div>
-        <app-upload-file (giveURLtoCreate)="onChange($event)"></app-upload-file>
+
         <div class="form-group">
           <label>Description: </label>
           <textarea class="form-control" [(ngModel)]="song.describes" formControlName="describes"
@@ -39,6 +39,7 @@
       </form>
     </div>
     <div class="col-4" style="margin-bottom: 10px">
+      <app-upload-file (giveURLtoCreate)="onChange($event)"></app-upload-file>
       <app-upload-avatar (giveURLtoCreate)="onAvatar($event)"></app-upload-avatar>
     </div>
   </div>
