@@ -5,33 +5,33 @@
   <div class="container-fluid row">
     <div class="col-3">
       <div class="card-header">
-        <h4>Menu</h4>
+        <h4>Danh mục</h4>
       </div>
       <div class="dropdown-divider"></div>
       <div class="list-group">
         <a href="#" class="list-group-item list-group-item-success">My Playlist</a>
         <a href="#" class="list-group-item list-group-item-success">Danh sách bài hát</a>
         <div class="dropdown-divider"></div>
-        <a routerLink="create-song" class="list-group-item list-group-item-warning">Create Song</a>
+        <a routerLink="create-song" class="list-group-item list-group-item-warning">Tạo bài hát mới</a>
       </div>
     </div>
     <div class="col-5" style="margin-bottom: 10px">
       <form (ngSubmit)="createSong()" [formGroup]="songForm">
         <div class="form-group">
-          <label>Song Name: </label>
+          <label>Tên bài hát: </label>
           <input type="text" class="form-control" [(ngModel)]="song.nameSong" formControlName="nameSong"
-                 placeholder="Enter song name">
+                 placeholder="Nhập vào tên bài hát">
         </div>
         <div class="form-group">
-          <label>Singer Name: </label>
+          <label>Tên ca sĩ: </label>
           <input type="text" class="form-control" [(ngModel)]="song.nameSinger" formControlName="nameSinger"
-                 placeholder="Enter song name">
+                 placeholder="Nhập vào tên ca sĩ">
         </div>
 
         <div class="form-group">
-          <label>Description: </label>
+          <label>Mô tả: </label>
           <textarea class="form-control" [(ngModel)]="song.describes" formControlName="describes"
-                    placeholder="Enter description"></textarea>
+                    placeholder="Nhập vào mô tả bài hát"></textarea>
         </div>
         <div style="margin-bottom: 20px">
           <button type="submit" class="btn btn-primary">Thêm Bài Hát</button>

@@ -24,6 +24,8 @@ import {AngularFireModule} from '@angular/fire';
 import { CarouselComponent } from './component/layout/carousel/carousel.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
+import { ListSongComponent } from './component/songManager/list-song/list-song.component';
+import { AboutUsComponent } from './component/layout/about-us/about-us.component';
 
 
 @NgModule({
@@ -39,7 +41,9 @@ import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
     UploadAvatarComponent,
     FooterComponent,
     DetailSongComponent,
-    CarouselComponent
+    CarouselComponent,
+    ListSongComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,
