@@ -1,1 +1,101 @@
-<p>list-song works!</p>
+<div class="top">
+  <h2>Danh sách bài hát</h2>
+</div>
+<div class="container">
+  <div class="container-fluid row">
+    <div class="col-3">
+
+<!--      Menu-->
+      <div class="card-header">
+        <h4>Danh mục</h4>
+      </div>
+      <div class="dropdown-divider"></div>
+      <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-success">My Playlist</a>
+        <a href="list-song" class="list-group-item list-group-item-success">Danh sách bài hát</a>
+        <div class="dropdown-divider"></div>
+        <a href="create-song" class="list-group-item list-group-item-warning">Tạo bài hát mới</a>
+      </div>
+    </div>
+
+<!--    List-music-->
+    <div class="col-9" style="margin-bottom: 10px">
+      <p>You can see <code>My Playlist</code>, listen to music and edit or delete song.</p>
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th scope="col"><i class="fas fa-bars"></i></th>
+          <th scope="col" class="col-md-5">Name song</th>
+          <th scope="col" class="col-md-3">Singer</th>
+          <th scope="col" class="col-md-2">Category</th>
+          <th scope="col" class="col-md-3">Note</th>
+        </tr>
+        </thead>
+        <tbody>
+<!--        list-song-example-->
+        <tr>
+          <th>1</th>
+          <td>NameSong-1</td>
+          <td>NameSinger-1</td>
+          <td>Category-1</td>
+          <td>
+            <button class="btn btn-outline-warning"
+                    style="padding: 2px; margin-right: 5px">Sửa</button>
+            <button class="btn btn-outline-danger"
+                    style="padding: 2px">Xóa</button>
+          </td>
+        </tr>
+        <tr>
+          <th>2</th>
+          <td>NameSong-2</td>
+          <td>NameSinger-2</td>
+          <td>Category-2</td>
+          <td>
+            <button class="btn btn-outline-warning"
+                    style="padding: 2px; margin-right: 5px">Sửa</button>
+            <button class="btn btn-outline-danger"
+                    style="padding: 2px">Xóa</button>
+          </td>
+        </tr>
+        <tr>
+          <th>3</th>
+          <td>NameSong-3</td>
+          <td>NameSinger-3</td>
+          <td>Category-3</td>
+          <td>
+            <button class="btn btn-outline-warning"
+                    style="padding: 2px; margin-right: 5px">Sửa</button>
+            <button class="btn btn-outline-danger"
+                    style="padding: 2px">Xóa</button>
+          </td>
+        </tr>
+
+<!--        list-song-code-chinh-->
+        <tr *ngFor="let song of songList">
+          <th scope="row">{{ song.id }}</th>
+
+          <td><a class="namesong" [routerLink]="['/song/play',song.id]">{{ song.nameSong }}</a></td>
+          <td><a>{{ song.singer }}</a></td>
+          <td><a>{{ song.category }}</a></td>
+          <td>
+            <button class="btn btn-danger" (click)="editSong(song.id)">Sửa</button>
+            <button class="btn btn-danger" (click)="deleteSong(song.id)">Xóa</button>
+          </td>
+
+        </tr>
+        </tbody>
+      </table>
+      <div class="d-flex justify-content-between p-2">
+        <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize">
+        </ngb-pagination>
+        <select class="custom-select" style="width: auto" [(ngModel)]="pageSize">
+          <option [ngValue]="2">2 items per page</option>
+          <option [ngValue]="4">4 items per page</option>
+          <option [ngValue]="6">6 items per page</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>
