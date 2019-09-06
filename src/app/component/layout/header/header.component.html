@@ -11,15 +11,16 @@
   <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse"
   style="font-size: 16px">
     <div class="navbar-nav">
-      <a routerLink="home" class="nav-item nav-link active">Trang chủ</a>
+      <a routerLink="home" class="nav-item nav-link active">Trang Chủ</a>
       <a routerLink="song/play" class="nav-item nav-link">My Profile</a>
       <a href="#" class="nav-item nav-link">My Albums</a>
-      <a href="#" class="nav-item nav-link">Liên hệ</a>
+      <a routerLink="about-us" class="nav-item nav-link">Liên Hệ</a>
       <div class="nav-item dropdown">
         <a href="#" class="nav-link dropdown-toggle btn btn-outline-warning"
-           data-toggle="dropdown" *ngIf="authority">My Playlist</a>
+           data-toggle="dropdown" *ngIf="!authority">My Playlist</a>
         <div class="dropdown-menu">
-          <a routerLink="create-song" class="dropdown-item">Create Song</a>
+          <a routerLink="list-song" class="dropdown-item">Danh Sách Bài Hát</a>
+          <a routerLink="create-song" class="dropdown-item">Thêm Bài Hát</a>
         </div>
       </div>
     </div>
