@@ -3,7 +3,19 @@
 </div>
 <div class="container">
   <div class="container-fluid row">
-    <div class="col-4">
+    <div class="col-3">
+      <div class="card-header">
+        <h4>Menu</h4>
+      </div>
+      <div class="dropdown-divider"></div>
+      <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-success">My Playlist</a>
+        <a href="#" class="list-group-item list-group-item-success">Danh sách bài hát</a>
+        <div class="dropdown-divider"></div>
+        <a routerLink="create-song" class="list-group-item list-group-item-warning">Create Song</a>
+      </div>
+    </div>
+    <div class="col-5" style="margin-bottom: 10px">
       <form (ngSubmit)="createSong()" [formGroup]="songForm">
         <div class="form-group">
           <label>Song Name: </label>
@@ -15,6 +27,7 @@
           <input type="text" class="form-control" [(ngModel)]="song.nameSinger" formControlName="nameSinger"
                  placeholder="Enter song name">
         </div>
+        <app-upload-file (giveURLtoCreate)="onChange($event)"></app-upload-file>
         <div class="form-group">
           <label>Description: </label>
           <textarea class="form-control" [(ngModel)]="song.describes" formControlName="describes"
@@ -24,9 +37,6 @@
           <button type="submit" class="btn btn-primary">Thêm Bài Hát</button>
         </div>
       </form>
-    </div>
-    <div class="col-4" style="margin-bottom: 10px">
-      <app-upload-file (giveURLtoCreate)="onChange($event)"></app-upload-file>
     </div>
     <div class="col-4" style="margin-bottom: 10px">
       <app-upload-avatar (giveURLtoCreate)="onAvatar($event)"></app-upload-avatar>
