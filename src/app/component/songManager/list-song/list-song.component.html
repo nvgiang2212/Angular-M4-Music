@@ -5,9 +5,9 @@
   <div class="container-fluid row">
     <div class="col-3">
 
-<!--      Menu-->
+      <!--      Menu-->
       <div class="card-header">
-        <h4>Danh mục</h4>
+        <h4>Danh Mục</h4>
       </div>
       <div class="dropdown-divider"></div>
       <div class="list-group">
@@ -18,7 +18,7 @@
       </div>
     </div>
 
-<!--    List-music-->
+    <!--    List-music-->
     <div class="col-9" style="margin-bottom: 10px">
       <p>You can see <code>My Playlist</code>, listen to music and edit or delete song.</p>
       <table class="table table-striped">
@@ -32,7 +32,7 @@
         </tr>
         </thead>
         <tbody>
-<!--        list-song-example-->
+        <!--        list-song-example-->
         <tr>
           <th>1</th>
           <td>NameSong-1</td>
@@ -40,9 +40,11 @@
           <td>Category-1</td>
           <td>
             <button class="btn btn-outline-warning"
-                    style="padding: 2px; margin-right: 5px">Sửa</button>
+                    style="padding: 2px; margin-right: 5px">Sửa
+            </button>
             <button class="btn btn-outline-danger"
-                    style="padding: 2px">Xóa</button>
+                    style="padding: 2px">Xóa
+            </button>
           </td>
         </tr>
         <tr>
@@ -52,9 +54,11 @@
           <td>Category-2</td>
           <td>
             <button class="btn btn-outline-warning"
-                    style="padding: 2px; margin-right: 5px">Sửa</button>
+                    style="padding: 2px; margin-right: 5px">Sửa
+            </button>
             <button class="btn btn-outline-danger"
-                    style="padding: 2px">Xóa</button>
+                    style="padding: 2px">Xóa
+            </button>
           </td>
         </tr>
         <tr>
@@ -64,13 +68,44 @@
           <td>Category-3</td>
           <td>
             <button class="btn btn-outline-warning"
-                    style="padding: 2px; margin-right: 5px">Sửa</button>
+                    style="padding: 2px; margin-right: 5px">Sửa
+            </button>
             <button class="btn btn-outline-danger"
-                    style="padding: 2px">Xóa</button>
+                    style="padding: 2px">Xóa
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <th>4</th>
+          <td>NameSong-4</td>
+          <td>NameSinger-4</td>
+          <td>Category-4</td>
+          <td>
+            <button class="btn btn-outline-warning"
+                    style="padding: 2px; margin-right: 5px">Sửa
+            </button>
+            <button class="btn btn-outline-danger"
+                    style="padding: 2px">Xóa
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <th>5</th>
+          <td>NameSong-5</td>
+          <td>NameSinger-5</td>
+          <td>Category-5</td>
+          <td>
+            <button class="btn btn-outline-warning"
+                    style="padding: 2px; margin-right: 5px">Sửa
+            </button>
+            <button class="btn btn-outline-danger"
+                    style="padding: 2px">Xóa
+            </button>
           </td>
         </tr>
 
-<!--        list-song-code-chinh-->
+
+        <!--        list-song-code-chinh-->
         <tr *ngFor="let song of songList">
           <th scope="row">{{ song.id }}</th>
 
@@ -85,15 +120,18 @@
         </tr>
         </tbody>
       </table>
-      <div class="d-flex justify-content-between p-2">
-        <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize">
-        </ngb-pagination>
-        <select class="custom-select" style="width: auto" [(ngModel)]="pageSize">
-          <option [ngValue]="2">2 items per page</option>
-          <option [ngValue]="4">4 items per page</option>
-          <option [ngValue]="6">6 items per page</option>
-        </select>
-      </div>
+
+      <!-- Pagination-->
+      <!--      <div class="d-flex justify-content-between p-2">-->
+      <!--        <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize">-->
+      <!--        </ngb-pagination>-->
+      <!--        <select class="custom-select" style="width: auto" [(ngModel)]="pageSize">-->
+      <!--          <option [ngValue]="2">2 items per page</option>-->
+      <!--          <option [ngValue]="4">4 items per page</option>-->
+      <!--          <option [ngValue]="6">6 items per page</option>-->
+      <!--        </select>-->
+      <!--      </div>-->
+
     </div>
   </div>
 </div>
