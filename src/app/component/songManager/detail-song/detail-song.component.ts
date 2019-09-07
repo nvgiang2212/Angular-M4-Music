@@ -22,7 +22,6 @@ export class DetailSongComponent implements OnInit {
 
   constructor(
     private songService: SongService,
-    private route: Route,
     private router: ActivatedRoute) {
   }
 
