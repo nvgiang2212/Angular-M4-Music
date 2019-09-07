@@ -16,7 +16,6 @@ import { UploadFileComponent } from './component/upload/upload-file/upload-file.
 import { CreateSongComponent } from './component/songManager/create-song/create-song.component';
 import { UploadAvatarComponent } from './component/upload/upload-avatar/upload-avatar.component';
 import { FooterComponent } from './component/layout/footer/footer.component';
-import { DetailSongComponent } from './component/songManager/detail-song/detail-song.component';
 import {AngularFontAwesomeModule} from 'angular-font-awesome';
 import {AngularFireStorageModule} from '@angular/fire/storage';
 import {environment} from '../environments/environment';
@@ -26,6 +25,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
 import { ListSongComponent } from './component/songManager/list-song/list-song.component';
 import { AboutUsComponent } from './component/layout/about-us/about-us.component';
+import {DetailSongComponent} from './component/songManager/detail-song/detail-song.component';
 
 
 @NgModule({
