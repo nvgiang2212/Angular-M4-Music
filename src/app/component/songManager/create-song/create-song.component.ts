@@ -19,14 +19,14 @@ export class CreateSongComponent implements OnInit {
     this.songForm = new FormGroup({
       avatarUrl: new FormControl(''),
       nameSong: new FormControl(''),
-      nameSinger: new FormControl(''),
+      singer: new FormControl(''),
       mp3Url: new FormControl(''),
       describes: new FormControl('')
     });
     this.song = {
       avatarUrl: '',
       nameSong: '',
-      nameSinger: '',
+      singer: '',
       mp3Url: '',
       describes: ''
     };

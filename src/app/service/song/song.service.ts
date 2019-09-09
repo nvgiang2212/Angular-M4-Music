@@ -19,7 +19,7 @@ export class SongService {
   songs: Song[];
   private readonly API_URL_CREATE = environment.URL + '/api/songs/create';
   private readonly API_URL_GET = environment.URL + '/api/songs';
-  private readonly API_URL_GET_ID = environment.URL + '/api/songs';
+  private readonly API_URL_GET_ID = environment.URL + '/api/songs/{id}';
   private  readonly API_URL_PUT = environment.URL + '/api/songs/update';
   private  readonly API_URL_DELETE = environment.URL + '/api/songs/delete';
 
@@ -28,8 +28,8 @@ export class SongService {
     return this.http.get<any>(this.API_URL_GET);
   }
 
-  getSongById(id: number): Observable<any> {
-    return this.http.get<any>(`${this.API_URL_GET_ID}/${id}`);
+  getSongById(id: number): Observable<Song> {
+    return this.http.get<Song>(`${this.API_URL_GET_ID}/${id}`);
   }
 
   createSong(song: Partial<Song>): Observable<Song> {

@@ -1,7 +1,7 @@
 <div class="container">
   <div class="col">
     <div class="namesong">
-      <h3>Name Song</h3>
+      <h3>Name Song:</h3>
       <h4>{{song.nameSong}}</h4>
     </div>
     <div class="header-song">
@@ -114,7 +114,7 @@
       <div class="col-md-3" style="text-align: center">
         <p>Upload By:</p><br>
         <a href="#">aa</a>
-        <a routerLink="#">{{song.nameSinger}}</a>
+        <a routerLink="#">{{song.singer}}</a>
       </div>
       <div class="col-md-5">
         <div class="row" style="padding:5px 25px">
@@ -145,7 +145,7 @@
           <tr *ngFor="let song of songInfor">
             <!--              <td>{{song.avatarUrl}}</td>-->
             <td><a class="list-play-list" [routerLink]="['/song/play',song.id]">{{song.nameSong}}</a></td>
-            <td>{{song.nameSinger}}</td>
+            <td>{{song.singer}}</td>
           </tr>
           </tbody>
         </table>

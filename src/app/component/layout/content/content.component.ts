@@ -28,8 +28,10 @@ export class ContentComponent implements OnInit {
 
     this.songService.getSong()
       .subscribe(next => {
-        this.songList = next.data;
+        this.songList = next;
         console.log(next);
+      }, error => {
+        console.log(error);
       });
   }
 

@@ -57,6 +57,7 @@ export class RegisterComponent implements OnInit {
   }
 
   RegisterAccount() {
+    // tslint:disable-next-line:no-debugger
     debugger;
     this.registerForm = new SignUpInfo(
       this.form.name,
