@@ -1,1 +1,36 @@
-<p>create-playlist works!</p>
+<div class="top">
+  <h2>Thêm Playlist</h2>
+</div>
+<div class="container">
+  <div class="container-fluid row">
+    <div class="col-3">
+      <div class="card-header">
+        <h4>Danh Mục</h4>
+      </div>
+      <div class="dropdown-divider"></div>
+      <div class="list-group">
+        <a href="my-playlist" class="list-group-item list-group-item-success">
+          My Playlist
+        </a>
+        <a href="list-song" class="list-group-item list-group-item-success">
+          Danh sách bài hát
+        </a>
+        <div class="dropdown-divider"></div>
+        <a href="create-song" class="list-group-item list-group-item-warning">
+          <i class="far fa-plus-square"></i> Tạo bài hát mới
+        </a>
+      </div>
+    </div>
+    <div class="col-8" style="margin-bottom: 10px">
+      <h1>Create Playlist</h1>
+      <!-- Default input -->
+      <label for="exampleForm2">Enter the name list</label>
+      <input type="text" id="exampleForm2" class="form-control">
+      <br>
+      <button type="button" class="btn btn-primary">Create</button>
+      <hr>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>
