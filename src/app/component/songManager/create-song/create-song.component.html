@@ -4,16 +4,7 @@
 <div class="container">
   <div class="container-fluid row">
     <div class="col-3">
-      <div class="card-header">
-        <h4>Danh Mục</h4>
-      </div>
-      <div class="dropdown-divider"></div>
-      <div class="list-group">
-        <a href="my-playlist" class="list-group-item list-group-item-success">My Playlist</a>
-        <a href="list-song" class="list-group-item list-group-item-success">Danh sách bài hát</a>
-        <div class="dropdown-divider"></div>
-        <a href="create-song" class="list-group-item list-group-item-warning">Tạo bài hát mới</a>
-      </div>
+      <app-menu-left></app-menu-left>
     </div>
     <div class="col-5" style="margin-bottom: 10px">
       <form (ngSubmit)="createSong()" [formGroup]="songForm">
