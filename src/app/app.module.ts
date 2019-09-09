@@ -29,6 +29,7 @@ import { AboutUsComponent } from './component/layout/about-us/about-us.component
 import { CreatePlaylistComponent } from './component/playlistManager/create-playlist/create-playlist.component';
 import { ListPlaylistComponent } from './component/playlistManager/list-playlist/list-playlist.component';
 import { PlaylistComponent } from './component/playlistManager/playlist/playlist.component';
+import { MenuLeftComponent } from './component/layout/menu-left/menu-left.component';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { PlaylistComponent } from './component/playlistManager/playlist/playlist
     AboutUsComponent,
     CreatePlaylistComponent,
     ListPlaylistComponent,
-    PlaylistComponent
+    PlaylistComponent,
+    MenuLeftComponent
   ],
   imports: [
     BrowserModule,
