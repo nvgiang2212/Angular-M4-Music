@@ -9,56 +9,39 @@
       <!--      NEW SONG-->
       <div class="col-md-4">
         <h3 routerLink="#">New Song <i class="fas fa-chevron-right fas-1g" style="font-size: 80%"></i></h3>
-        <table class="table table-striped">
-          <thead>
-          <tr>
-            <th scope="col"><i class="fas fa-bars"></i></th>
-            <th scope="col" class="col-md-50">Name song</th>
-            <th scope="col" class="col-md-10">Singer</th>
-            <th scope="col" class="col-md-10">Avatar</th>
-            <th scope="col" class="col-md-10">Audio</th>
-            <!--            <th scope="col" class="col-md-1">Delete</th>-->
-          </tr>
-          </thead>
-          <tbody>
-          <tr *ngFor="let song of songList">
-            <th scope="row">{{ song.id }}</th>
-            <td><a class="namesong" [routerLink]="['/home/song/play',song.id]">{{ song.nameSong }}</a></td>
-            <td><a>{{ song.singer }}</a></td>
-            <td><a href="/"><img style="width: 100px;height: 100px" [src]=song.avatarUrl></a></td>
-            <td>
-              <audio controls>
-                <source [src]=song.mp3Url>
-              </audio>
-            </td>
-            <!--            <td>-->
-            <!--              <button class="btn btn-danger" (click)="deleteSong(song.id)">Xóa</button>-->
-            <!--            </td>-->
+        <div *ngFor="let song of songList" [routerLink]="['/home/song/play',song.id]">
+          <table class="table table-striped">
+            <thead>
+            <tr>
+              <th scope="col"><i class="fas fa-bars"></i></th>
+              <th scope="col" class="col-md-10">Name song</th>
+              <th scope="col" class="col-md-10">Singer</th>
+              <th scope="col" class="col-md-10">Avatar</th>
+              <th scope="col" class="col-md-10">Audio</th>
+              <!--            <th scope="col" class="col-md-1">Delete</th>-->
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <th scope="row">{{ song.id }}</th>
+              <td><a class="namesong" >{{ song.nameSong }}</a></td>
+              <td><a>{{ song.singer }}</a></td>
+              <td><a href="/"><img style="width: 100px;height: 100px" [src]=song.avatarUrl></a></td>
+              <td>
+                <audio controls>
+                  <source [src]=song.mp3Url>
+                </audio>
+              </td>
+              <!--            <td>-->
+              <!--              <button class="btn btn-danger" (click)="deleteSong(song.id)">Xóa</button>-->
+              <!--            </td>-->
 
-          </tr>
-          </tbody>
-        </table>
+            </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
       <br><br>
-      <!--      <div class="row">-->
-
-      <!--        <div class="col-lg-3 col-md-12 mb-lg-0 mb-3" *ngFor="let songs of bestChoiceSong">-->
-      <!--          <div class="rounded mb-4 play portfolio-effect__item portfolio-item&#45;&#45;eff1"-->
-      <!--               style="width: 180px;height: 180px">-->
-      <!--&lt;!&ndash;            <a routerLink="/songs/{{songs.id}}"></a>&ndash;&gt;-->
-      <!--            <img class="img-fluid" [src]=songs.avatar >-->
-      <!--            <div class="portfolio-item__info">-->
-      <!--              <i class="fas fa-play-circle fa-3x"></i>-->
-      <!--            </div>-->
-
-      <!--          </div>-->
-      <!--          <h4 class="font-weight-bold mb-3" style="font-size: 80%">-->
-      <!--            <strong>name Song:sadasdasd</strong></h4>-->
-      <!--          <p>Ca sỹ - <a class="font-weight-bold">Singer</a></p>-->
-      <!--          <p>Thể loại - <a class="font-weight-bold">Category</a></p>-->
-      <!--        </div>-->
-
-      <!--      </div>-->
       <hr>
       <!--TOP SONG-->
 

@@ -5,7 +5,6 @@ import {ActivatedRoute, Route} from '@angular/router';
 import {TokenStorageService} from '../../../service/userManager/token/token-storage.service';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
-// declare function playDock(): any;
 
 @Component({
   selector: 'app-detail-song',
@@ -16,11 +15,15 @@ import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 export class DetailSongComponent implements OnInit {
   song: Song = {
     id: 0,
+    avatarUrl: '',
     nameSong: '',
     singer: '',
-    avatarUrl: '',
     mp3Url: '',
-    describes: ''
+    describes: '',
+    category: '',
+    lyrics: '',
+    likeSong: 0,
+    listenSong: 0
   };
   songInfor: Song[] = [];
 
@@ -44,12 +47,13 @@ export class DetailSongComponent implements OnInit {
     this.songService.getSongById(id).subscribe(
       next => {
         this.song = next;
+        console.log(next);
       },
       error => {
         this.song = null;
+        console.log(error);
       }
     );
-    // playDock();
   }
 
   open(content) {

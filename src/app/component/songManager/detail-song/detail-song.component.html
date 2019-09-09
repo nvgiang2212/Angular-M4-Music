@@ -26,7 +26,7 @@
       </div>
       <div class="row col-xl-6">
         <audio id="audio">
-          <source src="{{song.mp3Url}}">
+          <source [src]=song.mp3Url>
         </audio>
         <!--          next left-->
         <div class="col-xl-1">
@@ -46,6 +46,9 @@
             </g>
           </svg>
         </div>
+        <audio controls>
+          <source [src]=song.mp3Url>
+        </audio>
         <!--          next right-->
         <div class="col-xl-1">
           <svg id="next_btn" viewBox="0 0 24.5 23.6">
@@ -113,7 +116,7 @@
       </div>
       <div class="col-md-3" style="text-align: center">
         <p>Upload By:</p><br>
-        <a href="#">aa</a>
+        <a href="#"></a>
         <a routerLink="#">{{song.singer}}</a>
       </div>
       <div class="col-md-5">
@@ -122,10 +125,9 @@
             <h4>Description</h4>
           </div>
           <div class="col-md-12">
-            <p>Ca sĩ: singer</p>
-            <p>Category: category</p>
-            <p>Lyric: lyric</p>
-            <p>{{song.describes}}</p>
+            <p>Ca sĩ: {{song.singer}}</p><br>
+            <p>Category: {{song.category}}</p><br>
+            <p>Lyric: {{song.lyrics}}</p>
           </div>
         </div>
       </div>
@@ -144,7 +146,7 @@
           <tbody>
           <tr *ngFor="let song of songInfor">
             <!--              <td>{{song.avatarUrl}}</td>-->
-            <td><a class="list-play-list" [routerLink]="['/song/play',song.id]">{{song.nameSong}}</a></td>
+            <td><a class="list-play-list" [routerLink]="['/home/song/play',song.id]">{{song.nameSong}}</a></td>
             <td>{{song.singer}}</td>
           </tr>
           </tbody>
@@ -153,6 +155,7 @@
     </div>
   </div>
   <hr>
+
 
 </div>
 <app-footer></app-footer>
