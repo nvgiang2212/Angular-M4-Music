@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../../../service/userManager/auth/auth.service';
 
 @Component({
@@ -7,8 +7,10 @@ import {AuthService} from '../../../service/userManager/auth/auth.service';
   styleUrls: ['./create-playlist.component.scss']
 })
 export class CreatePlaylistComponent implements OnInit {
+  title = 'Tạo PLaylist Mới';
 
-  constructor(private auth: AuthService) { }
+  constructor(private auth: AuthService) {
+  }
 
   ngOnInit() {
   }

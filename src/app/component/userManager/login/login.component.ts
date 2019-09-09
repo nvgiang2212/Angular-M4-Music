@@ -9,6 +9,7 @@ import {AuthService} from '../../../service/userManager/auth/auth.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  title = 'Đăng Nhập';
   form: any = {};
   isLoggedIn = false;
   isLoginFailed = false;

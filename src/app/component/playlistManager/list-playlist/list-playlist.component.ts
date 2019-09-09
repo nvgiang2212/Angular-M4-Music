@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-list-playlist',
@@ -6,7 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-playlist.component.scss']
 })
 export class ListPlaylistComponent implements OnInit {
-  constructor() { }
+  title = 'Danh Sách PLaylist';
+
+  constructor() {
+  }
 
   ngOnInit() {
   }

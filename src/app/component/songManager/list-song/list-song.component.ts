@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-song.component.scss']
 })
 export class ListSongComponent implements OnInit {
+  title = 'Danh Sách Bài Hát';
 
   constructor() { }
 
