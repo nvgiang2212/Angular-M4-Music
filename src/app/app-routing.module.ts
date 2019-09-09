@@ -10,6 +10,7 @@ import {ListSongComponent} from './component/songManager/list-song/list-song.com
 import {AboutUsComponent} from './component/layout/about-us/about-us.component';
 import {CreatePlaylistComponent} from './component/playlistManager/create-playlist/create-playlist.component';
 import {PlaylistComponent} from './component/playlistManager/playlist/playlist.component';
+import {ListPlaylistComponent} from './component/playlistManager/list-playlist/list-playlist.component';
 
 
 
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path: 'list-song', component: ListSongComponent},
   {path: 'about-us', component: AboutUsComponent},
   {path: 'create-playlist', component: CreatePlaylistComponent},
+  {path: 'list-playlist', component: ListPlaylistComponent},
   {path: 'my-playlist', component: PlaylistComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'}
 ];
