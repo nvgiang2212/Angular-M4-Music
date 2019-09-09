@@ -6,33 +6,43 @@ import {SignUpInfo} from '../../../model/userManager/Signup-Infor';
 import {FileUpload} from '../../../model/song/fileUpload';
 import {AngularFireDatabase, AngularFireList} from '@angular/fire/database';
 import * as firebase from 'firebase';
+import {UpdateInfo} from '../../../model/userManager/UpdateInfo';
+import {RegisterInfo} from '../../../model/userManager/RegisterInfo';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  // private userUrl = 'http://localhost:8080/user';
-  // private pmUrl = 'http://localhost:8080/pm';
-  // private adminUrl = 'http://localhost:8080/admin';
-  private readonly API_URL = environment.URL + '/api/auth';
+  private userUrl = 'http://localhost:8080/api/users/user';
+  private pmUrl = 'http://localhost:8080/api/users/pm';
+  private adminUrl = 'http://localhost:8080/api/users/admin';
+  private updateUserUrl = 'http://localhost:8080/api/auth/updateuser';
+  private getUserUrl = 'http://localhost:8080/api/auth/user';
 
-  // Firebase
-  private userAvatarUrl = '';
 
-  constructor(private http: HttpClient, private db: AngularFireDatabase) { }
+  // FIREBASE - API
+  private userAvatarUrl = 'dangduc_project/userManager/avatar';
 
-  getUserBoard(): Observable<SignUpInfo[]> {
-    return this.http.get<SignUpInfo[]>(this.API_URL  + '/signup');
+
+  constructor(private http: HttpClient, private db: AngularFireDatabase) {}
+
+  // SERVICE CHO BACK-END
+  getUserBoard(): Observable<RegisterInfo[]> {
+    return this.http.get<RegisterInfo[]>(this.userUrl);
   }
-
-  // getPMBoard(): Observable<string> {
-  //   return this.http.get(this.pmUrl, { responseType: 'text' });
-  // }
-  //
-  // getAdminBoard(): Observable<string> {
-  //   return this.http.get(this.adminUrl, { responseType: 'text' });
-  // }
+  getPMBoard(): Observable<string> {
+    return this.http.get(this.pmUrl, {responseType: 'text'});
+  }
+  getAdminBoard(): Observable<string> {
+    return this.http.get(this.adminUrl, {responseType: 'text'});
+  }
+  getUpdateUser(username: string): Observable<UpdateInfo> {
+    return this.http.get<UpdateInfo>(`${this.updateUserUrl}/${username}`);
+  }
+  getUser(username: string): Observable<UpdateInfo> {
+    return this.http.get<UpdateInfo>(`${this.getUserUrl}/${username}`);
+  }
 
   // SERVICE CHO FIREBASE
   public pushAvatarToStorage(fileUpload: FileUpload) {

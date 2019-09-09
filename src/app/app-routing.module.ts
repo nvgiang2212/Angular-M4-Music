@@ -12,6 +12,8 @@ import {CreatePlaylistComponent} from './component/playlistManager/create-playli
 import {PlaylistComponent} from './component/playlistManager/playlist/playlist.component';
 import {ListPlaylistComponent} from './component/playlistManager/list-playlist/list-playlist.component';
 import {MenuLeftComponent} from './component/layout/menu-left/menu-left.component';
+import {DashboardComponent} from './component/userManager/dashboard/dashboard.component';
+import {UpdateInforComponent} from "./component/userManager/update-infor/update-infor.component";
 
 
 
@@ -28,7 +30,9 @@ const routes: Routes = [
   {path: 'list-playlist', component: ListPlaylistComponent},
   {path: 'my-playlist', component: PlaylistComponent},
   {path: 'menu-left', component: MenuLeftComponent},
-  {path: '', redirectTo: 'home', pathMatch: 'full'}
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
+  {path: 'auth/dashboard', component: DashboardComponent},
+  {path: 'auth/updateuser', component: UpdateInforComponent}
 ];
 
 @NgModule({
