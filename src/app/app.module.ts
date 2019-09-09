@@ -30,6 +30,7 @@ import { CreatePlaylistComponent } from './component/playlistManager/create-play
 import { ListPlaylistComponent } from './component/playlistManager/list-playlist/list-playlist.component';
 import { PlaylistComponent } from './component/playlistManager/playlist/playlist.component';
 import { MenuLeftComponent } from './component/layout/menu-left/menu-left.component';
+import { TitlePageComponent } from './component/layout/title-page/title-page.component';
 
 
 @NgModule({
@@ -52,6 +53,7 @@ import { MenuLeftComponent } from './component/layout/menu-left/menu-left.compon
     ListPlaylistComponent,
     PlaylistComponent,
     MenuLeftComponent,
+    TitlePageComponent,
   ],
   imports: [
     BrowserModule,
