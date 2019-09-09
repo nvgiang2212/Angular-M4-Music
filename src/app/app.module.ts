@@ -26,6 +26,10 @@ import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
 import { ListSongComponent } from './component/songManager/list-song/list-song.component';
 import { AboutUsComponent } from './component/layout/about-us/about-us.component';
 import {DetailSongComponent} from './component/songManager/detail-song/detail-song.component';
+import { CreatePlaylistComponent } from './component/playlistManager/create-playlist/create-playlist.component';
+import { ListPlaylistComponent } from './component/playlistManager/list-playlist/list-playlist.component';
+import { PlaylistComponent } from './component/playlistManager/playlist/playlist.component';
+import { MenuLeftComponent } from './component/layout/menu-left/menu-left.component';
 
 
 @NgModule({
@@ -43,7 +47,11 @@ import {DetailSongComponent} from './component/songManager/detail-song/detail-so
     DetailSongComponent,
     CarouselComponent,
     ListSongComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    CreatePlaylistComponent,
+    ListPlaylistComponent,
+    PlaylistComponent,
+    MenuLeftComponent,
   ],
   imports: [
     BrowserModule,
