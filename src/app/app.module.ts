@@ -51,7 +51,7 @@ import { MenuLeftComponent } from './component/layout/menu-left/menu-left.compon
     CreatePlaylistComponent,
     ListPlaylistComponent,
     PlaylistComponent,
-    MenuLeftComponent
+    MenuLeftComponent,
   ],
   imports: [
     BrowserModule,
