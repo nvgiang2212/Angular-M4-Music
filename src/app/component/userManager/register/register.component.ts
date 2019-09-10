@@ -41,20 +41,20 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  selectAvatar(event) {
+  // selectAvatar(event) {
+  //
+  //   this.selectedFiles = event.target.files;
+  //   console.log(this.selectedFiles);
+  // }
 
-    this.selectedFiles = event.target.files;
-    console.log(this.selectedFiles);
-  }
-
-  upload() {
-    const file = this.selectedFiles.item(0);
-    this.selectedFiles = undefined;
-
-    this.currentFileUpload = new FileUpload(file);
-    this.userService.pushAvatarToStorage(this.currentFileUpload);
-    console.log(this.currentFileUpload);
-  }
+  // upload() {
+  //   const file = this.selectedFiles.item(0);
+  //   this.selectedFiles = undefined;
+  //
+  //   this.currentFileUpload = new FileUpload(file);
+  //   this.userService.pushAvatarToStorage(this.currentFileUpload);
+  //   console.log(this.currentFileUpload);
+  // }
 
   RegisterAccount() {
     // tslint:disable-next-line:no-debugger

@@ -11,7 +11,13 @@ export class DashboardComponent implements OnInit {
 
   userInfor: UpdateInfo;
   errorMessage: string;
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService) {
+    this.userInfor = {
+      id: 0,
+      name: '',
+      email: ''
+    };
+  }
 
   ngOnInit() {
     const name = sessionStorage.getItem('AuthUsername');

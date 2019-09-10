@@ -34,7 +34,7 @@ export class UpdateInforComponent implements OnInit {
     debugger;
     const name = sessionStorage.getItem('AuthUsername');
     this.userService
-      .getUpdateUser(name)
+      .getUser(name)
       .subscribe(
         data => {this.updateInfo = data; },
         error => {this.updateInfo = null; }

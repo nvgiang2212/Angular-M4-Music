@@ -32,6 +32,7 @@ import { PlaylistComponent } from './component/playlistManager/playlist/playlist
 import { MenuLeftComponent } from './component/layout/menu-left/menu-left.component';
 import {DashboardComponent} from './component/userManager/dashboard/dashboard.component';
 import { UpdateInforComponent } from './component/userManager/update-infor/update-infor.component';
+import { ChangePassComponent } from './component/userManager/change-pass/change-pass.component';
 
 
 @NgModule({
@@ -56,6 +57,7 @@ import { UpdateInforComponent } from './component/userManager/update-infor/updat
     MenuLeftComponent,
     DashboardComponent,
     UpdateInforComponent,
+    ChangePassComponent,
   ],
   imports: [
     BrowserModule,

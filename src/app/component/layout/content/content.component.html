@@ -9,11 +9,11 @@
       <!--      NEW SONG-->
       <div class="col-md-4">
         <h3 routerLink="#">New Song <i class="fas fa-chevron-right fas-1g" style="font-size: 80%"></i></h3>
-        <div *ngFor="let song of songList" [routerLink]="['/home/song/play',song.id]">
+        <div>
           <table class="table table-striped">
             <thead>
             <tr>
-              <th scope="col"><i class="fas fa-bars"></i></th>
+<!--              <th scope="col"><i class="fas fa-bars"></i></th>-->
               <th scope="col" class="col-md-10">Name song</th>
               <th scope="col" class="col-md-10">Singer</th>
               <th scope="col" class="col-md-10">Avatar</th>
@@ -22,8 +22,8 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-              <th scope="row">{{ song.id }}</th>
+            <tr *ngFor="let song of songList" [routerLink]="['/home/song/play',song.id]">
+<!--              <th scope="row">{{ song.id }}</th>-->
               <td><a class="namesong" >{{ song.nameSong }}</a></td>
               <td><a>{{ song.singer }}</a></td>
               <td><a href="/"><img style="width: 100px;height: 100px" [src]=song.avatarUrl></a></td>
