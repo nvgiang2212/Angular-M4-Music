@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {UserService} from '../../../service/userManager/user/user.service';
 import {TokenStorageService} from '../../../service/userManager/token/token-storage.service';
 import {Router} from '@angular/router';
+import {UpdateInfo} from "../../../model/userManager/UpdateInfo";
 
 @Component({
   selector: 'app-user',
@@ -12,23 +13,29 @@ export class UserComponent implements OnInit {
   board: any = [];
   errorMessage: string;
   info: any;
+  userInfor: UpdateInfo;
+
 
   constructor(
     private userService: UserService,
     private token: TokenStorageService,
     private router: Router
   ) {
+    this.userInfor = {
+      id: 0,
+      name: '',
+      email: ''
+    };
   }
 
   ngOnInit() {
-    // this.userService.getUserBoard().subscribe(
-    //   data => {
-    //     this.board = data;
-    //   },
-    //   error => {
-    //     this.errorMessage = `${error.status}: ${JSON.parse(error.error).message}`;
-    //   }
-    // );
+    const name = sessionStorage.getItem('AuthUsername');
+    this.userService
+      .getUser(name)
+      .subscribe(
+        data => { this.userInfor = data; },
+        error => {this.userInfor = null; }
+      );
 
     this.info = {
       token: this.token.getToken(),
