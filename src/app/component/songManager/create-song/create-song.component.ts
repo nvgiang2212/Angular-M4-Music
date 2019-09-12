@@ -18,7 +18,9 @@ export class CreateSongComponent implements OnInit {
               private service: SongService) {
     this.songForm = new FormGroup({
       avatarUrl: new FormControl(''),
+      category: new FormControl(''),
       nameSong: new FormControl(''),
+      lyrics: new FormControl(''),
       singer: new FormControl(''),
       mp3Url: new FormControl(''),
       describes: new FormControl('')
@@ -26,7 +28,9 @@ export class CreateSongComponent implements OnInit {
     this.song = {
       avatarUrl: '',
       nameSong: '',
+      category: '',
       singer: '',
+      lyrics: '',
       mp3Url: '',
       describes: ''
     };

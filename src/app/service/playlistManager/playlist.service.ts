@@ -3,6 +3,7 @@ import {AngularFireDatabase} from '@angular/fire/database';
 import {HttpClient} from '@angular/common/http';
 import {PlaylistInfor} from '../../model/playlist/playlist-Infor';
 import {Observable} from 'rxjs';
+import {environment} from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -10,15 +11,16 @@ import {Observable} from 'rxjs';
 export class PlaylistService {
 
   private playlistUrl = 'http://localhost:8080/api/playlist';
+  private readonly API_URL_CREATE = environment.URL + '/api/playlist/create';
+
 
   constructor(
-    private db: AngularFireDatabase,
     private http: HttpClient) {
   }
 
   // METHOD CHO BACKEND
-  createPlaylist(playlist: PlaylistInfor): Observable<PlaylistInfor> {
-    return this.http.post<PlaylistInfor>(this.playlistUrl, playlist);
+  createPlaylist(playlist: Partial<PlaylistInfor>): Observable<any> {
+    return this.http.post<any>(this.API_URL_CREATE, playlist);
   }
 
   getPlayListAll(): Observable<PlaylistInfor[]> {
@@ -30,7 +32,7 @@ export class PlaylistService {
   }
 
   updatePlayList(playlist: PlaylistInfor): Observable<PlaylistInfor> {
-    return this.http.patch<PlaylistInfor>(`${this.playlistUrl}/${playlist.id}`, playlist);
+    return this.http.put<PlaylistInfor>(`${this.playlistUrl}/${playlist.id}`, playlist);
   }
 
   deletePlayList(id: number): Observable<PlaylistInfor> {

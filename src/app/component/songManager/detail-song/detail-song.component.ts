@@ -13,18 +13,7 @@ import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 })
 
 export class DetailSongComponent implements OnInit {
-  song: Song = {
-    id: 0,
-    avatarUrl: '',
-    nameSong: '',
-    singer: '',
-    mp3Url: '',
-    describes: '',
-    category: '',
-    lyrics: '',
-    likeSong: 0,
-    listenSong: 0
-  };
+  song: Song;
   songInfor: Song[] = [];
 
   constructor(private token: TokenStorageService,
@@ -48,6 +37,8 @@ export class DetailSongComponent implements OnInit {
       next => {
         this.song = next;
         console.log(next);
+        console.log(this.song);
+        console.log(this.song.mp3Url);
       },
       error => {
         this.song = null;

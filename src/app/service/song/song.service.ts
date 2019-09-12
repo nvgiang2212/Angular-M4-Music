@@ -16,7 +16,6 @@ export class SongService {
   // private updateSongByIdUrl = 'http://localhost:8080/api/songs';
   // private deleteSongByIdUrl = 'http://localhost:8080/api/songs/by';
 
-  songs: Song[];
   private readonly API_URL_CREATE = environment.URL + '/api/songs/create';
   private readonly API_URL_GET = environment.URL + '/api/songs';
   private readonly API_URL_GET_ID = environment.URL + '/api/songs';

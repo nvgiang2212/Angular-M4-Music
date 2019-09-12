@@ -21,91 +21,17 @@
         </tr>
         </thead>
         <tbody>
-        <!--        list-song-example-->
-        <tr>
-          <th>1</th>
-          <td>NameSong-1</td>
-          <td>NameSinger-1</td>
-          <td>Category-1</td>
-          <td>
-            <button class="btn btn-outline-warning"
-                    style="padding: 2px; margin-right: 5px">Sửa
-            </button>
-            <button class="btn btn-outline-danger"
-                    style="padding: 2px">Xóa
-            </button>
-          </td>
-        </tr>
-        <tr>
-          <th>2</th>
-          <td>NameSong-2</td>
-          <td>NameSinger-2</td>
-          <td>Category-2</td>
-          <td>
-            <button class="btn btn-outline-warning"
-                    style="padding: 2px; margin-right: 5px">Sửa
-            </button>
-            <button class="btn btn-outline-danger"
-                    style="padding: 2px">Xóa
-            </button>
-          </td>
-        </tr>
-        <tr>
-          <th>3</th>
-          <td>NameSong-3</td>
-          <td>NameSinger-3</td>
-          <td>Category-3</td>
-          <td>
-            <button class="btn btn-outline-warning"
-                    style="padding: 2px; margin-right: 5px">Sửa
-            </button>
-            <button class="btn btn-outline-danger"
-                    style="padding: 2px">Xóa
-            </button>
-          </td>
-        </tr>
-        <tr>
-          <th>4</th>
-          <td>NameSong-4</td>
-          <td>NameSinger-4</td>
-          <td>Category-4</td>
-          <td>
-            <button class="btn btn-outline-warning"
-                    style="padding: 2px; margin-right: 5px">Sửa
-            </button>
-            <button class="btn btn-outline-danger"
-                    style="padding: 2px">Xóa
-            </button>
-          </td>
-        </tr>
-        <tr>
-          <th>5</th>
-          <td>NameSong-5</td>
-          <td>NameSinger-5</td>
-          <td>Category-5</td>
-          <td>
-            <button class="btn btn-outline-warning"
-                    style="padding: 2px; margin-right: 5px">Sửa
-            </button>
-            <button class="btn btn-outline-danger"
-                    style="padding: 2px">Xóa
-            </button>
-          </td>
-        </tr>
-
-
         <!--        list-song-code-chinh-->
         <tr *ngFor="let song of songList">
           <th scope="row">{{ song.id }}</th>
 
-          <td><a class="namesong" [routerLink]="['/song/play',song.id]">{{ song.nameSong }}</a></td>
+          <td><a class="namesong" [routerLink]="['/home/song/play',song.id]">{{ song.nameSong }}</a></td>
           <td><a>{{ song.singer }}</a></td>
           <td><a>{{ song.category }}</a></td>
           <td>
             <button class="btn btn-danger" (click)="editSong(song.id)">Sửa</button>
             <button class="btn btn-danger" (click)="deleteSong(song.id)">Xóa</button>
           </td>
-
         </tr>
         </tbody>
       </table>

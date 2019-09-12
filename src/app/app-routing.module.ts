@@ -29,7 +29,7 @@ const routes: Routes = [
   {path: 'about-us', component: AboutUsComponent},
   {path: 'create-playlist', component: CreatePlaylistComponent},
   {path: 'list-playlist', component: ListPlaylistComponent},
-  {path: 'my-playlist', component: PlaylistComponent},
+  {path: 'my-playlist/:id', component: PlaylistComponent},
   {path: 'menu-left', component: MenuLeftComponent},
   {path: 'auth/dashboard', component: DashboardComponent},
   {path: 'auth/updateuser', component: UpdateInforComponent},
