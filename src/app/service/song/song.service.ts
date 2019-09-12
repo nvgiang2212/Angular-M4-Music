@@ -20,7 +20,7 @@ export class SongService {
   private readonly API_URL_GET = environment.URL + '/api/songs';
   private readonly API_URL_GET_ID = environment.URL + '/api/songs';
   private  readonly API_URL_PUT = environment.URL + '/api/songs/update';
-  private  readonly API_URL_DELETE = environment.URL + '/api/songs/delete';
+  private  readonly API_URL_DELETE = environment.URL + '/api/songs/by';
 
 
   getSong(): Observable<any> {

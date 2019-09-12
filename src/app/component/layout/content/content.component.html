@@ -9,37 +9,51 @@
       <!--      NEW SONG-->
       <div class="col-md-4">
         <h3 routerLink="#">New Song</h3>
-        <div>
-          <table class="table table-striped">
-            <thead>
-            <tr>
-<!--              <th scope="col"><i class="fas fa-bars"></i></th>-->
-              <th scope="col" class="col-md-10">Name song</th>
-              <th scope="col" class="col-md-10">Singer</th>
-              <th scope="col" class="col-md-10">Avatar</th>
-              <th scope="col" class="col-md-10">Audio</th>
-              <!--            <th scope="col" class="col-md-1">Delete</th>-->
-            </tr>
-            </thead>
-            <tbody>
-            <tr *ngFor="let song of songList" [routerLink]="['/home/song/play',song.id]">
-<!--              <th scope="row">{{ song.id }}</th>-->
-              <td><a class="namesong" >{{ song.nameSong }}</a></td>
-              <td><a>{{ song.singer }}</a></td>
-              <td><a href="/"><img style="width: 100px;height: 100px" [src]=song.avatarUrl></a></td>
-              <td>
-                <audio controls>
-                  <source [src]=song.mp3Url>
-                </audio>
-              </td>
-              <!--            <td>-->
-              <!--              <button class="btn btn-danger" (click)="deleteSong(song.id)">Xóa</button>-->
-              <!--            </td>-->
+        <div class="row">
 
-            </tr>
-            </tbody>
-          </table>
+          <div class="col-lg-3 col-md-12 mb-lg-0 mb-3" *ngFor="let song of songList">
+            <div [routerLink]="['/home/song/play',song.id]"
+                 class="rounded mb-4 play portfolio-effect__item portfolio-item--eff1"
+                 style="width: 180px;height: 180px">
+              <img class="img-fluid portfolio-item__image"
+                   src="{{song.avatarUrl}}"
+                   alt="{{song.nameSong}}">
+              <div class="portfolio-item__info">
+                <i class="fas fa-play-circle fa-3x"></i>
+              </div>
+            </div>
+            <h4 [routerLink]="['/home/song/play',song.id]" class="font-weight-bold mb-3" style="font-size: 80%">
+              <strong>{{song.nameSong}}</strong></h4>
+            <p>Ca sỹ - <a class="font-weight-bold">{{song.singer}}</a></p>
+            <p>Thể loại - <a class="font-weight-bold">{{song.category}}</a></p>
+          </div>
+
         </div>
+<!--        <div>-->
+<!--          <table class="table table-striped">-->
+<!--            <thead>-->
+<!--            <tr>-->
+<!--&lt;!&ndash;              <th scope="col"><i class="fas fa-bars"></i></th>&ndash;&gt;-->
+<!--              <th scope="col" class="col-md-10">Name song</th>-->
+<!--              <th scope="col" class="col-md-10">Singer</th>-->
+<!--              <th scope="col" class="col-md-10">Avatar</th>-->
+<!--              <th scope="col" class="col-md-10">Audio</th>-->
+<!--            </tr>-->
+<!--            </thead>-->
+<!--            <tbody>-->
+<!--            <tr *ngFor="let song of songList" [routerLink]="['/home/song/play',song.id]">-->
+<!--              <td><a class="namesong" >{{ song.nameSong }}</a></td>-->
+<!--              <td><a>{{ song.singer }}</a></td>-->
+<!--              <td><a href="/"><img style="width: 100px;height: 100px" [src]=song.avatarUrl></a></td>-->
+<!--              <td>-->
+<!--                <audio controls>-->
+<!--                  <source [src]=song.mp3Url>-->
+<!--                </audio>-->
+<!--              </td>-->
+<!--            </tr>-->
+<!--            </tbody>-->
+<!--          </table>-->
+<!--        </div>-->
       </div>
       <br><br>
       <hr>

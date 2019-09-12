@@ -9,6 +9,7 @@ import {PlaylistService} from "../../../service/playlistManager/playlist.service
 })
 export class ListPlaylistComponent implements OnInit {
   playlistInfors: PlaylistInfor [] = [];
+  delete: PlaylistInfor;
   constructor(private songplaylist: PlaylistService) { }
 
   ngOnInit() {
@@ -25,6 +26,14 @@ export class ListPlaylistComponent implements OnInit {
   }
 
   deleteSong(id: number) {
+    this.songplaylist
+      .deletePlayList(id)
+      .subscribe(
+        data => {
+          this.delete = data;
+          window.location.reload(); },
+        error => {this.delete = null; }
+      );
   }
 
 }

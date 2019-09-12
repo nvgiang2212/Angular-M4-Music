@@ -10,7 +10,7 @@ import {SongService} from "../../../service/song/song.service";
 export class ListSongComponent implements OnInit {
   songList: Song[] = [];
   constructor(private songService: SongService) { }
-
+  delete: Song;
   ngOnInit() {
     this.songService.getSong()
       .subscribe(next => {
@@ -25,5 +25,13 @@ export class ListSongComponent implements OnInit {
   }
 
   deleteSong(id: number) {
+    this.songService
+      .deleteSong(id)
+      .subscribe(
+        data => {
+          this.delete = data;
+          window.location.reload(); },
+        error => {this.delete = null; }
+      );
   }
 }
