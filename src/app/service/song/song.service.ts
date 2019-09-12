@@ -21,6 +21,10 @@ export class SongService {
   private readonly API_URL_GET_ID = environment.URL + '/api/songs';
   private  readonly API_URL_PUT = environment.URL + '/api/songs/update';
   private  readonly API_URL_DELETE = environment.URL + '/api/songs/by';
+  private likedSongByIdUrl = 'http://localhost:8080/api/songs/like';
+  private likeSongUrl = 'http://localhost:8080/api/songs/toplike';
+
+
 
 
   getSong(): Observable<any> {
@@ -44,5 +48,13 @@ export class SongService {
   }
 
   constructor(private http: HttpClient, private authenService: AuthService) {
+  }
+
+  getLikeSongById(id: number): Observable<Song> {
+    return this.http.get<Song>(`${this.likedSongByIdUrl}/${id}`);
+  }
+
+  getLikeSong(): Observable<Song[]> {
+    return this.http.get<Song[]>(this.likeSongUrl);
   }
 }

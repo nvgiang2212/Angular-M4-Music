@@ -3,7 +3,7 @@ import {Song} from '../../../model/song/song';
 import {SongService} from '../../../service/song/song.service';
 import {ActivatedRoute, Route} from '@angular/router';
 import {TokenStorageService} from '../../../service/userManager/token/token-storage.service';
-import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModal, NgbModalConfig} from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
@@ -15,11 +15,15 @@ import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 export class DetailSongComponent implements OnInit {
   song: Song;
   songInfor: Song[] = [];
+  likeCounter = 0;
 
   constructor(private token: TokenStorageService,
               private songService: SongService,
               private routes: ActivatedRoute,
+              config: NgbModalConfig,
               private modalService: NgbModal) {
+    config.backdrop = 'static';
+    config.keyboard = false;
   }
 
   ngOnInit() {
@@ -45,6 +49,22 @@ export class DetailSongComponent implements OnInit {
         console.log(error);
       }
     );
+  }
+
+  likeCount(id: number) {
+    this.likeCounter++;
+    if (this.likeCounter === 1) {
+      this.songService
+        .getLikeSongById(id)
+        .subscribe(
+          data => {
+            this.song = data;
+          },
+          error => {
+            this.song = null;
+          }
+        );
+    }
   }
 
   open(content) {

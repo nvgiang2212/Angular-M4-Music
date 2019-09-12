@@ -93,7 +93,7 @@
       </ng-template>
     </div>
     <div class="col-md-1">
-      <a routerLink="#"><i class="far fa-heart"> Like</i></a>
+      <a routerLink="#"><i class="far fa-heart" (click)="likeCount(song.id)"> Like</i></a>
     </div>
     <div class="col-md-2">
       <a routerLink="#"><i class="fas fa-cloud-download-alt"> Download</i></a>
