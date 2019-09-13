@@ -2,11 +2,11 @@
 <div class="container">
   <div class="row" style="padding:10px 35px">
     <div class="col-12" style="text-align: center">
-      <h4>name song</h4>
+      <h4>{{song.nameSong}}</h4>
     </div>
     <div class="col-12 mb-2 mt-4">
-      <audio controls style="width: 100%">
-        <source src="./assets/music/Loi-Yeu-Ngay-Dai-Kha.mp3" style="width: 350px; height: auto">
+      <audio controls style="width: 100%; border-radius: 5px" loop autoplay>
+        <source [src]="song.mp3Url" style="width: 350px; height: auto" type="audio/mpeg">
       </audio>
     </div>
 
