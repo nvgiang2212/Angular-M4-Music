@@ -10,6 +10,7 @@ import {SongService} from '../../../service/song/song.service';
   styleUrls: ['./create-song.component.scss']
 })
 export class CreateSongComponent implements OnInit {
+  title = 'Thêm Bài Hát Mới';
 
   songForm: FormGroup;
   song: Partial<Song>;

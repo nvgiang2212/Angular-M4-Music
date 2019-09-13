@@ -11,6 +11,7 @@ import {Router} from "@angular/router";
   styleUrls: ['./create-playlist.component.scss']
 })
 export class CreatePlaylistComponent implements OnInit {
+  title = 'Tạo PLaylist Mới';
 
   playlistForm: FormGroup;
   playlist: Partial<PlaylistInfor>;
@@ -23,6 +24,8 @@ export class CreatePlaylistComponent implements OnInit {
     this.playlist = {
       playlistName: ''
     };
+  }
+  constructor(private auth: AuthService) {
   }
 
   ngOnInit() {

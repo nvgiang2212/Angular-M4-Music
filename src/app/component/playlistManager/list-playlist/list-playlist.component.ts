@@ -11,6 +11,10 @@ export class ListPlaylistComponent implements OnInit {
   playlistInfors: PlaylistInfor [] = [];
   delete: PlaylistInfor;
   constructor(private songplaylist: PlaylistService) { }
+  title = 'Danh Sách PLaylist';
+
+  constructor() {
+  }
 
   ngOnInit() {
     this.songplaylist.getAllPlayListByUser()

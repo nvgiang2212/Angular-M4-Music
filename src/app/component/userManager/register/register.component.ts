@@ -14,6 +14,7 @@ import {FileUpload} from '../../../model/song/fileUpload';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
+  title = 'Đăng Ký';
   selectedFiles: FileList;
   currentFileUpload: FileUpload;
   form: any = {};

@@ -11,6 +11,10 @@ export class ListSongComponent implements OnInit {
   songList: Song[] = [];
   constructor(private songService: SongService) { }
   delete: Song;
+  title = 'Danh Sách Bài Hát';
+
+  constructor() { }
+
   ngOnInit() {
     // const userId = sessionStorage.getItem('AuthUserId');
     this.songService.getAllSongUserId()

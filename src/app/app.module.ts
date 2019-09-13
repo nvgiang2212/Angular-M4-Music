@@ -33,6 +33,7 @@ import { MenuLeftComponent } from './component/layout/menu-left/menu-left.compon
 import {DashboardComponent} from './component/userManager/dashboard/dashboard.component';
 import { UpdateInforComponent } from './component/userManager/update-infor/update-infor.component';
 import { ChangePassComponent } from './component/userManager/change-pass/change-pass.component';
+import { TitlePageComponent } from './component/layout/title-page/title-page.component';
 
 
 @NgModule({
@@ -55,6 +56,7 @@ import { ChangePassComponent } from './component/userManager/change-pass/change-
     ListPlaylistComponent,
     PlaylistComponent,
     MenuLeftComponent,
+    TitlePageComponent,
     DashboardComponent,
     UpdateInforComponent,
     ChangePassComponent,
