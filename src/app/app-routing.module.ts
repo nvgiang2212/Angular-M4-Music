@@ -13,8 +13,9 @@ import {PlaylistComponent} from './component/playlistManager/playlist/playlist.c
 import {ListPlaylistComponent} from './component/playlistManager/list-playlist/list-playlist.component';
 import {MenuLeftComponent} from './component/layout/menu-left/menu-left.component';
 import {DashboardComponent} from './component/userManager/dashboard/dashboard.component';
-import {UpdateInforComponent} from "./component/userManager/update-infor/update-infor.component";
-import {ChangePassComponent} from "./component/userManager/change-pass/change-pass.component";
+import {UpdateInforComponent} from './component/userManager/update-infor/update-infor.component';
+import {ChangePassComponent} from './component/userManager/change-pass/change-pass.component';
+
 
 
 
@@ -23,7 +24,7 @@ const routes: Routes = [
   {path: 'my-profile', component: UserComponent},
   {path: 'auth/login', component: LoginComponent},
   {path: 'signup', component: RegisterComponent},
-  {path: 'home/song/play/:id', component: DetailSongComponent},
+  {path: 'home/song/play', component: DetailSongComponent},
   {path: 'create-song', component: CreateSongComponent},
   {path: 'list-song', component: ListSongComponent},
   {path: 'about-us', component: AboutUsComponent},

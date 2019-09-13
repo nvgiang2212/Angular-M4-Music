@@ -8,7 +8,7 @@ import {UserService} from '../../../service/userManager/user/user.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-
+  title = 'Danh sách';
   userInfor: UpdateInfo;
   errorMessage: string;
   constructor(private userService: UserService) {

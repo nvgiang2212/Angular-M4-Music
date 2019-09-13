@@ -16,7 +16,7 @@ function comparePassword(c: AbstractControl) {
   styleUrls: ['./change-pass.component.scss']
 })
 export class ChangePassComponent implements OnInit {
-
+  title = 'Thay Đổi Mật Khẩu';
   form: any = {};
   changePassword: ChangePassword;
   isChangePassed = false;

@@ -11,7 +11,7 @@ import {Router} from "@angular/router";
   styleUrls: ['./update-infor.component.scss']
 })
 export class UpdateInforComponent implements OnInit {
-
+  title = 'Thay Đổi Thông Tin';
   form: any = {};
   progress = 0;
   updateInfo: UpdateInfo;
