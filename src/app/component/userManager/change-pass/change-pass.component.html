@@ -1,17 +1,12 @@
 <app-title-page [content]="title"></app-title-page>
-<div class="card col-md-4 offset-4">
+<div class="card col-md-4 offset-4 mb-4">
   <div class="card-body">
     <div id="loginbox" class="mainbox">
       <div class="panel panel-info">
 
-        <div class="panel-heading">
-          <div class="panel-title offset-4"><h2>Change Password</h2></div>
-          <hr>
-        </div> <!--Header-->
-
         <div class="panel-body" style="padding-top:30px">
           <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
-          <form class="form-inline" name="form" (ngSubmit)="f.form.valid" #f="ngForm" novalidate>
+          <form class="form" name="form" (ngSubmit)="f.form.valid" #f="ngForm" novalidate>
             <div *ngIf="isChangePassed; else ChanePassForm">
               <p class="message-signup" style="color: limegreen">Your registration is successful. Please login!</p>
             </div>
@@ -19,7 +14,9 @@
             <ng-template #ChanePassForm>
               <form name="form" (ngSubmit)="f.form.valid && ngSubmit()" #f="ngForm" novalidate>
                 <div style="margin-bottom: 25px" class="form-group">
-
+                  <label><i class="fa fa-unlock"></i>
+                    Mật Khẩu Cũ:
+                  </label>
                   <input type="password" class="form-control"
                          name="firstName" placeholder="Current Password"
                          [(ngModel)]="form.currentPassword"
@@ -30,7 +27,9 @@
                 </div>
 
                 <div style="margin-bottom: 25px" class="form-group">
-
+                  <label><i class="fa fa-unlock-alt"></i>
+                    Mật Khẩu Mới:
+                  </label>
                   <input type="password" class="form-control"
                          name="lastName" placeholder="New Password"
                          [(ngModel)]="form.newPassword" #newPassword="ngModel" required/>
@@ -40,9 +39,11 @@
                 </div>
 
                 <div style="margin-bottom: 25px" class="form-group">
-
+                  <label><i class="fa fa-lock"></i>
+                    Xác Nhận Mật Khẩu Mới:
+                  </label>
                   <input type="password" class="form-control"
-                         name="lastName" placeholder="confirm Password"
+                         name="lastName" placeholder="Confirm Password"
                          [(ngModel)]="form.confirmPassword" #confirmPassword="ngModel" required/>
                   <div *ngIf="f.submitted && confirmPassword.invalid">
                     <div *ngIf="confirmPassword.errors.required">confirm PassWord is required</div>
@@ -51,7 +52,7 @@
 
 
                 <div class="form-group">
-                  <button class="btn btn-info btn-block my-4" type="submit">ChangePassword</button>
+                  <button class="btn btn-info btn-block my-4" type="submit">Thay Đổi Mật Khẩu</button>
                 </div>
               </form>
             </ng-template>
@@ -63,3 +64,6 @@
     </div>
   </div>
 </div>
+
+
+<app-footer></app-footer>
