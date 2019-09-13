@@ -13,6 +13,7 @@ export class ContentComponent implements OnInit {
   info: any;
   listSongLike: Song[] = [];
   songList: Song[] = [];
+  listenSong: Song[] = [];
 
   constructor(
     private token: TokenStorageService,
@@ -42,10 +43,22 @@ export class ContentComponent implements OnInit {
       }, error => {
         console.log(error);
       });
+
+    this.songService.getListenSong()
+      .subscribe(next => {
+        this.listenSong = next;
+        console.log(next);
+      }, error => {
+        console.log(error);
+      });
   }
 
   logout() {
     this.token.signOut();
     window.location.reload();
+  }
+
+  update(songs: Song[]) {
+    this.songList = songs;
   }
 }

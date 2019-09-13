@@ -8,13 +8,14 @@
     <div class="card-body">
       <!--      NEW SONG-->
       <div>
+        <app-search (press)="update($event)"></app-search>
         <h3 routerLink="#">New Song</h3>
         <div class="row">
 
-          <div class="col-lg-3 col-md-12 mb-lg-0 mb-3" *ngFor="let song of songList">
+          <div class="col-2" *ngFor="let song of songList">
             <div [routerLink]="['/home/song/play',song.id]"
                  class="rounded mb-4 play portfolio-effect__item portfolio-item--eff1"
-                 style="width: 180px;height: 180px">
+                 style="width: 150px;height: 150px">
               <img class="img-fluid portfolio-item__image"
                    src="{{song.avatarUrl}}"
                    alt="{{song.nameSong}}">
@@ -29,55 +30,36 @@
           </div>
 
         </div>
-        <!--        <div>-->
-        <!--          <table class="table table-striped">-->
-        <!--            <thead>-->
-        <!--            <tr>-->
-        <!--&lt;!&ndash;              <th scope="col"><i class="fas fa-bars"></i></th>&ndash;&gt;-->
-        <!--              <th scope="col" class="col-md-10">Name song</th>-->
-        <!--              <th scope="col" class="col-md-10">Singer</th>-->
-        <!--              <th scope="col" class="col-md-10">Avatar</th>-->
-        <!--              <th scope="col" class="col-md-10">Audio</th>-->
-        <!--            </tr>-->
-        <!--            </thead>-->
-        <!--            <tbody>-->
-        <!--            <tr *ngFor="let song of songList" [routerLink]="['/home/song/play',song.id]">-->
-        <!--              <td><a class="namesong" >{{ song.nameSong }}</a></td>-->
-        <!--              <td><a>{{ song.singer }}</a></td>-->
-        <!--              <td><a href="/"><img style="width: 100px;height: 100px" [src]=song.avatarUrl></a></td>-->
-        <!--              <td>-->
-        <!--                <audio controls>-->
-        <!--                  <source [src]=song.mp3Url>-->
-        <!--                </audio>-->
-        <!--              </td>-->
-        <!--            </tr>-->
-        <!--            </tbody>-->
-        <!--          </table>-->
-        <!--        </div>-->
       </div>
+
       <br><br>
       <hr>
       <!--TOP SONG-->
 
-      <div class="col-md-4">
+      <div>
         <h3 routerLink="#">Top Song <i class="fas fa-chevron-right fas-1g" style="font-size: 80%"></i></h3>
       </div>
       <br><br>
       <div class="row">
-        <div class="col-lg-3 col-md-12 mb-lg-0 mb-3">
-          <div routerLink="/song/play" class="rounded mb-4 play portfolio-effect__item portfolio-item--eff1 "
-               style="width: 180px;height: 180px">
+
+        <div class="col-2" *ngFor="let listenSongs of listenSong">
+          <div [routerLink]="['/home/song/play',listenSongs.id]"
+               class="rounded mb-4 play portfolio-effect__item portfolio-item--eff1"
+               style="width: 150px;height: 150px">
             <img class="img-fluid portfolio-item__image"
-                 alt="">
+                 src="{{listenSongs.avatarUrl}}"
+                 alt="{{listenSongs.nameSong}}">
             <div class="portfolio-item__info">
               <i class="fas fa-play-circle fa-3x"></i>
             </div>
           </div>
-          <h4 routerLink="/song/play" class="font-weight-bold mb-3" style="font-size: 80%"><strong>name Song</strong>
-          </h4>
-          <p>Ca sỹ: <a class="font-weight-bold">Singer</a></p>
-          <p>Lượt nghe: <a class="font-weight-bold">listen Song</a></p>
+          <h4 [routerLink]="['/home/song/play',listenSongs.id]" class="font-weight-bold mb-3" style="font-size: 80%">
+            <strong>{{listenSongs.nameSong}}</strong></h4>
+          <p>Ca sỹ - <a class="font-weight-bold">{{listenSongs.singer}}</a></p>
+          <p>Thể loại - <a class="font-weight-bold">{{listenSongs.category}}</a></p>
+          <p>Lượt Nghe- <a class="font-weight-bold">{{listenSongs.listenSong}}</a></p>
         </div>
+
       </div>
       <hr>
       <!--LIKE SONG-->
@@ -87,10 +69,10 @@
       <br><br>
       <div class="row">
 
-        <div class="col-lg-3 col-md-12 mb-lg-0 mb-3" *ngFor="let songLike of listSongLike">
+        <div class="col-2" *ngFor="let songLike of listSongLike">
           <div [routerLink]="['/home/song/play',songLike.id]"
                class="rounded mb-4 play portfolio-effect__item portfolio-item--eff1"
-               style="width: 180px;height: 180px">
+               style="width: 150px;height: 150px">
             <img class="img-fluid portfolio-item__image"
                  src="{{songLike.avatarUrl}}"
                  alt="{{songLike.nameSong}}">
@@ -102,6 +84,7 @@
             <strong>{{songLike.nameSong}}</strong></h4>
           <p>Ca sỹ - <a class="font-weight-bold">{{songLike.singer}}</a></p>
           <p>Thể loại - <a class="font-weight-bold">{{songLike.category}}</a></p>
+          <p>Like - <a class="font-weight-bold">{{songLike.likeSong}}</a></p>
         </div>
 
       </div>

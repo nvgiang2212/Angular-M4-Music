@@ -33,6 +33,8 @@ import { MenuLeftComponent } from './component/layout/menu-left/menu-left.compon
 import {DashboardComponent} from './component/userManager/dashboard/dashboard.component';
 import { UpdateInforComponent } from './component/userManager/update-infor/update-infor.component';
 import { ChangePassComponent } from './component/userManager/change-pass/change-pass.component';
+import { SearchComponent } from './component/search/search.component';
+import { AllListSongComponent } from './component/songManager/all-list-song/all-list-song.component';
 
 
 @NgModule({
@@ -58,6 +60,8 @@ import { ChangePassComponent } from './component/userManager/change-pass/change-
     DashboardComponent,
     UpdateInforComponent,
     ChangePassComponent,
+    SearchComponent,
+    AllListSongComponent,
   ],
   imports: [
     BrowserModule,
