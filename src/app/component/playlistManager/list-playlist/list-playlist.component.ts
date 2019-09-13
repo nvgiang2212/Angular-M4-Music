@@ -13,9 +13,9 @@ export class ListPlaylistComponent implements OnInit {
   constructor(private songplaylist: PlaylistService) { }
 
   ngOnInit() {
-    this.songplaylist.getPlayListAll()
+    this.songplaylist.getAllPlayListByUser()
       .subscribe(next => {
-        this.playlistInfors = next;
+        this.playlistInfors = next.data;
         console.log(next);
       }, error => {
         console.log(error);

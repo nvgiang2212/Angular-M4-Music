@@ -12,7 +12,7 @@ export class PlaylistService {
 
   private playlistUrl = 'http://localhost:8080/api/playlist';
   private readonly API_URL_CREATE = environment.URL + '/api/playlist/create';
-
+  private playlistByUser = 'http://localhost:8080/api/auth/playListByUser';
 
   constructor(
     private http: HttpClient) {
@@ -37,5 +37,9 @@ export class PlaylistService {
 
   deletePlayList(id: number): Observable<PlaylistInfor> {
     return this.http.delete<PlaylistInfor>(`${this.playlistUrl}/${id}`);
+  }
+
+  getAllPlayListByUser(): Observable<any> {
+    return this.http.get<any>(this.playlistByUser);
   }
 }
