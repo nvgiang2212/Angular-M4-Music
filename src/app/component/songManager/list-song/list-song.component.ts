@@ -12,10 +12,11 @@ export class ListSongComponent implements OnInit {
   constructor(private songService: SongService) { }
   delete: Song;
   ngOnInit() {
-    this.songService.getSong()
+    // const userId = sessionStorage.getItem('AuthUserId');
+    this.songService.getAllSongUserId()
       .subscribe(next => {
-        this.songList = next;
-        console.log(next);
+        this.songList = next.data;
+        console.log(this.songList);
       }, error => {
         console.log(error);
       });

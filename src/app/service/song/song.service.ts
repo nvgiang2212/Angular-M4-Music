@@ -23,6 +23,7 @@ export class SongService {
   private  readonly API_URL_DELETE = environment.URL + '/api/songs/by';
   private likedSongByIdUrl = 'http://localhost:8080/api/songs/like';
   private likeSongUrl = 'http://localhost:8080/api/songs/toplike';
+  private listSongUserId = 'http://localhost:8080/api/auth/listSongByUser';
 
 
 
@@ -56,5 +57,9 @@ export class SongService {
 
   getLikeSong(): Observable<Song[]> {
     return this.http.get<Song[]>(this.likeSongUrl);
+  }
+
+  getAllSongUserId(): Observable<any> {
+    return this.http.get<any>(this.listSongUserId);
   }
 }

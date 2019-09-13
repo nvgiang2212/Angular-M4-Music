@@ -10,7 +10,7 @@
     <!--    List-music-->
     <div class="col-9" style="margin-bottom: 10px">
       <p>You can see <code>Danh sách bài hát</code>, listen to music and edit or delete song.</p>
-      <table class="table table-striped">
+      <table class="table table-striped" *ngIf="songList">
         <thead>
         <tr>
           <th scope="col"><i class="fas fa-bars"></i></th>
