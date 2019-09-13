@@ -34,7 +34,8 @@ export class ChangePassComponent implements OnInit {
     debugger;
     this.changePassword = new ChangePassword(
       this.form.currentPassword,
-      this.form.newPassword);
+      this.form.newPassword,
+      this.form.confirmPassword);
 
     this.authService
       .changePasswordAuth(this.changePassword)

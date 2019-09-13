@@ -42,6 +42,16 @@
                   </div>
                 </div>
 
+                <div style="margin-bottom: 25px" class="form-group">
+
+                  <input type="password" class="form-control"
+                         name="lastName" placeholder="confirm Password"
+                         [(ngModel)]="form.confirmPassword" #confirmPassword="ngModel" required/>
+                  <div *ngIf="f.submitted && confirmPassword.invalid">
+                    <div *ngIf="confirmPassword.errors.required">confirm PassWord is required</div>
+                  </div>
+                </div>
+
 
                 <div class="form-group">
                   <button class="btn btn-info btn-block my-4" type="submit">ChangePassword</button>
