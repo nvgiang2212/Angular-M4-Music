@@ -11,6 +11,7 @@ import {environment} from '../../../environments/environment';
 export class PlaylistService {
 
   private playlistUrl = 'http://localhost:8080/api/playlist';
+  private playlistUpdate = 'http://localhost:8080/api/playlist/update';
   private readonly API_URL_CREATE = environment.URL + '/api/playlist/create';
   private playlistByUser = 'http://localhost:8080/api/auth/playListByUser';
 
@@ -31,8 +32,8 @@ export class PlaylistService {
     return this.http.get<PlaylistInfor>(`${this.playlistUrl}/${id}`);
   }
 
-  updatePlayList(playlist: PlaylistInfor): Observable<PlaylistInfor> {
-    return this.http.put<PlaylistInfor>(`${this.playlistUrl}/${playlist.id}`, playlist);
+  updatePlayList(playlist: PlaylistInfor): Observable<any> {
+    return this.http.put<any>(`${this.playlistUpdate}/${playlist.id}`, playlist);
   }
 
   deletePlayList(id: number): Observable<PlaylistInfor> {
