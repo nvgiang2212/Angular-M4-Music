@@ -38,7 +38,7 @@ const routes: Routes = [
   {path: 'auth/updateuser', component: UpdateInforComponent, canActivate: [AuthGuard]},
   {path: 'auth/changepass', component: ChangePassComponent, canActivate: [AuthGuard]},
   {path: 'error404', component: NotGuardComponent},
-  {path: ' ', redirectTo: 'home', pathMatch: 'full'}
+  {path: '', redirectTo: '/home', pathMatch: 'full'}
 
 ];
 
