@@ -21,16 +21,14 @@ export class UpdatePlaylistComponent implements OnInit {
               private router: Router) {
     this.playListForm = new FormGroup({
       playlistName: new FormControl('', [Validators.required]),
-      // songs: new FormControl('', [Validators.required]),
-      // user: new FormControl('', [Validators.required])
     });
 
-    this.playlist = {
-      id: 0,
-      playlistName: '',
-      songs: Song[''],
-      users: SignUpInfo[''],
-    };
+    // this.playlist = {
+    //   id: 0,
+    //   playlistName: '',
+    //   songs: Song[''],
+    //   users: SignUpInfo[''],
+    // };
   }
 
   ngOnInit() {
