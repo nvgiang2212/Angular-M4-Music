@@ -24,7 +24,7 @@ const routes: Routes = [
   {path: 'home', component: ContentComponent},
   {path: 'my-profile', component: UserComponent, canActivate: [AuthGuard]},
   {path: 'auth/login', component: LoginComponent},
-  {path: 'signup', component: RegisterComponent},
+  {path: 'register', component: RegisterComponent},
   {path: 'home/song/play', component: DetailSongComponent, canActivate: [AuthGuard]},
   {path: 'create-song', component: CreateSongComponent, canActivate: [AuthGuard]},
   {path: 'list-song', component: ListSongComponent, canActivate: [AuthGuard]},
@@ -32,11 +32,11 @@ const routes: Routes = [
   {path: 'create-playlist', component: CreatePlaylistComponent, canActivate: [AuthGuard]},
   {path: 'list-playlist', component: ListPlaylistComponent, canActivate: [AuthGuard]},
   {path: 'my-playlist/:id', component: PlaylistComponent, canActivate: [AuthGuard]},
-  {path: 'menu-left', component: MenuLeftComponent},
+  {path: 'menu-left', component: MenuLeftComponent, canActivate: [AuthGuard]},
   {path: 'auth/dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
   {path: 'auth/updateuser', component: UpdateInforComponent, canActivate: [AuthGuard]},
   {path: 'auth/changepass', component: ChangePassComponent, canActivate: [AuthGuard]},
-  {path: '', redirectTo: 'home', pathMatch: 'full'}
+  {path: ' ', redirectTo: 'home', pathMatch: 'full'}
 
 ];
 
