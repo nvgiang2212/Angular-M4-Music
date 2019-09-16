@@ -36,6 +36,7 @@ import { ChangePassComponent } from './component/userManager/change-pass/change-
 import { TitlePageComponent } from './component/layout/title-page/title-page.component';
 import {AuthGuard} from './service/userManager/guard/auth.guard';
 import {AuthService} from './service/userManager/auth/auth.service';
+import { NotGuardComponent } from './component/layout/not-guard/not-guard.component';
 
 
 @NgModule({
@@ -62,6 +63,7 @@ import {AuthService} from './service/userManager/auth/auth.service';
     DashboardComponent,
     UpdateInforComponent,
     ChangePassComponent,
+    NotGuardComponent,
   ],
   imports: [
     BrowserModule,

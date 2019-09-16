@@ -16,6 +16,7 @@ import {DashboardComponent} from './component/userManager/dashboard/dashboard.co
 import {UpdateInforComponent} from './component/userManager/update-infor/update-infor.component';
 import {ChangePassComponent} from './component/userManager/change-pass/change-pass.component';
 import {AuthGuard} from './service/userManager/guard/auth.guard';
+import {NotGuardComponent} from './component/layout/not-guard/not-guard.component';
 
 
 
@@ -36,6 +37,7 @@ const routes: Routes = [
   {path: 'auth/dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
   {path: 'auth/updateuser', component: UpdateInforComponent, canActivate: [AuthGuard]},
   {path: 'auth/changepass', component: ChangePassComponent, canActivate: [AuthGuard]},
+  {path: 'error404', component: NotGuardComponent},
   {path: ' ', redirectTo: 'home', pathMatch: 'full'}
 
 ];
