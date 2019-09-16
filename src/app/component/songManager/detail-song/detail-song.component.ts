@@ -27,28 +27,30 @@ export class DetailSongComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.songService.getSong().subscribe(
-      next => {
-        this.songInfor = next;
-      },
-      error => {
-        this.songInfor = [];
-      },
-    );
+    // this.songService.getSong().subscribe(
+    //   next => {
+    //     this.songInfor = next;
+    //   },
+    //   error => {
+    //     this.songInfor = [];
+    //   },
+    // );
 
-    const id = +this.routes.snapshot.paramMap.get('id');
-    this.songService.getSongById(id).subscribe(
-      next => {
-        this.song = next;
-        console.log(next);
-        console.log(this.song);
-        console.log(this.song.mp3Url);
-      },
-      error => {
-        this.song = null;
-        console.log(error);
-      }
-    );
+    this.routes.paramMap.subscribe( paramMap => {
+      const id = +paramMap.get('id');
+      this.songService.getSongById(id).subscribe(
+        next => {
+          this.song = next;
+          console.log(next);
+          console.log(this.song);
+          console.log(this.song.mp3Url);
+        },
+        error => {
+          this.song = null;
+          console.log(error);
+        }
+      );
+    });
   }
 
   likeCount(id: number) {

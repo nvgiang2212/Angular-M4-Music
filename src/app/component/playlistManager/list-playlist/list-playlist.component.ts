@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {PlaylistInfor} from "../../../model/playlist/playlist-Infor";
 import {PlaylistService} from "../../../service/playlistManager/playlist.service";
 
@@ -10,7 +10,9 @@ import {PlaylistService} from "../../../service/playlistManager/playlist.service
 export class ListPlaylistComponent implements OnInit {
   playlistInfors: PlaylistInfor [] = [];
   delete: PlaylistInfor;
-  constructor(private songplaylist: PlaylistService) { }
+
+  constructor(private songplaylist: PlaylistService) {
+  }
 
   ngOnInit() {
     this.songplaylist.getAllPlayListByUser()
@@ -22,8 +24,6 @@ export class ListPlaylistComponent implements OnInit {
       });
   }
 
-  editSong(id: number) {
-  }
 
   deleteSong(id: number) {
     this.songplaylist
@@ -31,9 +31,14 @@ export class ListPlaylistComponent implements OnInit {
       .subscribe(
         data => {
           this.delete = data;
-          window.location.reload(); },
-        error => {this.delete = null; }
+          window.location.reload();
+        },
+        error => {
+          this.delete = null;
+        }
       );
   }
 
+  editSong(id: number) {
+  }
 }

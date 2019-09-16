@@ -2,9 +2,8 @@
 <br>
 <br>
 <div class="container">
-  <div class="col">
-    <div class="header-song" *ngIf="song">
-      <div class="col-md-1"></div>
+  <div class="col" *ngIf="song">
+    <div class="header-song">
       <div class="row">
         <div class="col-sm-2">
           <div class="ih-item circle effect2 left_to_right">
@@ -16,7 +15,7 @@
           </div>
         </div>
         <div class="col-md-6">
-          <h3 class="color-letter">{{song.nameSong}}</h3>
+          <h3 class="color-letter">Bài hát: {{song.nameSong}}</h3>
           <p class="color-letter">Ca sĩ: <a class="not-underlined">{{song.singer}}</a></p><br>
           <p class="color-letter">Thể loại: <a class="not-underlined">{{song.category}}</a></p>
         </div>
@@ -24,61 +23,17 @@
         <div class="col-xl-2" style="color: white"><i class="fas fa-play">{{song.listenSong}}</i></div>
         <div class="col-xl-2" style="color: white"><i class="fas fa-heart">{{song.likeSong}}</i></div>
       </div>
-      <div class="row col-xl-6">
-        <audio id="audio" autoplay>
-          <source src="{{song.mp3Url}}">
+      <div class="col-12 mb-2 mt-4">
+        <audio controls style="width: 100%; border-radius: 5px" loop autoplay>
+          <source [src]=song.mp3Url style="width: 350px; height: auto" type="audio/mpeg">
         </audio>
-        <!--          next left-->
-        <div class="col-xl-1">
-          <svg id="prev_btn" viewBox="0 0 24.5 23.6">
-            <polygon points="0,11.8 13.5,0 13.5,10.7 24.5,0 24.5,23.6 13.5,12.9 13.5,23.6 "/>
-          </svg>
-        </div>
-        <!--          play-->
-        <div class="col-xl-1" style="">
-          <svg id="plays_btn" viewBox="0 0 24.5 30.9">
-            <g id="play_btn">
-              <path d="M0,30.9L0,0l24.5,15.4L0,30.9z"/>
-            </g>
-            <g id="pause_btn">
-              <rect x="0" y="0" width="8.2" height="30.9"/>
-              <rect x="16.2" y="0" width="8.2" height="30.9"/>
-            </g>
-          </svg>
-        </div>
-        <!--          next right-->
-        <div class="col-xl-1">
-          <svg id="next_btn" viewBox="0 0 24.5 23.6">
-            <polygon points="25,11.8 11.5,0 11.5,10.7 0.5,0 0.5,23.6 11.5,12.9 11.5,23.6 "/>
-          </svg>
-        </div>
-        <div class="col-xl-4 controls_player">
-          <svg id="volume_btn" viewBox="0 0 23 23">
-            <path d="M17.5,6.6v9.9L11.4,13H5.5v-3h6L17.5,6.6z M10.7,7H2.5v9h8.2l9.8,5.3V1.2L10.7,7z"/>
-          </svg>
-          <svg id="shuffle_btn" viewBox="0 0 23 23">
-            <path d="M7.3,6l0.4,2.8l3.6-5l-5-3.6l0.5,3C3.6,4.4,1.1,7.4,1.1,11c0,4.4,2.4,8,7.4,8.3v-2.7
-							c-3-0.3-4.7-2.7-4.7-5.6C3.8,8.8,5.5,7,7.3,6z"/>
-            <path d="M21.5,11c0-4.4-4-8-8-8.3v2.7c2,0.3,5.2,2.7,5.2,5.6c0,2.2-1.2,4-3,5l-0.4-2.8l-3.6,5l5,3.6l-0.6-3
-							C19.4,17.6,21.5,14.6,21.5,11z"/>
-          </svg>
-          <svg id="playlist_btn" viewBox="0 0 23 23">
-            <rect x="1.5" y="2" width="20" height="3"/>
-            <rect x="1.5" y="9" width="20" height="3"/>
-            <rect x="1.5" y="17" width="20" height="3"/>
-          </svg>
-        </div>
-      </div>
-    </div>
-    <div class="controls_player">
-      <p id="timeleft" style="font-size: 60%">00:00</p>
-      <div class="progressbar_slide">
-        <div class="progressbar_range"></div>
       </div>
     </div>
   </div>
-  <div class="col-md-2"></div>
-  <div class="row" style="padding:10px 35px">
+  <br>
+  <br>
+  <hr>
+  <div class="row" style="padding:10px 35px" *ngIf="song">
     <div class="col-md-2">
       <a routerLink="#" (click)="open(content)"><i class="fas fa-folder-plus"> Add to playlist</i></a>
       <ng-template #content let-c="close" let-d="dismiss">
@@ -96,52 +51,25 @@
       </ng-template>
     </div>
     <div class="col-md-1">
-      <a routerLink="#"><i class="far fa-heart" (click)="likeCount(song.id)"> Like</i></a>
-    </div>
-    <div class="col-md-2">
-      <a routerLink="#"><i class="fas fa-cloud-download-alt"> Download</i></a>
-    </div>
-    <div class="col-md-1">
-      <a routerLink="#"><i class="fab fa-rocketchat"></i></a>
+      <button type="button" class="btn btn-outline-primary" (click)="likeCount(song.id)"><i
+        class="fas fa-thumbs-up"></i></button>
     </div>
   </div>
   <hr>
   <div class="row col-md-12" *ngIf="song">
-    <div class="row col-md-8" style="padding:10px 35px">
+    <div class="row col-md-12" style="padding:10px 35px">
       <div class="col-md-1">
         <img src="{{song.avatarUrl}}" alt="{{song.nameSong}}" class="avatar">
       </div>
       <div class="col-md-2">
-        <p>Upload By:</p>
+        <p>Name Song :</p>
         <a routerLink="#">{{song.singer}}</a>
       </div>
-      <div class="col-md-5"></div>
       <div class="card-footer row" style="padding:10px 35px">
         <div class="col-md-12"><h2>Lyrics: </h2></div>
         <div class="col-md-12">
           <p>{{song.lyrics}}</p>
         </div>
-      </div>
-    </div>
-    <div class="col-md-4" *ngIf="song">
-      <h4>Có thể bạn quan tâm</h4>
-      <div class="list-song">
-        <table class="table table-striped table-responsive-md btn-table">
-          <thead>
-          <tr>
-            <th><i class="fas fa-music"></i></th>
-            <th>Name Song</th>
-            <th>Singer</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr *ngFor="let song of songInfor">
-            <!--              <td>{{song.avatarUrl}}</td>-->
-            <td><a class="list-play-list" [routerLink]="['/home/song/play',song.id]">{{song.nameSong}}</a></td>
-            <td>{{song.singer}}</td>
-          </tr>
-          </tbody>
-        </table>
       </div>
     </div>
   </div>
@@ -152,6 +80,7 @@
     </div>
     <hr>
     <div id="fb-root"></div>
-    <div class="fb-comments col-md-8" data-href="https://www.facebook.com/tinhnt020795" data-width="" data-numposts="5"></div>
+    <div class="fb-comments col-md-8" data-href="https://www.facebook.com/tinhnt020795" data-width=""
+         data-numposts="5"></div>
   </div>
 </div>

@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {PlaylistService} from "../../../service/playlistManager/playlist.service";
+import {ActivatedRoute} from "@angular/router";
+import {Song} from "../../../model/song/song";
+import {PlaylistInfor} from "../../../model/playlist/playlist-Infor";
 
 @Component({
   selector: 'app-playlist',
@@ -7,9 +11,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlaylistComponent implements OnInit {
 
-  constructor() { }
+  playlist: PlaylistInfor;
+
+  constructor(private playlistService: PlaylistService,
+              private routes: ActivatedRoute) {
+  }
 
   ngOnInit() {
+    this.routes.paramMap.subscribe(paramMap => {
+      const id = +paramMap.get('id');
+      this.playlistService.getPlayListById(id).subscribe(
+        next => {
+          this.playlist = next;
+          console.log(next);
+        },
+        error => {
+          this.playlist = null;
+          console.log(error);
+        }
+      );
+    });
   }
 
 }

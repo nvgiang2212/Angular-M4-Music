@@ -22,9 +22,6 @@ export class ListSongComponent implements OnInit {
       });
   }
 
-  editSong(id: number) {
-  }
-
   deleteSong(id: number) {
     this.songService
       .deleteSong(id)

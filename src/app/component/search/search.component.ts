@@ -40,6 +40,7 @@ export class SearchComponent implements OnInit {
       if (!isEmptyForm) {
         if (form.nameSong) {
           this.filteredSong = this.filteredSong.filter((song => song.nameSong === form.nameSong));
+          // this.filteredSong = this.filteredSong.filter((song => song.singer === form.nameSong));
         }
       } else {
         this.filteredSong = this.songs;
