@@ -47,14 +47,15 @@ export class LoginComponent implements OnInit {
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getAuthorities();
-        this.reloadPage();
         alert('Đăng Nhập Thành Công');
+        this.reloadPage();
       },
       error => {
         console.log(error);
         this.errorMessage = error.error.message;
         this.isLoginFailed = true;
         alert('Đăng Nhập Thất Bại ! Mời Đăng Nhập lại...');
+        this.reloadPage();
       }
     );
   }
