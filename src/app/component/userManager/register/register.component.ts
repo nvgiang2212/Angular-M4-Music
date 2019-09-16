@@ -75,11 +75,19 @@ export class RegisterComponent implements OnInit {
           console.log(data);
           this.isRegister = true;
           this.isRegisterFail = false;
+          alert('Bạn Đã Đăng Ký Thành Công');
+          this.reloadPage();
         },
         error => {
           console.log(error);
           this.errorMessage = error.error.message;
           this.isRegisterFail = true;
+          alert('Bạn Đăng Ký Thất Bại! Mời Bạn Đăng Ký Lại...');
         });
+  }
+
+  reloadPage() {
+    window.location.reload();
+    this.router.navigate(['/login']);
   }
 }
