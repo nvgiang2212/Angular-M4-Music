@@ -34,6 +34,8 @@ import {DashboardComponent} from './component/userManager/dashboard/dashboard.co
 import { UpdateInforComponent } from './component/userManager/update-infor/update-infor.component';
 import { ChangePassComponent } from './component/userManager/change-pass/change-pass.component';
 import { TitlePageComponent } from './component/layout/title-page/title-page.component';
+import {AuthGuard} from './service/userManager/guard/auth.guard';
+import {AuthService} from './service/userManager/auth/auth.service';
 
 
 @NgModule({
@@ -74,7 +76,7 @@ import { TitlePageComponent } from './component/layout/title-page/title-page.com
     NgbPaginationModule,
     NgbAlertModule,
   ],
-  providers: [httpInterceptorProviders],
+  providers: [httpInterceptorProviders, AuthGuard, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

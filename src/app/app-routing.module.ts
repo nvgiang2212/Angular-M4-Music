@@ -15,26 +15,27 @@ import {MenuLeftComponent} from './component/layout/menu-left/menu-left.componen
 import {DashboardComponent} from './component/userManager/dashboard/dashboard.component';
 import {UpdateInforComponent} from './component/userManager/update-infor/update-infor.component';
 import {ChangePassComponent} from './component/userManager/change-pass/change-pass.component';
+import {AuthGuard} from './service/userManager/guard/auth.guard';
 
 
 
 
 const routes: Routes = [
   {path: 'home', component: ContentComponent},
-  {path: 'my-profile', component: UserComponent},
+  {path: 'my-profile', component: UserComponent, canActivate: [AuthGuard]},
   {path: 'auth/login', component: LoginComponent},
   {path: 'signup', component: RegisterComponent},
-  {path: 'home/song/play', component: DetailSongComponent},
-  {path: 'create-song', component: CreateSongComponent},
-  {path: 'list-song', component: ListSongComponent},
+  {path: 'home/song/play', component: DetailSongComponent, canActivate: [AuthGuard]},
+  {path: 'create-song', component: CreateSongComponent, canActivate: [AuthGuard]},
+  {path: 'list-song', component: ListSongComponent, canActivate: [AuthGuard]},
   {path: 'about-us', component: AboutUsComponent},
-  {path: 'create-playlist', component: CreatePlaylistComponent},
-  {path: 'list-playlist', component: ListPlaylistComponent},
-  {path: 'my-playlist/:id', component: PlaylistComponent},
+  {path: 'create-playlist', component: CreatePlaylistComponent, canActivate: [AuthGuard]},
+  {path: 'list-playlist', component: ListPlaylistComponent, canActivate: [AuthGuard]},
+  {path: 'my-playlist/:id', component: PlaylistComponent, canActivate: [AuthGuard]},
   {path: 'menu-left', component: MenuLeftComponent},
-  {path: 'auth/dashboard', component: DashboardComponent},
-  {path: 'auth/updateuser', component: UpdateInforComponent},
-  {path: 'auth/changepass', component: ChangePassComponent},
+  {path: 'auth/dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
+  {path: 'auth/updateuser', component: UpdateInforComponent, canActivate: [AuthGuard]},
+  {path: 'auth/changepass', component: ChangePassComponent, canActivate: [AuthGuard]},
   {path: '', redirectTo: 'home', pathMatch: 'full'}
 
 ];
