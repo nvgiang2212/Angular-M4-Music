@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./not-guard.component.scss']
 })
 export class NotGuardComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit() {
