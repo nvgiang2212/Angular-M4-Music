@@ -15,9 +15,13 @@ import {MenuLeftComponent} from './component/layout/menu-left/menu-left.componen
 import {DashboardComponent} from './component/userManager/dashboard/dashboard.component';
 import {UpdateInforComponent} from "./component/userManager/update-infor/update-infor.component";
 import {ChangePassComponent} from "./component/userManager/change-pass/change-pass.component";
-import {SearchComponent} from "./component/search/search.component";
 import {UpdatePlaylistComponent} from "./component/playlistManager/update-playlist/update-playlist.component";
 import {AddsongComponent} from "./component/playlistManager/addsong/addsong.component";
+import {AuthGuard} from "./service/userManager/guard/auth.guard";
+import {CreateSingerComponent} from "./component/singerManager/create-singer/create-singer.component";
+import {DetailSingerComponent} from "./component/singerManager/detail-singer/detail-singer.component";
+import {ListSingerComponent} from "./component/singerManager/list-singer/list-singer.component";
+import {NotGuardComponent} from "./component/layout/not-guard/not-guard.component";
 
 
 
@@ -26,7 +30,7 @@ const routes: Routes = [
   {path: 'my-profile', component: UserComponent, canActivate: [AuthGuard]},
   {path: 'auth/login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'home/song/play', component: DetailSongComponent, canActivate: [AuthGuard]},
+  {path: 'home/song/play/:id', component: DetailSongComponent},
   {path: 'create-song', component: CreateSongComponent, canActivate: [AuthGuard]},
   {path: 'list-song', component: ListSongComponent, canActivate: [AuthGuard]},
   {path: 'about-us', component: AboutUsComponent},
@@ -39,8 +43,8 @@ const routes: Routes = [
   {path: 'auth/updateuser', component: UpdateInforComponent},
   {path: 'auth/changepass', component: ChangePassComponent},
   {path: 'add-song/:id', component: AddsongComponent},
-  {path: 'search/{nameSong}', component: SearchComponent},
-  {path: '', redirectTo: 'home', pathMatch: 'full'}
+  // {path: 'search/{nameSong}', component: SearchComponent},
+  // {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'create-playlist', component: CreatePlaylistComponent, canActivate: [AuthGuard]},
   {path: 'list-playlist', component: ListPlaylistComponent, canActivate: [AuthGuard]},
   {path: 'my-playlist/:id', component: PlaylistComponent, canActivate: [AuthGuard]},

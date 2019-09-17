@@ -24,9 +24,6 @@ export class ListPlaylistComponent implements OnInit {
       });
   }
 
-  editSong(id: number) {
-  }
-
   deleteSong(id: number) {
     this.songplaylist
       .deletePlayList(id)
