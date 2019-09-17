@@ -2,13 +2,10 @@
 <hr>
 
 <div class="container">
-  <div class="row">
+  <div class="row" *ngIf="singers">
     <div class="col-3">
       <div class="text-center">
-        <img src="./assets/img/bg-img/b3.jpg" alt="" class="avatar">
-      </div>
-      <div class="mt-2">
-        <p style="text-align: center">??? lượt Follow</p>
+        <img [src]=singers.singerAvatar alt="" class="avatar">
       </div>
       <div class="offset-4 mt-5">
         <a href="#" class="btn btn-outline-info">Follow</a>
@@ -27,50 +24,21 @@
 
           <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
             <div class="card-body">
-              singerName
+              {{singers.nameSinger}}
             </div>
           </div>
         </div>
-        <div class="card">
-          <div class="card-header" id="headingTwo">
-            <h2 class="mb-0">
-              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                Ngày Sinh Của Ca Sĩ
-              </button>
-            </h2>
-          </div>
-          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-            <div class="card-body">
-              singerBirthday
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header" id="headingThree">
-            <h2 class="mb-0">
-              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                Quốc Gia
-              </button>
-            </h2>
-          </div>
-          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-            <div class="card-body">
-              singerNation
-            </div>
-          </div>
-        </div>
-
         <div class="card">
           <div class="card-header" id="headingFour">
             <h2 class="mb-0">
               <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                Các Thông Tin Khác
+                Information
               </button>
             </h2>
           </div>
           <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
             <div class="card-body">
-              description
+              {{singers.information}}
             </div>
           </div>
         </div>
@@ -84,45 +52,13 @@
 <div class="container">
   <h3>Bài Hát <i class="fas fa-angle-right"></i></h3>
   <hr>
-  <div class="row">
-    <div class="col">
-      <div class="text-center">
-        <img src="./assets/img/bg-img/b1.jpg" alt="" class="avatar-music">
+  <div class="row" *ngIf="singers">
+    <div class="col" *ngFor="let songs of singers.songs">
+      <div class="text-center" [routerLink]="['/home/song/play',songs.id]" >
+        <img [src]=songs.avatarUrl alt="" class="avatar-music">
       </div>
       <div class="mt-2 text-center">
-        <a routerLink="#">Name-Song</a>
-      </div>
-    </div>
-    <div class="col">
-      <div class="text-center">
-        <img src="./assets/img/bg-img/b2.jpg" alt="" class="avatar-music">
-      </div>
-      <div class="mt-2 text-center">
-        <a routerLink="#">Name-Song</a>
-      </div>
-    </div>
-    <div class="col">
-      <div class="text-center">
-        <img src="./assets/img/bg-img/b3.jpg" alt="" class="avatar-music">
-      </div>
-      <div class="mt-2 text-center">
-        <a routerLink="#">Name-Song</a>
-      </div>
-    </div>
-    <div class="col">
-      <div class="text-center">
-        <img src="./assets/img/bg-img/b4.jpg" alt="" class="avatar-music">
-      </div>
-      <div class="mt-2 text-center">
-        <a routerLink="#">Name-Song</a>
-      </div>
-    </div>
-    <div class="col">
-      <div class="text-center">
-        <img src="./assets/img/bg-img/b1.jpg" alt="" class="avatar-music">
-      </div>
-      <div class="mt-2 text-center">
-        <a routerLink="#">Name-Song</a>
+        <a routerLink="#">{{songs.nameSong}}</a>
       </div>
     </div>
   </div>
