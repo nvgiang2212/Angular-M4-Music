@@ -31,4 +31,8 @@ export class SingerManagerService {
   createSinger(singer: Partial<SingerInfo>): Observable<SingerInfo> {
     return this.http.post<SingerInfo>(this.API_CREATE_SINGER, singer);
   }
+
+  updateSinger(singer: SingerInfo): Observable<SingerInfo> {
+    return this.http.put<SingerInfo>(`${this.API_PUT_SINGER}/${singer.id}`, singer);
+  }
 }
