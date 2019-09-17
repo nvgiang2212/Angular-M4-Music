@@ -9,8 +9,19 @@ export class Song {
   lyrics: string;
   likeSong: number;
   listenSong: number;
-  // tslint:disable-next-line:max-line-length
-  constructor(id: number, avatarUrl: string, nameSong: string, singer: string, mp3Url: string, describes: string, category: string, lyrics: string, likeSong: number, listenSong: number) {
+
+  constructor(
+    id: number,
+    avatarUrl: string,
+    nameSong: string,
+    singer: string,
+    mp3Url: string,
+    describes: string,
+    category: string,
+    lyrics: string,
+    likeSong: number,
+    listenSong: number
+  ) {
     this.id = id;
     this.avatarUrl = avatarUrl;
     this.nameSong = nameSong;
