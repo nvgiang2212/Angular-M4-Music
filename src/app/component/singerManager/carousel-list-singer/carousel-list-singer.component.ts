@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-carousel-list-singer',
@@ -7,7 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarouselListSingerComponent implements OnInit {
 
-  constructor() { }
+  images = [1].map(() => `http://i3.ytimg.com/vi/AtBNDsPkq40/maxresdefault.jpg`);
+  images1 = [2].map(() => `http://i3.ytimg.com/vi/4uAXzzMVrPk/maxresdefault.jpg`);
+  images2 = [3].map(() => `http://i3.ytimg.com/vi/9cPJLlNwO-w/maxresdefault.jpg`);
+
+  constructor() {
+  }
 
   ngOnInit() {
   }
