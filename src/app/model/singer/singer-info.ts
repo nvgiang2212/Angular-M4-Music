@@ -4,13 +4,13 @@ export class SingerInfo {
   id: number;
   singerName: string;
   singerAvatar: string;
-  singerBirthday: number;
+  singerBirthday: string;
   singerNation: string;
   description: string;
   songs: Song[];
 
   // tslint:disable-next-line:max-line-length
-  constructor(id: number, singerName: string, singerAvatar: string, singerBirthday: number, singerNation: string, description: string, songs: Song[]) {
+  constructor(id: number, singerName: string, singerAvatar: string, singerBirthday: string, singerNation: string, description: string, songs: Song[]) {
     this.id = id;
     this.singerName = singerName;
     this.singerAvatar = singerAvatar;
