@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-detail-singer',
@@ -6,8 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./detail-singer.component.scss']
 })
 export class DetailSingerComponent implements OnInit {
+  title = 'Chi Tiết Ca Sĩ';
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
