@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./create-singer.component.scss']
 })
 export class CreateSingerComponent implements OnInit {
-
+  title = 'Thêm Ca Sĩ';
   constructor() { }
 
   ngOnInit() {
