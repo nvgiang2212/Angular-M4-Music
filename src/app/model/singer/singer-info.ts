@@ -5,6 +5,7 @@ export class SingerInfo {
   id: number;
   nameSinger: string;
   singerAvatar: string;
+  information: string;
   users: SignUpInfo;
   songs: Song[];
 }

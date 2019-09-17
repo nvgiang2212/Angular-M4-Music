@@ -25,9 +25,10 @@
               </div>
             </div>
             <h4 [routerLink]="['/home/song/play',song.id]" class="font-weight-bold mb-3" style="font-size: 80%">
-              <strong>{{song.nameSong}}</strong></h4>
-            <p>Ca sỹ - <a class="font-weight-bold">{{song.singer}}</a></p>
-            <p>Thể loại - <a class="font-weight-bold">{{song.category}}</a></p>
+              <strong>{{song.nameSong}}</strong>
+            </h4>
+            <p style="font-size: 70%">Ca sỹ - <a class="font-weight-bold">{{song.singer}}</a></p>
+            <p style="font-size: 70%">Thể loại - <a class="font-weight-bold">{{song.category}}</a></p>
           </div>
 
         </div>
@@ -56,8 +57,8 @@
           </div>
           <h4 [routerLink]="['/home/song/play',listenSongs.id]" class="font-weight-bold mb-3" style="font-size: 80%">
             <strong>{{listenSongs.nameSong}}</strong></h4>
-          <p>Ca sỹ - <a class="font-weight-bold">{{listenSongs.singer}}</a></p>
-          <p>Thể loại - <a class="font-weight-bold">{{listenSongs.category}}</a></p>
+          <p style="font-size: 70%">Ca sỹ - <a class="font-weight-bold">{{listenSongs.singer}}</a></p>
+          <p style="font-size: 70%">Thể loại - <a class="font-weight-bold">{{listenSongs.category}}</a></p>
           <p>Lượt Nghe- <a class="font-weight-bold">{{listenSongs.listenSong}}</a></p>
         </div>
 
@@ -83,9 +84,9 @@
           </div>
           <h4 [routerLink]="['/home/song/play',songLike.id]" class="font-weight-bold mb-3" style="font-size: 80%">
             <strong>{{songLike.nameSong}}</strong></h4>
-          <p>Ca sỹ - <a class="font-weight-bold">{{songLike.singer}}</a></p>
-          <p>Thể loại - <a class="font-weight-bold">{{songLike.category}}</a></p>
-          <p>Like - <a class="font-weight-bold">{{songLike.likeSong}}</a></p>
+          <p style="font-size: 70%">Ca sỹ - <a class="font-weight-bold">{{songLike.singer}}</a></p>
+          <p style="font-size: 70%">Thể loại - <a class="font-weight-bold">{{songLike.category}}</a></p>
+          <p><i class="fas fa-thumbs-up"></i><a class="font-weight-bold"> {{songLike.likeSong}}</a></p>
         </div>
 
       </div>
