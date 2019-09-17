@@ -40,6 +40,7 @@ import { NotGuardComponent } from './component/layout/not-guard/not-guard.compon
 import { ListSingerComponent } from './component/singerManager/list-singer/list-singer.component';
 import { DetailSingerComponent } from './component/singerManager/detail-singer/detail-singer.component';
 import { CreateSingerComponent } from './component/singerManager/create-singer/create-singer.component';
+import { CarouselListSingerComponent } from './component/singerManager/carousel-list-singer/carousel-list-singer.component';
 
 
 @NgModule({
@@ -70,6 +71,7 @@ import { CreateSingerComponent } from './component/singerManager/create-singer/c
     ListSingerComponent,
     DetailSingerComponent,
     CreateSingerComponent,
+    CarouselListSingerComponent,
   ],
   imports: [
     BrowserModule,
