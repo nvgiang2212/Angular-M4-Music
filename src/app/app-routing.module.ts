@@ -17,6 +17,9 @@ import {UpdateInforComponent} from './component/userManager/update-infor/update-
 import {ChangePassComponent} from './component/userManager/change-pass/change-pass.component';
 import {AuthGuard} from './service/userManager/guard/auth.guard';
 import {NotGuardComponent} from './component/layout/not-guard/not-guard.component';
+import {CreateSingerComponent} from './component/singerManager/create-singer/create-singer.component';
+import {DetailSingerComponent} from './component/singerManager/detail-singer/detail-singer.component';
+import {ListSingerComponent} from './component/singerManager/list-singer/list-singer.component';
 
 
 
@@ -37,6 +40,9 @@ const routes: Routes = [
   {path: 'auth/dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
   {path: 'auth/updateuser', component: UpdateInforComponent, canActivate: [AuthGuard]},
   {path: 'auth/changepass', component: ChangePassComponent, canActivate: [AuthGuard]},
+  {path: 'create-singer', component: CreateSingerComponent, canActivate: [AuthGuard]},
+  {path: 'detail-singer', component: DetailSingerComponent},
+  {path: 'list-singer', component: ListSingerComponent, canActivate: [AuthGuard]},
   {path: 'error404', component: NotGuardComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'}
 
