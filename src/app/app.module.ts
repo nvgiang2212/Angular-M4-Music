@@ -36,6 +36,7 @@ import { ChangePassComponent } from './component/userManager/change-pass/change-
 import { SearchComponent } from './component/search/search.component';
 import { AllListSongComponent } from './component/songManager/all-list-song/all-list-song.component';
 import { UpdatePlaylistComponent } from './component/playlistManager/update-playlist/update-playlist.component';
+import { AddsongComponent } from './component/playlistManager/addsong/addsong.component';
 
 
 @NgModule({
@@ -64,6 +65,7 @@ import { UpdatePlaylistComponent } from './component/playlistManager/update-play
     SearchComponent,
     AllListSongComponent,
     UpdatePlaylistComponent,
+    AddsongComponent,
   ],
   imports: [
     BrowserModule,

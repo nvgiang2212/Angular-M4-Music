@@ -17,6 +17,7 @@ import {UpdateInforComponent} from "./component/userManager/update-infor/update-
 import {ChangePassComponent} from "./component/userManager/change-pass/change-pass.component";
 import {SearchComponent} from "./component/search/search.component";
 import {UpdatePlaylistComponent} from "./component/playlistManager/update-playlist/update-playlist.component";
+import {AddsongComponent} from "./component/playlistManager/addsong/addsong.component";
 
 
 
@@ -37,6 +38,7 @@ const routes: Routes = [
   {path: 'auth/dashboard', component: DashboardComponent},
   {path: 'auth/updateuser', component: UpdateInforComponent},
   {path: 'auth/changepass', component: ChangePassComponent},
+  {path: 'add-song/:id', component: AddsongComponent},
   {path: 'search/{nameSong}', component: SearchComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'}
 
