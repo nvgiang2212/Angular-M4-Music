@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {Song} from "../../../model/song/song";
-import {SongService} from "../../../service/song/song.service";
+import {Component, OnInit} from '@angular/core';
+import {Song} from '../../../model/song/song';
+import {SongService} from '../../../service/song/song.service';
 
 @Component({
   selector: 'app-list-song',
@@ -9,8 +9,12 @@ import {SongService} from "../../../service/song/song.service";
 })
 export class ListSongComponent implements OnInit {
   songList: Song[] = [];
-  constructor(private songService: SongService) { }
   delete: Song;
+  title = 'Danh Sách Bài Hát';
+
+  constructor(private songService: SongService) {
+  }
+
   ngOnInit() {
     // const userId = sessionStorage.getItem('AuthUserId');
     this.songService.getAllSongUserId()
@@ -28,8 +32,11 @@ export class ListSongComponent implements OnInit {
       .subscribe(
         data => {
           this.delete = data;
-          window.location.reload(); },
-        error => {this.delete = null; }
+          window.location.reload();
+        },
+        error => {
+          this.delete = null;
+        }
       );
   }
 }

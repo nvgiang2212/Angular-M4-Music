@@ -10,6 +10,7 @@ import {PlaylistInfor} from "../../../model/playlist/playlist-Infor";
   styleUrls: ['./playlist.component.scss']
 })
 export class PlaylistComponent implements OnInit {
+  title = 'PLaylist Của Tôi';
 
   playlist: PlaylistInfor;
 

@@ -37,6 +37,14 @@ import { SearchComponent } from './component/search/search.component';
 import { AllListSongComponent } from './component/songManager/all-list-song/all-list-song.component';
 import { UpdatePlaylistComponent } from './component/playlistManager/update-playlist/update-playlist.component';
 import { AddsongComponent } from './component/playlistManager/addsong/addsong.component';
+import { TitlePageComponent } from './component/layout/title-page/title-page.component';
+import {AuthGuard} from './service/userManager/guard/auth.guard';
+import {AuthService} from './service/userManager/auth/auth.service';
+import { NotGuardComponent } from './component/layout/not-guard/not-guard.component';
+import { ListSingerComponent } from './component/singerManager/list-singer/list-singer.component';
+import { DetailSingerComponent } from './component/singerManager/detail-singer/detail-singer.component';
+import { CreateSingerComponent } from './component/singerManager/create-singer/create-singer.component';
+import { CarouselListSingerComponent } from './component/singerManager/carousel-list-singer/carousel-list-singer.component';
 
 
 @NgModule({
@@ -59,6 +67,7 @@ import { AddsongComponent } from './component/playlistManager/addsong/addsong.co
     ListPlaylistComponent,
     PlaylistComponent,
     MenuLeftComponent,
+    TitlePageComponent,
     DashboardComponent,
     UpdateInforComponent,
     ChangePassComponent,
@@ -66,6 +75,11 @@ import { AddsongComponent } from './component/playlistManager/addsong/addsong.co
     AllListSongComponent,
     UpdatePlaylistComponent,
     AddsongComponent,
+    NotGuardComponent,
+    ListSingerComponent,
+    DetailSingerComponent,
+    CreateSingerComponent,
+    CarouselListSingerComponent,
   ],
   imports: [
     BrowserModule,
@@ -80,7 +94,7 @@ import { AddsongComponent } from './component/playlistManager/addsong/addsong.co
     NgbPaginationModule,
     NgbAlertModule,
   ],
-  providers: [httpInterceptorProviders],
+  providers: [httpInterceptorProviders, AuthGuard, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

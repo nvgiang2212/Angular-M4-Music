@@ -13,6 +13,7 @@ import {NgbModal, NgbModalConfig} from '@ng-bootstrap/ng-bootstrap';
 })
 
 export class DetailSongComponent implements OnInit {
+  title = 'Chi Tiết Bài Hát';
   song: Song;
   songInfor: Song[] = [];
   likeCounter = 0;

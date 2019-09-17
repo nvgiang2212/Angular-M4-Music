@@ -16,6 +16,7 @@
       <!--Vi du ve trang chi tiet bai hat-->
 <!--      <a routerLink="home/song/play/:id" class="nav-item nav-link">Detail-Song</a>-->
       <!---->
+      <a routerLink="list-singer" class="nav-item nav-link">Ca Sĩ</a>
       <a routerLink="about-us" class="nav-item nav-link">Liên Hệ</a>
       <div class="nav-item dropdown">
         <a href="#" class="nav-link dropdown-toggle btn btn-outline-warning"
@@ -25,7 +26,7 @@
           <a routerLink="list-playlist" class="dropdown-item">Danh Sách PlayList</a>
           <a routerLink="create-song" class="dropdown-item">Thêm Bài Hát</a>
           <a routerLink="create-playlist" class="dropdown-item">Thêm PlayList</a>
-<!--          <a routerLink="add-song" class="dropdown-item">Thêm Song vào Playlist</a>-->
+          <a routerLink="create-singer" class="dropdown-item">Thêm Ca Sĩ</a>
         </div>
       </div>
     </div>
@@ -34,7 +35,7 @@
          *ngIf="!authority">
         Đăng Nhập
       </a>
-      <a routerLink="signup" class="nav-item nav-link" *ngIf="!authority">
+      <a routerLink="register" class="nav-item nav-link" *ngIf="!authority">
         Đăng Ký
       </a>
       <ul *ngIf="authority">

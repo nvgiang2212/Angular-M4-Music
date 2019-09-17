@@ -23,12 +23,12 @@ import {AddsongComponent} from "./component/playlistManager/addsong/addsong.comp
 
 const routes: Routes = [
   {path: 'home', component: ContentComponent},
-  {path: 'my-profile', component: UserComponent},
+  {path: 'my-profile', component: UserComponent, canActivate: [AuthGuard]},
   {path: 'auth/login', component: LoginComponent},
-  {path: 'signup', component: RegisterComponent},
-  {path: 'home/song/play/:id', component: DetailSongComponent},
-  {path: 'create-song', component: CreateSongComponent},
-  {path: 'list-song', component: ListSongComponent},
+  {path: 'register', component: RegisterComponent},
+  {path: 'home/song/play', component: DetailSongComponent, canActivate: [AuthGuard]},
+  {path: 'create-song', component: CreateSongComponent, canActivate: [AuthGuard]},
+  {path: 'list-song', component: ListSongComponent, canActivate: [AuthGuard]},
   {path: 'about-us', component: AboutUsComponent},
   {path: 'create-playlist', component: CreatePlaylistComponent},
   {path: 'list-playlist', component: ListPlaylistComponent},
@@ -41,6 +41,18 @@ const routes: Routes = [
   {path: 'add-song/:id', component: AddsongComponent},
   {path: 'search/{nameSong}', component: SearchComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'}
+  {path: 'create-playlist', component: CreatePlaylistComponent, canActivate: [AuthGuard]},
+  {path: 'list-playlist', component: ListPlaylistComponent, canActivate: [AuthGuard]},
+  {path: 'my-playlist/:id', component: PlaylistComponent, canActivate: [AuthGuard]},
+  {path: 'menu-left', component: MenuLeftComponent, canActivate: [AuthGuard]},
+  {path: 'auth/dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
+  {path: 'auth/updateuser', component: UpdateInforComponent, canActivate: [AuthGuard]},
+  {path: 'auth/changepass', component: ChangePassComponent, canActivate: [AuthGuard]},
+  {path: 'create-singer', component: CreateSingerComponent, canActivate: [AuthGuard]},
+  {path: 'detail-singer', component: DetailSingerComponent},
+  {path: 'list-singer', component: ListSingerComponent},
+  {path: 'error404', component: NotGuardComponent},
+  {path: '', redirectTo: '/home', pathMatch: 'full'}
 
 ];
 

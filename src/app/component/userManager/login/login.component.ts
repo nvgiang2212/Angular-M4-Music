@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AuthLoginInfo} from '../../../model/userManager/Login-Infor';
 import {TokenStorageService} from '../../../service/userManager/token/token-storage.service';
 import {AuthService} from '../../../service/userManager/auth/auth.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,6 +10,7 @@ import {AuthService} from '../../../service/userManager/auth/auth.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  title = 'Đăng Nhập';
   form: any = {};
   isLoggedIn = false;
   isLoginFailed = false;
@@ -16,7 +18,11 @@ export class LoginComponent implements OnInit {
   roles: string[] = [];
   private loginInfo: AuthLoginInfo;
 
-  constructor(private authService: AuthService, private tokenStorage: TokenStorageService) { }
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private tokenStorage: TokenStorageService
+  ) { }
 
   ngOnInit() {
     if (this.tokenStorage.getToken()) {
@@ -41,18 +47,22 @@ export class LoginComponent implements OnInit {
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getAuthorities();
+        alert('Đăng Nhập Thành Công');
         this.reloadPage();
       },
       error => {
         console.log(error);
         this.errorMessage = error.error.message;
         this.isLoginFailed = true;
+        alert('Đăng Nhập Thất Bại ! Mời Đăng Nhập lại...');
+        this.reloadPage();
       }
     );
   }
 
   reloadPage() {
     window.location.reload();
+    this.router.navigate(['/home']);
   }
 
 }
