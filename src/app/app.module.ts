@@ -37,6 +37,9 @@ import { TitlePageComponent } from './component/layout/title-page/title-page.com
 import {AuthGuard} from './service/userManager/guard/auth.guard';
 import {AuthService} from './service/userManager/auth/auth.service';
 import { NotGuardComponent } from './component/layout/not-guard/not-guard.component';
+import { ListSingerComponent } from './component/singerManager/list-singer/list-singer.component';
+import { DetailSingerComponent } from './component/singerManager/detail-singer/detail-singer.component';
+import { CreateSingerComponent } from './component/singerManager/create-singer/create-singer.component';
 
 
 @NgModule({
@@ -64,6 +67,9 @@ import { NotGuardComponent } from './component/layout/not-guard/not-guard.compon
     UpdateInforComponent,
     ChangePassComponent,
     NotGuardComponent,
+    ListSingerComponent,
+    DetailSingerComponent,
+    CreateSingerComponent,
   ],
   imports: [
     BrowserModule,
