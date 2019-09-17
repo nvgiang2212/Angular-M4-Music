@@ -40,7 +40,7 @@ export class SingerManagerService {
     return this.http.delete<SingerInfo>(`${this.API_DELETE_SINGER}/${id}`);
   }
 
-  getAllSongUserId(): Observable<any> {
+  getAllSingerUserId(): Observable<any> {
     return this.http.get<any>(this.API_GET_SINGER_BY_USER);
   }
 }
