@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {SingerInfo} from "../../../model/singer/singer-info";
+import {SingerManagerService} from "../../../service/singerManager/singer-manager.service";
 
 @Component({
   selector: 'app-list-singer',
@@ -6,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-singer.component.scss']
 })
 export class ListSingerComponent implements OnInit {
-  constructor() { }
+  singerList: SingerInfo[] = [];
+
+  constructor(private singerService: SingerManagerService) {
+  }
 
   ngOnInit() {
+    this.singerService.getSinger().subscribe(next => {
+      this.singerList = next;
+      console.log(next);
+    }, error => {
+      console.log(error);
+    });
   }
 
 }
