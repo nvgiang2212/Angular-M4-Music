@@ -35,4 +35,8 @@ export class SingerManagerService {
   updateSinger(singer: SingerInfo): Observable<SingerInfo> {
     return this.http.put<SingerInfo>(`${this.API_PUT_SINGER}/${singer.id}`, singer);
   }
+
+  deleteSinger(id: number): Observable<SingerInfo> {
+    return this.http.delete<SingerInfo>(`${this.API_DELETE_SINGER}/${id}`);
+  }
 }
