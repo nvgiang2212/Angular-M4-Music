@@ -2,15 +2,22 @@
   <app-carousel></app-carousel>
 </div>
 
-<div class="container">
+<div class="container mt-3">
   <div class="card">
     <div class="card-body">
       <!--      NEW SONG-->
       <div>
-        <app-search (press)="update($event)"></app-search>
+        <div class="mt-2">
+          <app-search (press)="update($event)"></app-search>
+        </div>
         <hr>
-        <h3 routerLink="#">Bài Hát Mới Nhất</h3>
-        <div class="row">
+        <div>
+          <h3 routerLink="#" class="mb-5 mt-2" style="color: deeppink; font-weight: bold">
+            <img src="./assets/img/bg-img/new.jpg" style="width: 7%">
+            Bài Hát Mới Nhất
+          </h3>
+        </div>
+        <div class="row mt-3">
 
           <div class="col-2" *ngFor="let song of songList">
             <div [routerLink]="['/home/song/play',song.id]"
@@ -23,27 +30,29 @@
                 <i class="fas fa-play-circle fa-3x"></i>
               </div>
             </div>
-            <h4 [routerLink]="['/home/song/play',song.id]" class="font-weight-bold mb-3" style="font-size: 80%">
+            <a [routerLink]="['/home/song/play',song.id]" class="font-weight-bold mb-3" style="font-size: 14px">
               <strong>{{song.nameSong}}</strong>
-            </h4>
-            <p style="font-size: 70%">Ca sĩ - <a class="font-weight-bold">{{song.singer}}</a></p>
+            </a>
+            <p style="font-size: 70%" class="mt-3">Ca sĩ - <a class="font-weight-bold">{{song.singer}}</a></p>
             <p style="font-size: 70%">Thể loại - <a class="font-weight-bold">{{song.category}}</a></p>
           </div>
 
         </div>
       </div>
 
-      <br><br>
       <hr>
       <!--TOP SONG-->
 
-      <div>
-        <h3 routerLink="#">Top Bài Hát <i class="fas fa-chevron-right fas-1g" style="font-size: 80%"></i></h3>
+      <div class="mb-5">
+        <h3 routerLink="#" style="color: deeppink; font-weight: bold">
+          <img src="./assets/img/bg-img/top.png" alt="" style="width: 5%">
+          Top Bài Hát
+        </h3>
       </div>
-      <br><br>
+
       <div class="row">
 
-        <div class="col-2" *ngFor="let listenSongs of listenSong">
+        <div class="col" *ngFor="let listenSongs of listenSong">
           <div [routerLink]="['/home/song/play',listenSongs.id]"
                class="rounded mb-4 play portfolio-effect__item portfolio-item--eff1"
                style="width: 150px;height: 150px">
@@ -58,18 +67,21 @@
             <strong>{{listenSongs.nameSong}}</strong></h4>
           <p style="font-size: 70%">Ca sĩ - <a class="font-weight-bold">{{listenSongs.singer}}</a></p>
           <p style="font-size: 70%">Thể loại - <a class="font-weight-bold">{{listenSongs.category}}</a></p>
-          <p class="text-center"><i class="fas fa-headphones-alt"></i>
+          <p class="text-center"><i class="fas fa-headphones-alt mr-2"></i>
             <a class="font-weight-bold">{{listenSongs.listenSong}}</a>
           </p>
         </div>
-
       </div>
       <hr>
+
       <!--LIKE SONG-->
-      <div class="col-md-4">
-        <h3 routerLink="#">Bài Hát Nhiều Lượt Like Nhất <i class="fas fa-chevron-right fas-1g" style="font-size: 80%"></i></h3>
+      <div class="mb-5">
+        <h3 routerLink="#" style="color: deeppink; font-weight: bold">
+          <img src="./assets/img/bg-img/like1.png" alt="" style="width: 6%">
+          Bài Hát Nhiều Lượt Like Nhất
+        </h3>
       </div>
-      <br><br>
+
       <div class="row">
 
         <div class="col-2" *ngFor="let songLike of listSongLike">
@@ -87,15 +99,48 @@
             <strong>{{songLike.nameSong}}</strong></h4>
           <p style="font-size: 70%">Ca sĩ - <a class="font-weight-bold">{{songLike.singer}}</a></p>
           <p style="font-size: 70%">Thể loại - <a class="font-weight-bold">{{songLike.category}}</a></p>
-          <p><i class="far fa-thumbs-up"></i><a class="font-weight-bold"> {{songLike.likeSong}}</a></p>
+          <p class="text-center"><i class="fas fa-thumbs-up mr-2" style="color: #0080FF"></i>
+            <a class="font-weight-bold">{{songLike.likeSong}}</a>
+          </p>
+        </div>
+
+      </div>
+      <hr>
+
+      <div class="mb-5" >
+        <h3 routerLink="/list-singer" style="color: deeppink; font-weight: bold">
+          <img src="./assets/img/bg-img/singer.gif" alt="" style="width: 8%">
+          Ca Sĩ
+        </h3>
+      </div>
+
+      <div class="row">
+
+        <div class="col-2" *ngFor="let singer of listSingers">
+          <div [routerLink]="['/home/song/play',singer.id]"
+               class="rounded mb-4 play portfolio-effect__item portfolio-item--eff1"
+               style="width: 150px;height: 150px">
+            <img class="img-fluid portfolio-item__image"
+                 src="{{singer.singerAvatar}}"
+                 alt="{{singer.nameSinger}}">
+            <div class="portfolio-item__info">
+              <i class="fas fa-play-circle fa-3x"></i>
+            </div>
+          </div>
+          <h4 [routerLink]="['/detail-singer',singer.id]" class="font-weight-bold mb-3" style="font-size: 80%">
+            <strong>{{singer.nameSinger}}</strong></h4>
+          <p style="font-size: 70%">Ca sĩ - <a class="font-weight-bold">{{singer.nameSinger}}</a></p>
+          <p style="font-size: 70%">Thể loại - <a class="font-weight-bold">{{singer.nameSinger}}</a></p>
         </div>
 
       </div>
       <hr>
 
       <!-- SINGER -->
-      <div class="col-md-4">
-        <h3 routerLink="/list-singer">Ca Sĩ <i class="fas fa-chevron-right fas-1g" style="font-size: 80%"></i></h3>
+      <div class="col">
+        <h3 routerLink="/list-singer" style="color: deeppink; font-weight: bold">
+          Các Ca Sĩ Liên Quan<i class="fas fa-chevron-right fas-1g ml-2" style="font-size: 80%"></i>
+        </h3>
       </div>
       <br><br>
       <div class="row">

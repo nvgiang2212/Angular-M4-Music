@@ -1,4 +1,5 @@
 <app-title-page [content]="title"></app-title-page>
+
 <div class="container">
   <div class="container-fluid row">
     <div class="col-3">
@@ -7,29 +8,25 @@
     <div class="col-9" style="margin-bottom: 10px">
       <p>You can see <code>Danh sách Playlist</code>, listen to music and edit or delete playlist.</p>
       <!-- Default input -->
-      <table class="table table-striped">
-        <thead>
+      <table class="table">
+        <thead class="thead-dark">
         <tr>
-          <th scope="col" class="col-md-2"><i class="fas fa-list"></i></th>
-          <th scope="col" class="col-md-8">Name Playlist</th>
-          <th scope="col" class="col-md-2">Feature</th>
+          <th scope="col"><i class="fas fa-list"></i></th>
+          <th scope="col">Tên Playlist</th>
+          <th scope="col">ID</th>
+          <th scope="col">Chức Năng</th>
         </tr>
         </thead>
         <tbody>
         <tr *ngFor="let playlist of playlistInfors">
-          <th scope="row">{{ playlist.id }}</th>
-
+          <th scope="row">#</th>
           <td><a class="namesong" [routerLink]="['/my-playlist/',playlist.id]">{{ playlist.playlistName }}</a></td>
+          <td>{{playlist.id}}</td>
           <td>
-            <button class="btn btn-danger" [routerLink]="['/update-playlist/', playlist.id]" >Sửa</button>
+            <button class="btn btn-danger mr-1" [routerLink]="['/update-playlist/', playlist.id]">Sửa</button>
+            <button class="btn btn-danger mr-1" (click)="deleteSong(playlist.id)">Xóa</button>
+            <button class="btn btn-danger" [routerLink]="['/add-song/',playlist.id]">Add Song</button>
           </td>
-          <td>
-            <button class="btn btn-danger" (click)="deleteSong(playlist.id)">Xóa</button>
-          </td>
-          <td>
-            <button class="btn btn-danger" [routerLink]="['/add-song/',playlist.id]" >Thêm Song</button>
-          </td>
-
         </tr>
         </tbody>
       </table>

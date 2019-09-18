@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {TokenStorageService} from '../../../service/userManager/token/token-storage.service';
 import {Song} from '../../../model/song/song';
 import {SongService} from '../../../service/song/song.service';
+import {SingerInfo} from "../../../model/singer/singer-info";
+import {SingerManagerService} from "../../../service/singerManager/singer-manager.service";
 
 
 @Component({
@@ -14,10 +16,12 @@ export class ContentComponent implements OnInit {
   listSongLike: Song[] = [];
   songList: Song[] = [];
   listenSong: Song[] = [];
+  listSingers: SingerInfo[] = [];
 
   constructor(
     private token: TokenStorageService,
-    private songService: SongService) {
+    private songService: SongService,
+    private singerManagerService: SingerManagerService) {
   }
 
   ngOnInit() {
@@ -47,6 +51,14 @@ export class ContentComponent implements OnInit {
     this.songService.getListenSong()
       .subscribe(next => {
         this.listenSong = next;
+        console.log(next);
+      }, error => {
+        console.log(error);
+      });
+
+    this.singerManagerService.getSinger()
+      .subscribe(next => {
+        this.listSingers = next;
         console.log(next);
       }, error => {
         console.log(error);

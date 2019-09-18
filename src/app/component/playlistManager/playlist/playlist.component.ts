@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
+import {PlaylistInfor} from "../../../model/playlist/playlist-Infor";
 import {PlaylistService} from "../../../service/playlistManager/playlist.service";
 import {ActivatedRoute} from "@angular/router";
-import {Song} from "../../../model/song/song";
-import {PlaylistInfor} from "../../../model/playlist/playlist-Infor";
+
 
 @Component({
   selector: 'app-playlist',
@@ -10,7 +10,7 @@ import {PlaylistInfor} from "../../../model/playlist/playlist-Infor";
   styleUrls: ['./playlist.component.scss']
 })
 export class PlaylistComponent implements OnInit {
-  title = 'PLaylist Của Tôi';
+  title = 'Danh Sách Bài Hát Trong PLaylist Của Tôi';
 
   playlist: PlaylistInfor;
 

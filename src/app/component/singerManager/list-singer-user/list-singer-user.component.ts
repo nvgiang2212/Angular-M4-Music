@@ -13,7 +13,7 @@ export class ListSingerUserComponent implements OnInit {
 
   listSinger: SingerInfo [] = [];
   delete: SingerInfo;
-  title = 'Danh Sách Ca Sĩ';
+  title = 'Danh Sách Ca Sĩ Của Tôi';
 
   constructor(private singerManagerService: SingerManagerService) {
   }

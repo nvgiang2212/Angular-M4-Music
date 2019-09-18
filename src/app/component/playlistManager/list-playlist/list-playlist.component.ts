@@ -10,7 +10,7 @@ import {PlaylistService} from "../../../service/playlistManager/playlist.service
 export class ListPlaylistComponent implements OnInit {
   playlistInfors: PlaylistInfor [] = [];
   delete: PlaylistInfor;
-  title = 'Danh sach playlist' ;
+  title = 'Danh Sách Playlist' ;
 
   constructor(private songplaylist: PlaylistService) {
   }
