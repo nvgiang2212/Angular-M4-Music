@@ -2,8 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {TokenStorageService} from '../../../service/userManager/token/token-storage.service';
 import {FormControl, FormGroup} from "@angular/forms";
-import {Song} from "../../../model/song/song";
-import {SongService} from "../../../service/song/song.service";
+import {Song} from '../../../model/song/song';
+import {SongService} from '../../../service/song/song.service';
+
 
 @Component({
   selector: 'app-header',
@@ -15,6 +16,7 @@ export class HeaderComponent implements OnInit {
   private roles: string[];
   protected authority: string;
   info: any;
+  songList: Song[] = [];
 
   constructor(
     private token: TokenStorageService,
@@ -47,5 +49,9 @@ export class HeaderComponent implements OnInit {
     this.token.signOut();
     window.location.reload();
     this.router.navigate(['/home']);
+  }
+
+  update(songs: Song[]) {
+    this.songList = songs;
   }
 }
