@@ -55,7 +55,7 @@ const routes: Routes = [
   {path: 'auth/updateuser', component: UpdateInforComponent, canActivate: [AuthGuard]},
   {path: 'auth/changepass', component: ChangePassComponent, canActivate: [AuthGuard]},
   {path: 'create-singer', component: CreateSingerComponent, canActivate: [AuthGuard]},
-  {path: 'detail-singer/:id', component: DetailSingerComponent},
+  {path: 'detail-singer', component: DetailSingerComponent},
   {path: 'list-singer', component: ListSingerComponent},
   {path: 'error404', component: NotGuardComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'}
