@@ -1,7 +1,8 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {SongService} from "../../service/song/song.service";
-import {Song} from "../../model/song/song";
-import {FormControl, FormGroup} from "@angular/forms";
+import {FormControl, FormGroup} from '@angular/forms';
+import {Song} from '../../../model/song/song';
+import {SongService} from '../../../service/song/song.service';
+
 
 @Component({
   selector: 'app-search',
