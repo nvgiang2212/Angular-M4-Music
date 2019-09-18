@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getAuthorities();
         alert('Đăng Nhập Thành Công');
-        this.reloadPage();
+        this.router.navigate(['/home']);
       },
       error => {
         console.log(error);
