@@ -8,15 +8,16 @@ import {UserService} from '../../../service/userManager/user/user.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  title = 'Danh sách';
+  title = 'Thông Tin Tài Khoản';
   userInfor: UpdateInfo;
   errorMessage: string;
   constructor(private userService: UserService) {
-    this.userInfor = {
-      id: 0,
-      name: '',
-      email: ''
-    };
+    // this.userInfor = {
+    //   id: 0,
+    //   name: '',
+    //   email: '',
+    //   avatarUrl: ''
+    // };
   }
 
   ngOnInit() {

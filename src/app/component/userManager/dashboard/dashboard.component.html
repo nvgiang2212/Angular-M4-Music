@@ -1,26 +1,34 @@
 <app-title-page [content]="title"></app-title-page>
 <div class="container">
-  <table class="table">
-    <thead class="thead-dark">
-    <tr>
-      <th scope="col"></th>
-      <th scope="col">Thông Tin Tài Khoản</th>
-      <th scope="col"></th>
-    </tr>
-    </thead>
+<!--  <table class="table" *ngIf="userInfor">-->
+<!--    <thead class="thead-dark">-->
+<!--    <tr>-->
+<!--      <th scope="col">avatar</th>-->
+<!--      <th scope="col">name</th>-->
+<!--      <th scope="col">email</th>-->
+<!--    </tr>-->
+<!--    </thead>-->
 
-    <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Name</td>
-      <td>{{userInfor.name}}</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Email</td>
-      <td>{{userInfor.email}}</td>
-    </tr>
-
-    </tbody>
-  </table>
+<!--    <tbody>-->
+<!--    <tr>-->
+<!--      <td><img [src]=userInfor.avatarUrl style="width: 40px; height: 40px"></td>-->
+<!--      <td>{{userInfor.name}}</td>-->
+<!--      <td>{{userInfor.email}}</td>-->
+<!--    </tr>-->
+<!--    </tbody>-->
+<!--  </table>-->
+  <div class="container mt-3" *ngIf="userInfor">
+    <div class="media border p-3">
+      <img [src]=userInfor.avatarUrl alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:250px;">
+      <div class="media-body">
+        <br>
+        <br>
+        <h4 class="text-primary">Name:  {{userInfor.name}}</h4>
+        <br>
+        <hr>
+        <br>
+        <h4 class="text-primary">Email:  {{userInfor.email}}</h4>
+      </div>
+    </div>
+  </div>
 </div>

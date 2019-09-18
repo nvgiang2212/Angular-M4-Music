@@ -24,7 +24,8 @@ export class UserComponent implements OnInit {
     this.userInfor = {
       id: 0,
       name: '',
-      email: ''
+      email: '',
+      avatarUrl: ''
     };
   }
 
