@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AbstractControl} from "@angular/forms";
 import {ChangePassword} from "../../../model/userManager/ChangePassword";
 import {AuthService} from "../../../service/userManager/auth/auth.service";
@@ -43,8 +43,14 @@ export class ChangePassComponent implements OnInit {
         data => {
           console.log(data);
           this.isChangePassed = true;
-          this.router.navigate(['/home']); },
-        error => {console.log(error); this.errorMessage = error.error.message; });
+          alert('Bạn đã thay đổi Mật Khẩu thành công');
+          this.router.navigate(['/home']);
+        },
+        error => {
+          console.log(error);
+          this.errorMessage = error.error.message,
+            alert('Bạn chưa thay đổi thành công');
+        });
   }
 
 }

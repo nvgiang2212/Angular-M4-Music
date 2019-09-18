@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
 import {SingerInfo} from "../../../model/singer/singer-info";
 import {Router} from "@angular/router";
@@ -43,7 +43,12 @@ export class CreateSingerComponent implements OnInit {
   createSinger() {
     console.log(this.singer);
     this.singerManagerService.createSinger(this.singer).subscribe(() => {
-      this.router.navigate(['/list-singer']);
-    }, error => console.log(error));
+        alert('Bạn đã thêm thành công Ca Sĩ');
+        this.router.navigate(['/list-singer']);
+      }, error => {
+        console.log(error),
+          alert('Bạn chưa thêm thành công');
+      }
+    );
   }
 }

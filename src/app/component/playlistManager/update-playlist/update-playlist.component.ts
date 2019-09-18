@@ -48,8 +48,12 @@ export class UpdatePlaylistComponent implements OnInit {
   updatePlaylist() {
     console.log(this.playlist);
     this.playlistService.updatePlayList(this.playlist).subscribe(next => {
+      alert('Bạn đã Sửa thành công Playlist');
       this.router.navigate(['/list-playlist']);
       console.log(next);
-    }, error => console.log(error));
+    }, error => {
+      console.log(error),
+        alert('Bạn chưa Sửa thành công');
+    });
   }
 }

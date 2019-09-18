@@ -51,8 +51,13 @@ export class CreateSongComponent implements OnInit {
   createSong() {
     console.log(this.song);
     this.service.createSong(this.song).subscribe(() => {
-      this.router.navigate(['/home']);
-    }, error => console.log(error));
+        alert('Bạn đã thêm thành công Bài Hát');
+        this.router.navigate(['/home']);
+      }, error => {
+        console.log(error),
+          alert('Bạn chưa thêm thành công');
+      }
+    );
   }
 
 }
