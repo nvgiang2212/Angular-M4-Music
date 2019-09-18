@@ -10,7 +10,7 @@
       <div>
         <app-search (press)="update($event)"></app-search>
         <hr>
-        <h3 routerLink="#">New Song</h3>
+        <h3 routerLink="#">Bài Hát Mới Nhất</h3>
         <div class="row">
 
           <div class="col-2" *ngFor="let song of songList">
@@ -27,7 +27,7 @@
             <h4 [routerLink]="['/home/song/play',song.id]" class="font-weight-bold mb-3" style="font-size: 80%">
               <strong>{{song.nameSong}}</strong>
             </h4>
-            <p style="font-size: 70%">Ca sỹ - <a class="font-weight-bold">{{song.singer}}</a></p>
+            <p style="font-size: 70%">Ca sĩ - <a class="font-weight-bold">{{song.singer}}</a></p>
             <p style="font-size: 70%">Thể loại - <a class="font-weight-bold">{{song.category}}</a></p>
           </div>
 
@@ -39,7 +39,7 @@
       <!--TOP SONG-->
 
       <div>
-        <h3 routerLink="#">Top Song <i class="fas fa-chevron-right fas-1g" style="font-size: 80%"></i></h3>
+        <h3 routerLink="#">Top Bài Hát <i class="fas fa-chevron-right fas-1g" style="font-size: 80%"></i></h3>
       </div>
       <br><br>
       <div class="row">
@@ -57,7 +57,7 @@
           </div>
           <h4 [routerLink]="['/home/song/play',listenSongs.id]" class="font-weight-bold mb-3" style="font-size: 80%">
             <strong>{{listenSongs.nameSong}}</strong></h4>
-          <p style="font-size: 70%">Ca sỹ - <a class="font-weight-bold">{{listenSongs.singer}}</a></p>
+          <p style="font-size: 70%">Ca sĩ - <a class="font-weight-bold">{{listenSongs.singer}}</a></p>
           <p style="font-size: 70%">Thể loại - <a class="font-weight-bold">{{listenSongs.category}}</a></p>
           <p>Lượt Nghe- <a class="font-weight-bold">{{listenSongs.listenSong}}</a></p>
         </div>
@@ -66,7 +66,7 @@
       <hr>
       <!--LIKE SONG-->
       <div class="col-md-4">
-        <h3 routerLink="#">Like Song <i class="fas fa-chevron-right fas-1g" style="font-size: 80%"></i></h3>
+        <h3 routerLink="#">Bài Hát Nhiều Lượt Like Nhất <i class="fas fa-chevron-right fas-1g" style="font-size: 80%"></i></h3>
       </div>
       <br><br>
       <div class="row">
@@ -84,7 +84,7 @@
           </div>
           <h4 [routerLink]="['/home/song/play',songLike.id]" class="font-weight-bold mb-3" style="font-size: 80%">
             <strong>{{songLike.nameSong}}</strong></h4>
-          <p style="font-size: 70%">Ca sỹ - <a class="font-weight-bold">{{songLike.singer}}</a></p>
+          <p style="font-size: 70%">Ca sĩ - <a class="font-weight-bold">{{songLike.singer}}</a></p>
           <p style="font-size: 70%">Thể loại - <a class="font-weight-bold">{{songLike.category}}</a></p>
           <p><i class="fas fa-thumbs-up"></i><a class="font-weight-bold"> {{songLike.likeSong}}</a></p>
         </div>
@@ -94,7 +94,7 @@
 
       <!-- SINGER -->
       <div class="col-md-4">
-        <h3 routerLink="/singer/song">Singer <i class="fas fa-chevron-right fas-1g" style="font-size: 80%"></i></h3>
+        <h3 routerLink="/list-singer">Ca Sĩ <i class="fas fa-chevron-right fas-1g" style="font-size: 80%"></i></h3>
       </div>
       <br><br>
       <div class="row">
