@@ -4,6 +4,8 @@ import {Song} from '../../../model/song/song';
 import {SongService} from '../../../service/song/song.service';
 import {SingerInfo} from "../../../model/singer/singer-info";
 import {SingerManagerService} from "../../../service/singerManager/singer-manager.service";
+import {PlaylistService} from "../../../service/playlistManager/playlist.service";
+import {PlaylistInfor} from "../../../model/playlist/playlist-Infor";
 
 
 @Component({
@@ -17,10 +19,12 @@ export class ContentComponent implements OnInit {
   songList: Song[] = [];
   listenSong: Song[] = [];
   listSingers: SingerInfo[] = [];
+  playlist: PlaylistInfor[] = [];
 
   constructor(
     private token: TokenStorageService,
     private songService: SongService,
+    private playlistService: PlaylistService,
     private singerManagerService: SingerManagerService) {
   }
 
@@ -59,6 +63,14 @@ export class ContentComponent implements OnInit {
     this.singerManagerService.getSinger()
       .subscribe(next => {
         this.listSingers = next;
+        console.log(next);
+      }, error => {
+        console.log(error);
+      });
+
+    this.playlistService.getPlayListAll()
+      .subscribe(next => {
+        this.playlist = next;
         console.log(next);
       }, error => {
         console.log(error);

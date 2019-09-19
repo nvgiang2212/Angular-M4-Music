@@ -11,7 +11,7 @@ import {SongService} from '../../../service/song/song.service';
 })
 export class SearchComponent implements OnInit {
   songs: Song[];
-  addresses: string[] = [];
+  name: string[] = [];
   searchForm: FormGroup;
   filteredSong: Song[];
   @Output()
@@ -20,7 +20,8 @@ export class SearchComponent implements OnInit {
 
   constructor(private songService: SongService) {
     this.searchForm = new FormGroup({
-      nameSong: new FormControl('')
+      nameSong: new FormControl(''),
+      // singer: new FormControl('')
     });
   }
 
@@ -28,8 +29,8 @@ export class SearchComponent implements OnInit {
     this.songService.getSong()
       .subscribe(next => {
         this.songs = next;
-        this.addresses = this.addresses.filter((value, i, self) => self.indexOf(value) === i);
-        console.log(this.addresses);
+        this.name = this.name.filter((value, i, self) => self.indexOf(value) === i);
+        console.log(this.name);
       });
   }
 
@@ -41,7 +42,6 @@ export class SearchComponent implements OnInit {
       if (!isEmptyForm) {
         if (form.nameSong) {
           this.filteredSong = this.filteredSong.filter((song => song.nameSong.includes(form.nameSong)));
-          // this.filteredSong = this.filteredSong.filter((song => song.singer === form.nameSong));
         }
       } else {
         this.filteredSong = this.songs;

@@ -47,6 +47,7 @@ import { CreateSingerComponent } from './component/singerManager/create-singer/c
 import { CarouselListSingerComponent } from './component/singerManager/carousel-list-singer/carousel-list-singer.component';
 import { ListSingerUserComponent } from './component/singerManager/list-singer-user/list-singer-user.component';
 import { SingeraddsongComponent } from './component/singerManager/singeraddsong/singeraddsong.component';
+import { UpdatesingerComponent } from './component/singerManager/updatesinger/updatesinger.component';
 
 
 @NgModule({
@@ -84,6 +85,7 @@ import { SingeraddsongComponent } from './component/singerManager/singeraddsong/
     CarouselListSingerComponent,
     ListSingerUserComponent,
     SingeraddsongComponent,
+    UpdatesingerComponent,
   ],
   imports: [
     BrowserModule,

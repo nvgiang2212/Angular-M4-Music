@@ -22,13 +22,19 @@ export class CreatePlaylistComponent implements OnInit {
               private router: Router,
               private playlistService: PlaylistService) {
     this.playlistForm = new FormGroup({
-      playlistName: new FormControl('')
+      playlistName: new FormControl(''),
+      avatarPlaylist: new FormControl('')
     });
     this.playlist = {
-      playlistName: ''
+      playlistName: '',
+      avatarPlaylist: ''
     };
   }
   ngOnInit() {
+  }
+
+  onAvatar($event: string) {
+    this.playlist.avatarPlaylist = $event;
   }
 
   createPlaylist() {
@@ -37,5 +43,4 @@ export class CreatePlaylistComponent implements OnInit {
       this.router.navigate(['/list-playlist']);
     }, error => console.log(error));
   }
-
 }

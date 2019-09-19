@@ -1,8 +1,10 @@
 <app-title-page [content]="title"></app-title-page>
 <hr>
 
-<div class="container">
-  <div class="row" *ngIf="singers">
+<div class="container" *ngIf="singers">
+  <a [routerLink]="['/add-song-singer/',singers.id]" class="btn btn-outline-warning offset-5">Thêm Bài Hát Vào Ca Si</a>
+  <hr>
+  <div class="row">
     <div class="col-3">
       <div class="text-center">
         <img [src]=singers.singerAvatar alt="" class="avatar">

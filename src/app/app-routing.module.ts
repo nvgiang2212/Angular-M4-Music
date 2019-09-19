@@ -24,6 +24,7 @@ import {ListSingerComponent} from "./component/singerManager/list-singer/list-si
 import {NotGuardComponent} from "./component/layout/not-guard/not-guard.component";
 import {ListSingerUserComponent} from "./component/singerManager/list-singer-user/list-singer-user.component";
 import {SingeraddsongComponent} from "./component/singerManager/singeraddsong/singeraddsong.component";
+import {UpdatesingerComponent} from "./component/singerManager/updatesinger/updatesinger.component";
 
 
 
@@ -46,6 +47,7 @@ const routes: Routes = [
   {path: 'auth/changepass', component: ChangePassComponent, canActivate: [AuthGuard]},
   {path: 'add-song/:id', component: AddsongComponent , canActivate: [AuthGuard]},
   {path: 'add-song-singer/:id', component: SingeraddsongComponent , canActivate: [AuthGuard]},
+  {path: 'update-singer/:id', component: UpdatesingerComponent , canActivate: [AuthGuard]},
   {path: 'list-singer-users', component: ListSingerUserComponent, canActivate: [AuthGuard]},
   // {path: 'search/{nameSong}', component: SearchComponent},
   {path: 'create-playlist', component: CreatePlaylistComponent, canActivate: [AuthGuard]},

@@ -106,6 +106,32 @@
 
       </div>
       <hr>
+      <div class="mb-5">
+        <h3 routerLink="#" style="color: deeppink; font-weight: bold">
+          <img src="./assets/img/bg-img/top.png" alt="" style="width: 5%">
+          Play List
+        </h3>
+      </div>
+
+      <div class="row">
+
+        <div class="col" *ngFor="let play of playlist">
+          <div [routerLink]="['/my-playlist/',play.id]"
+               class="rounded mb-4 play portfolio-effect__item portfolio-item--eff1"
+               style="width: 150px;height: 150px">
+            <img class="img-fluid portfolio-item__image"
+                 src="{{play.avatarPlaylist}}"
+                 alt="{{play.playlistName}}">
+            <div class="portfolio-item__info">
+              <i class="fas fa-play-circle fa-3x"></i>
+            </div>
+          </div>
+          <h4 [routerLink]="['/my-playlist/',play.id]" class="font-weight-bold mb-3" style="font-size: 80%">
+            <strong>{{play.playlistName}}</strong></h4>
+        </div>
+      </div>
+
+      <hr>
 
       <div class="mb-5" >
         <h3 routerLink="/list-singer" style="color: deeppink; font-weight: bold">
