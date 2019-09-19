@@ -1,24 +1,26 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {Song} from "../../../model/song/song";
+import {PlaylistInfor} from "../../../model/playlist/playlist-Infor";
 import {SongService} from "../../../service/song/song.service";
 import {PlaylistService} from "../../../service/playlistManager/playlist.service";
-import {PlaylistInfor} from "../../../model/playlist/playlist-Infor";
 import {ActivatedRoute, Router} from "@angular/router";
+import {SingerInfo} from "../../../model/singer/singer-info";
+import {SingerManagerService} from "../../../service/singerManager/singer-manager.service";
 
 @Component({
-  selector: 'app-addsong',
-  templateUrl: './addsong.component.html',
-  styleUrls: ['./addsong.component.scss']
+  selector: 'app-singeraddsong',
+  templateUrl: './singeraddsong.component.html',
+  styleUrls: ['./singeraddsong.component.scss']
 })
-export class AddsongComponent implements OnInit {
+export class SingeraddsongComponent implements OnInit {
 
   songList: Song[] = [];
-  playlist: PlaylistInfor;
+  singer: SingerInfo;
   id: number;
   title: 'Mời Bạn Chọn Bài Hát';
 
   constructor(private songService: SongService,
-              private playlistService: PlaylistService,
+              private singerManagerService: SingerManagerService,
               private routes: ActivatedRoute,
               private router: Router) {
   }
@@ -27,12 +29,12 @@ export class AddsongComponent implements OnInit {
 
     this.routes.paramMap.subscribe(paramMap => {
       this.id = +paramMap.get('id');
-      this.playlistService.getPlayListById(this.id).subscribe(
+      this.singerManagerService.getSingerById(this.id).subscribe(
         data => {
-          this.playlist = data;
+          this.singer = data;
         },
         error => {
-          this.playlist = null;
+          this.singer = null;
         }
       );
     });
@@ -51,9 +53,9 @@ export class AddsongComponent implements OnInit {
   }
 
   addSongtoPlayList(song: Song) {
-    this.playlist.songs.push(song);
-    const url = '/my-playlist/' + this.id;
-    this.playlistService.updatePlayList(this.playlist).subscribe(next => {
+    this.singer.songs.push(song);
+    const url = '/detail-singer/' + this.id;
+    this.singerManagerService.updateSinger(this.singer).subscribe(next => {
       this.router.navigate([url]);
     });
   }

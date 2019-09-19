@@ -23,6 +23,7 @@ import {DetailSingerComponent} from "./component/singerManager/detail-singer/det
 import {ListSingerComponent} from "./component/singerManager/list-singer/list-singer.component";
 import {NotGuardComponent} from "./component/layout/not-guard/not-guard.component";
 import {ListSingerUserComponent} from "./component/singerManager/list-singer-user/list-singer-user.component";
+import {SingeraddsongComponent} from "./component/singerManager/singeraddsong/singeraddsong.component";
 
 
 
@@ -35,16 +36,17 @@ const routes: Routes = [
   {path: 'create-song', component: CreateSongComponent, canActivate: [AuthGuard]},
   {path: 'list-song', component: ListSongComponent, canActivate: [AuthGuard]},
   {path: 'about-us', component: AboutUsComponent},
-  {path: 'create-playlist', component: CreatePlaylistComponent},
+  {path: 'create-playlist', component: CreatePlaylistComponent, canActivate: [AuthGuard]},
   {path: 'list-playlist', component: ListPlaylistComponent},
   {path: 'my-playlist/:id', component: PlaylistComponent},
-  {path: 'update-playlist/:id', component: UpdatePlaylistComponent},
+  {path: 'update-playlist/:id', component: UpdatePlaylistComponent, canActivate: [AuthGuard]},
   {path: 'menu-left', component: MenuLeftComponent},
-  {path: 'auth/dashboard', component: DashboardComponent},
-  {path: 'auth/updateuser', component: UpdateInforComponent},
-  {path: 'auth/changepass', component: ChangePassComponent},
-  {path: 'add-song/:id', component: AddsongComponent},
-  {path: 'list-singer-users', component: ListSingerUserComponent},
+  {path: 'auth/dashboard', component: DashboardComponent , canActivate: [AuthGuard]},
+  {path: 'auth/updateuser', component: UpdateInforComponent , canActivate: [AuthGuard]},
+  {path: 'auth/changepass', component: ChangePassComponent, canActivate: [AuthGuard]},
+  {path: 'add-song/:id', component: AddsongComponent , canActivate: [AuthGuard]},
+  {path: 'add-song-singer/:id', component: SingeraddsongComponent , canActivate: [AuthGuard]},
+  {path: 'list-singer-users', component: ListSingerUserComponent, canActivate: [AuthGuard]},
   // {path: 'search/{nameSong}', component: SearchComponent},
   {path: 'create-playlist', component: CreatePlaylistComponent, canActivate: [AuthGuard]},
   {path: 'list-playlist', component: ListPlaylistComponent, canActivate: [AuthGuard]},

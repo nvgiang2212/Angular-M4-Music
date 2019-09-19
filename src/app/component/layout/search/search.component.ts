@@ -50,8 +50,7 @@ export class SearchComponent implements OnInit {
     }
   }
 
-  // unFilter() {
-  //   location.reload();
-  // }
-
+  unFilter() {
+    location.reload();
+  }
 }
