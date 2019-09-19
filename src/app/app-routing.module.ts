@@ -46,7 +46,6 @@ const routes: Routes = [
   {path: 'add-song/:id', component: AddsongComponent},
   {path: 'list-singer-users', component: ListSingerUserComponent},
   // {path: 'search/{nameSong}', component: SearchComponent},
-  // {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'create-playlist', component: CreatePlaylistComponent, canActivate: [AuthGuard]},
   {path: 'list-playlist', component: ListPlaylistComponent, canActivate: [AuthGuard]},
   {path: 'my-playlist/:id', component: PlaylistComponent, canActivate: [AuthGuard]},
