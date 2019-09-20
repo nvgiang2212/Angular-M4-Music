@@ -19,8 +19,10 @@
                   <input type="text" class="form-control"
                          name="Name" placeholder="Name"
                          [(ngModel)]="form.name" #name="ngModel" required/>
-                  <div *ngIf="f.submitted && name.invalid">
-                    <div *ngIf="name.errors.required">Name is required</div>
+                  <div *ngIf="f.submitted && name.invalid" class="offset-3">
+                    <div *ngIf="name.errors.required">
+                      <h6 style="color: red; font-size: 80%"><i>Name is required</i></h6>
+                    </div>
                   </div>
                 </div>
 
@@ -29,8 +31,10 @@
                   <input type="text" class="form-control"
                          name="username" placeholder="User Name"
                          [(ngModel)]="form.username" #username="ngModel" required/>
-                  <div *ngIf="f.submitted && username.invalid">
-                    <div *ngIf="username.errors.required">Username is required</div>
+                  <div *ngIf="f.submitted && username.invalid" class="offset-3">
+                    <div *ngIf="username.errors.required">
+                      <h6 style="color: red; font-size: 80%"><i>Username is required</i></h6>
+                    </div>
                   </div>
                 </div>
 
@@ -39,9 +43,13 @@
                   <input type="text" class="form-control"
                          name="email" placeholder="Email"
                          [(ngModel)]="form.email" #email="ngModel" required email/>
-                  <div *ngIf="f.submitted && email.invalid">
-                    <div *ngIf="email.errors.required">Email is required</div>
-                    <div *ngIf="email.errors.email">Email must be a valid email address</div>
+                  <div *ngIf="f.submitted && email.invalid" class="offset-3">
+                    <div *ngIf="email.errors.required">
+                      <h6 style="color: red; font-size: 80%"><i>Email is required</i></h6>
+                    </div>
+                    <div *ngIf="email.errors.email">
+                      <h6 style="color: red; font-size: 80%"><i>Email must be a valid email address</i></h6>
+                    </div>
                   </div>
                 </div>
 
@@ -51,18 +59,22 @@
                          name="password" placeholder="Password"
                          [(ngModel)]="form.password" #password="ngModel"
                          required minlength="6"/>
-                  <div *ngIf="f.submitted && password.invalid">
-                    <div *ngIf="password.errors.required">Password is required</div>
-                    <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
+                  <div *ngIf="f.submitted && password.invalid" class="offset-3">
+                    <div *ngIf="password.errors.required">
+                      <h6 style="color: red; font-size: 80%"><i>Password is required</i></h6>
+                    </div>
+                    <div *ngIf="password.errors.minlength">
+                      <h6 style="color: red; font-size: 80%"><i>Password must be at least 6 characters</i></h6>
+                    </div>
                   </div>
                 </div>
 
 
-<!--                <div style="margin-bottom: 25px" class="form-group">-->
-<!--                  <input type="file" (change)="selectAvatar($event)" placeholder="Choose Avatar">-->
-<!--                  <button type="button" class="btn btn-success mt-3" (click)="upload()">Save</button>-->
-<!--                  <div>{{currentFileUpload.url}}</div>-->
-<!--                </div> &lt;!&ndash;Choose Avatar&ndash;&gt;-->
+                <!--                <div style="margin-bottom: 25px" class="form-group">-->
+                <!--                  <input type="file" (change)="selectAvatar($event)" placeholder="Choose Avatar">-->
+                <!--                  <button type="button" class="btn btn-success mt-3" (click)="upload()">Save</button>-->
+                <!--                  <div>{{currentFileUpload.url}}</div>-->
+                <!--                </div> &lt;!&ndash;Choose Avatar&ndash;&gt;-->
 
 
                 <div class="form-group">
