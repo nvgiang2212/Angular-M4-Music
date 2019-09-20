@@ -17,10 +17,12 @@ export class SearchComponent implements OnInit {
   @Output()
   press = new EventEmitter<Song[]>();
 
+  searchBy: string;
+
 
   constructor(private songService: SongService) {
     this.searchForm = new FormGroup({
-      nameSong: new FormControl(''),
+      key: new FormControl(''),
       // singer: new FormControl('')
     });
   }
@@ -35,18 +37,35 @@ export class SearchComponent implements OnInit {
   }
 
   filter() {
-    if (this.searchForm.valid) {
-      const form = this.searchForm.value;
-      const isEmptyForm = !form.nameSong;
-      this.filteredSong = this.songs;
-      if (!isEmptyForm) {
-        if (form.nameSong) {
-          this.filteredSong = this.filteredSong.filter((song => song.nameSong.includes(form.nameSong)));
-        }
-      } else {
+    if (this.searchBy === 'song') {
+      if (this.searchForm.valid) {
+        const form = this.searchForm.value;
+        const isEmptyForm = !form.key;
         this.filteredSong = this.songs;
+        if (!isEmptyForm) {
+          if (form.key) {
+            this.filteredSong = this.filteredSong.filter((song => song.nameSong.includes(form.key)));
+          }
+        } else {
+          this.filteredSong = this.songs;
+        }
+        this.press.emit(this.filteredSong);
       }
-      this.press.emit(this.filteredSong);
+    }
+    if (this.searchBy === 'singer') {
+      if (this.searchForm.valid) {
+        const form = this.searchForm.value;
+        const isEmptyForm = !form.key;
+        this.filteredSong = this.songs;
+        if (!isEmptyForm) {
+          if (form.key) {
+            this.filteredSong = this.filteredSong.filter((song => song.singer.includes(form.key)));
+          }
+        } else {
+          this.filteredSong = this.songs;
+        }
+        this.press.emit(this.filteredSong);
+      }
     }
   }
 
