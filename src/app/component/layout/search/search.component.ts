@@ -25,6 +25,7 @@ export class SearchComponent implements OnInit {
       key: new FormControl(''),
       // singer: new FormControl('')
     });
+    this.searchBy = 'song';
   }
 
   ngOnInit() {
