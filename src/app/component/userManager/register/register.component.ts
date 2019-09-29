@@ -65,7 +65,6 @@ export class RegisterComponent implements OnInit {
       this.form.username,
       this.form.email,
       this.form.password,
-      this.currentFileUpload.url
     );
 
     this.authService
@@ -76,7 +75,7 @@ export class RegisterComponent implements OnInit {
           this.isRegister = true;
           this.isRegisterFail = false;
           alert('Bạn Đã Đăng Ký Thành Công');
-          this.reloadPage();
+          this.router.navigate(['/auth/login']);
         },
         error => {
           console.log(error);

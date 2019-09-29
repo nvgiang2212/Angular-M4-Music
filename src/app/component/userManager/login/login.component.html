@@ -18,8 +18,12 @@
                [(ngModel)]="form.password" #password="ngModel" required minlength="6"
                placeholder="Enter Password">
         <div *ngIf="f.submitted && password.invalid">
-          <div *ngIf="password.errors.required">Password is required</div>
-          <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
+          <div *ngIf="password.errors.required">
+            <h6 style="color: red; font-size: 80%"><i>Password is required</i></h6>
+          </div>
+          <div *ngIf="password.errors.minlength">
+            <h6 style="color: red; font-size: 80%"><i>Password must be at least 6 characters</i></h6>
+          </div>
         </div>
       </div>
 
